@@ -1,0 +1,344 @@
+
+.space {
+  display: inline-block;
+  width: 0.28em; /* 가시적인 공백 너비 조정 */
+}
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  width: 1px !important;
+  border: 0 !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+body {
+  background-color: #000;
+  overflow: auto;
+}
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+header > * {
+  margin: 20px 40px;
+}
+
+nav > a {
+  position: relative;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 100;
+  transition: all 0.5s ease-in-out;
+}
+
+.visual_main {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow-x: hidden;
+}
+.group_main{
+  width: 100%;
+  height: 100vh;
+}
+.group_main .title_wrap {
+  position: absolute;
+  width: 987px;
+  height: 384px;
+  left: calc(50% - 987px / 2 + 5.5px);
+  top: calc(50% - 384px / 2 + 39px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.group_main .title_wrap p {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 160%;
+  color: #fff;
+  position: relative;
+}
+.group_main .sub_title_wrap {
+  position: absolute;
+  width: 398px;
+  height: 56px;
+  left: calc(50% - 398px / 2 + 373px);
+  top: calc(50% - 56px / 2 + 173px);
+}
+.group_main .sub_title_wrap p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 140%;
+  color: #999;
+}
+.line-container-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.line-container .letter {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 160%;
+  color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.scroll_rolling {
+  position: absolute;
+  left: 3%;
+  top: 95%;
+  color: #a1a1a1;
+  vertical-align: bottom;
+  z-index: 2;
+}
+.scroll_rolling::before {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+  animation: scrollRolling 1s ease-in Infinite;
+  content: "";
+  width: 24px;
+  height: 29px;
+}
+
+/* marquee */
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300%;
+  height: 168px;
+  overflow: hidden;
+}
+
+.wrapper .boxes {
+  position: relative;
+  left: 418px;
+}
+
+.wrapper .box {
+  position: absolute;
+  width: 1628px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 140%;
+  text-align: center;
+  color: #000;
+  -webkit-text-stroke: 1px #555;
+  transition: opacity 1s;
+}
+#no03 .box.system-on{
+  opacity: 1;
+}
+#no03 .box.jt-on{
+  opacity: 0;
+}
+#no04 .box.system-on{
+  opacity: 0;
+}
+#no04 .box.jt-on{
+  opacity: 1;
+}
+
+.wrapper .marque_logo {
+  position: relative;
+  left: -235px;
+}
+.wrapper .marque_logo::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  width: 228px;
+  height: 150px;
+  transform: translateY(-50%);
+  background: url(../images/visual/marquee_logo_transference.png) no-repeat;
+  background-size: contain;
+}
+
+.about{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+}
+.intro_crossboard {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+.intro_crossboard .scale-txt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  scale: 1;
+  opacity: 0;
+}
+.crossboard_wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+.cross_link {
+  position: relative;
+  height: 100px;
+}
+.cross_link a {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 300;
+  font-size: 80px;
+  text-align: center;
+  /* animation: opacity 0.8s ease-out; */
+}
+.cross_link a strong {
+  margin-right: 24px;
+}
+.system-on .cross_link a:last-child {
+  display: none;
+  opacity: 0;
+}
+.jt-on .cross_link a:first-of-type {
+  display: none;
+  opacity: 0;
+}
+/* 
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+.crossboard_title{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.crossboard_title p{
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100px;
+}
+.crossboard_title p:first-child {
+  color: #fff;
+}
+.crossboard_title p:last-child {
+  margin-left: 30px;
+  color: #000;
+  -webkit-text-stroke: 1px #555;
+}
+.crossboard_main {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 10px 0;
+  transition: margin 1s;
+}
+.jt-on .crossboard_main {
+  margin: 40px 0 130px 0;
+}
+.system-on .img_txt_wrap {
+  position: relative;
+  margin-right: 40px;
+  width: 308px;
+  transition: width 0.5s;
+}
+.jt-on .img_txt_wrap {
+  position: relative;
+  margin-right: 40px;
+  width: 448px;
+  transition: width 1s;
+}
+.img_txt_wrap img:first-child {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+}
+.jt-on .img_txt_wrap img:first-child {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  opacity: 0;
+}
+.system-on .img_txt_wrap img:last-child {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  opacity: 0;
+}
+.group_txt_wrap{
+  position: relative;
+}
+.system_mark_wrap{
+  opacity: 0;
+}
+.system_mark_wrap span{
+  position: absolute;
+  left: 120px;
+  top: 10px;
+  bottom: 0;
+  width: 76px;
+  height: 19px;
+  background: url(../images/visual/Ellipse.png) no-repeat;
+  display: block;
+}
+.group_txt_wrap span:nth-child(1){
+  top: 10px;
+}
+.group_txt_wrap span:nth-child(2){
+  top: 23px;
+}
+.group_txt_wrap span:nth-child(3){
+  top: 36px;
+}
+.group_txt_wrap span:nth-child(4){
+  top: 49px;
+}
+
+.jt_mark_wrap{
+  opacity: 0;
+}
+.jt_mark_svg{
+  position: absolute;
+  left: 116px;
+  top: 0px;
+  display: none;
+}
+.arrow_svg1{
+  position: absolute;
+  left: -130px;
+  top: 50px;
+  display: none;
+}
+.arrow_svg2{
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
