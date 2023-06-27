@@ -193,26 +193,27 @@ function introScene() {
   introScene.to(".cross_link a:first-child", { display: "none" });
 
   introScene.fromTo(".system_mark_wrap", { opacity: 0 }, { opacity: 1 });
-  introScene.fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 });
-  introScene.add(() => {
-    crossboardWrap.classList.toggle("system-on");
-    crossboardWrap.classList.toggle("jt-on");
-    no03.classList.toggle("system-on");
-    no03.classList.toggle("jt-on");
-    no04.classList.toggle("system-on");
-    no04.classList.toggle("jt-on");
-  });
-  introScene.to(".crossboard_main", { opacity: 1 });
-  introScene.to(no03, { opacity: 0, duration: 2 });
-  introScene.to(no03, { display: "none" });
+  introScene.fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 })
+  // introScene.add(() => {
+  //   crossboardWrap.classList.toggle("system-on");
+  //   crossboardWrap.classList.toggle("jt-on");
+  //   no03.classList.toggle("system-on");
+  //   no03.classList.toggle("jt-on");
+  //   no04.classList.toggle("system-on");
+  //   no04.classList.toggle("jt-on");
+  // });
+  // introScene.to(".crossboard_main", { opacity: 1 });
+  // introScene.to(no03, { opacity: 0, duration: 2 });
+  // introScene.to(no03, { display: "none" });
 
-  introScene
-    .to(".jt_mark_svg", { display: "block" })
-    .to(".cross_link a:last-child", { opacity: 1, duration: 1 })
-    .to(".arrow_svg2", { display: "block", duration: 3 })
+  // introScene
+  //   .to(".jt_mark_svg", { display: "block" })
+  //   .to(".cross_link a:last-child", { opacity: 1, duration: 1 })
+  //   .to(".arrow_svg2", { display: "block", duration: 3 })
     .to(".crossboard_wrap", { opacity: 0, duration: 3 })
     .to(".crossboard_wrap", { display: "none" })
     .to("header nav > a", { color: "#000" })
+    .to(".logo img",{attr: {src: "./assets/images/logo_black.png"}})
     .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })

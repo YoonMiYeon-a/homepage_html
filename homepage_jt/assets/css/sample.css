@@ -11,14 +11,6 @@
 .panel.description {
   padding-bottom: 60px;
 }
-.panel p, .panel li {
-  color: black;
-  font-weight: 400;
-  text-align: left;
-  font-size: 0.8em;
-  line-height: 1.5em;
-  margin: 0.3em 0 1em 0;
-}
 .panel p code, .panel li code {
   background-color: rgba(255,255,255,0.15);
   padding: 2px 4px;
@@ -138,7 +130,7 @@ html, body {
 }
 
 .container {
-	width: 400%;
+	width: 100%; /*400% 수정*/
 	height: 100vh;
 	display: flex;
 	flex-wrap: nowrap;

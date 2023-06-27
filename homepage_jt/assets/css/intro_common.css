@@ -218,7 +218,7 @@ nav > a {
 .cross_link a strong {
   margin-right: 24px;
 }
-.system-on .cross_link a:last-child {
+.jt-on .cross_link a:last-child {
   display: none;
   opacity: 0;
 }
@@ -305,7 +305,7 @@ nav > a {
   width: 76px;
   height: 19px;
   background: url(../images/visual/Ellipse.png) no-repeat;
-  display: block;
+  display: none;
 }
 .group_txt_wrap span:nth-child(1){
   top: 10px;
@@ -321,13 +321,13 @@ nav > a {
 }
 
 .jt_mark_wrap{
-  opacity: 0;
+  opacity: 1;
 }
 .jt_mark_svg{
   position: absolute;
   left: 116px;
   top: 0px;
-  display: none;
+  z-index: 90;
 }
 .arrow_svg1{
   position: absolute;

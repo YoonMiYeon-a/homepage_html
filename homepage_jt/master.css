@@ -82,21 +82,6 @@ body {
   margin: 0;
 }
 
-.container {
-  width: 100; /*수정 400%*/
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.panel {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  flex: 0 0 100vw;
-  box-sizing: border-box;
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -306,27 +291,27 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
  * W. https://svgartista.net
  **************************************************/
 
-.rocket{
+.rocket {
   display: none;
 }
-.cloud1{
+.cloud1 {
   display: none;
 }
-.cloud2{
+.cloud2 {
   display: none;
 }
 
- #creative_group{
+#creative_group {
   display: none;
- }
- .cls-1 {
+}
+#creative_group .cls-1 {
   fill: none;
   fill-rule: evenodd;
   stroke: #231815;
   stroke-miterlimit: 10;
   stroke-width: 8px;
 }
-.ball{
+.ball {
   width: 20px;
   height: 20px;
   opacity: 0;
@@ -337,7 +322,7 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
  * W. https://svgartista.net
  **************************************************/
 
- @-webkit-keyframes animate-svg-stroke-1 {
+@-webkit-keyframes animate-svg-stroke-1 {
   0% {
     stroke-dashoffset: 228.7325439453125px;
     stroke-dasharray: 228.7325439453125px;
@@ -362,8 +347,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-1 {
-  -webkit-animation: animate-svg-stroke-1 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
-          animation: animate-svg-stroke-1 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+  -webkit-animation: animate-svg-stroke-1 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+  animation: animate-svg-stroke-1 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-2 {
@@ -391,8 +378,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-2 {
-  -webkit-animation: animate-svg-stroke-2 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2s both;
-          animation: animate-svg-stroke-2 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2s both;
+  -webkit-animation: animate-svg-stroke-2 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 0.2s both;
+  animation: animate-svg-stroke-2 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-3 {
@@ -420,8 +409,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-3 {
-  -webkit-animation: animate-svg-stroke-3 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both;
-          animation: animate-svg-stroke-3 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both;
+  -webkit-animation: animate-svg-stroke-3 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both;
+  animation: animate-svg-stroke-3 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-4 {
@@ -449,8 +440,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-4 {
-  -webkit-animation: animate-svg-stroke-4 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000001s both;
-          animation: animate-svg-stroke-4 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000001s both;
+  -webkit-animation: animate-svg-stroke-4 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000001s both;
+  animation: animate-svg-stroke-4 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    0.6000000000000001s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-5 {
@@ -478,8 +471,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-5 {
-  -webkit-animation: animate-svg-stroke-5 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
-          animation: animate-svg-stroke-5 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  -webkit-animation: animate-svg-stroke-5 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  animation: animate-svg-stroke-5 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-6 {
@@ -507,8 +502,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-6 {
-  -webkit-animation: animate-svg-stroke-6 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
-          animation: animate-svg-stroke-6 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+  -webkit-animation: animate-svg-stroke-6 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+  animation: animate-svg-stroke-6 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-7 {
@@ -536,8 +533,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-7 {
-  -webkit-animation: animate-svg-stroke-7 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000002s both;
-          animation: animate-svg-stroke-7 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000002s both;
+  -webkit-animation: animate-svg-stroke-7 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000002s both;
+  animation: animate-svg-stroke-7 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    1.2000000000000002s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-8 {
@@ -565,8 +564,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-8 {
-  -webkit-animation: animate-svg-stroke-8 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000001s both;
-          animation: animate-svg-stroke-8 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000001s both;
+  -webkit-animation: animate-svg-stroke-8 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000001s both;
+  animation: animate-svg-stroke-8 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    1.4000000000000001s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-9 {
@@ -594,8 +595,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-9 {
-  -webkit-animation: animate-svg-stroke-9 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
-          animation: animate-svg-stroke-9 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+  -webkit-animation: animate-svg-stroke-9 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+  animation: animate-svg-stroke-9 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-10 {
@@ -623,8 +626,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-10 {
-  -webkit-animation: animate-svg-stroke-10 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
-          animation: animate-svg-stroke-10 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+  -webkit-animation: animate-svg-stroke-10 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+  animation: animate-svg-stroke-10 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-11 {
@@ -652,8 +657,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-11 {
-  -webkit-animation: animate-svg-stroke-11 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
-          animation: animate-svg-stroke-11 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+  -webkit-animation: animate-svg-stroke-11 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+  animation: animate-svg-stroke-11 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-12 {
@@ -681,8 +688,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-12 {
-  -webkit-animation: animate-svg-stroke-12 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
-          animation: animate-svg-stroke-12 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+  -webkit-animation: animate-svg-stroke-12 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+  animation: animate-svg-stroke-12 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-13 {
@@ -710,8 +719,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-13 {
-  -webkit-animation: animate-svg-stroke-13 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000004s both;
-          animation: animate-svg-stroke-13 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000004s both;
+  -webkit-animation: animate-svg-stroke-13 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000004s both;
+  animation: animate-svg-stroke-13 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    2.4000000000000004s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-14 {
@@ -739,8 +750,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-14 {
-  -webkit-animation: animate-svg-stroke-14 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
-          animation: animate-svg-stroke-14 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
+  -webkit-animation: animate-svg-stroke-14 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
+  animation: animate-svg-stroke-14 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-15 {
@@ -768,8 +781,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-15 {
-  -webkit-animation: animate-svg-stroke-15 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.8000000000000003s both;
-          animation: animate-svg-stroke-15 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.8000000000000003s both;
+  -webkit-animation: animate-svg-stroke-15 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 2.8000000000000003s both;
+  animation: animate-svg-stroke-15 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    2.8000000000000003s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-16 {
@@ -797,8 +812,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-16 {
-  -webkit-animation: animate-svg-stroke-16 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3s both;
-          animation: animate-svg-stroke-16 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3s both;
+  -webkit-animation: animate-svg-stroke-16 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 3s both;
+  animation: animate-svg-stroke-16 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-17 {
@@ -826,8 +843,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-17 {
-  -webkit-animation: animate-svg-stroke-17 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.2s both;
-          animation: animate-svg-stroke-17 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.2s both;
+  -webkit-animation: animate-svg-stroke-17 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 3.2s both;
+  animation: animate-svg-stroke-17 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.2s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-18 {
@@ -855,8 +874,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-18 {
-  -webkit-animation: animate-svg-stroke-18 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.4000000000000004s both;
-          animation: animate-svg-stroke-18 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.4000000000000004s both;
+  -webkit-animation: animate-svg-stroke-18 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 3.4000000000000004s both;
+  animation: animate-svg-stroke-18 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    3.4000000000000004s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-19 {
@@ -884,8 +905,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-19 {
-  -webkit-animation: animate-svg-stroke-19 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.6s both;
-          animation: animate-svg-stroke-19 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.6s both;
+  -webkit-animation: animate-svg-stroke-19 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 3.6s both;
+  animation: animate-svg-stroke-19 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.6s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-20 {
@@ -913,8 +936,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-20 {
-  -webkit-animation: animate-svg-stroke-20 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.8000000000000003s both;
-          animation: animate-svg-stroke-20 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 3.8000000000000003s both;
+  -webkit-animation: animate-svg-stroke-20 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 3.8000000000000003s both;
+  animation: animate-svg-stroke-20 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
+    3.8000000000000003s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-21 {
@@ -942,8 +967,10 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-21 {
-  -webkit-animation: animate-svg-stroke-21 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 4s both;
-          animation: animate-svg-stroke-21 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 4s both;
+  -webkit-animation: animate-svg-stroke-21 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 4s both;
+  animation: animate-svg-stroke-21 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 4s
+    both;
 }
 
 @-webkit-keyframes animate-svg-stroke-22 {
@@ -971,6 +998,66 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 
 .creative_group-22 {
-  -webkit-animation: animate-svg-stroke-22 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 4.2s both;
-          animation: animate-svg-stroke-22 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 4.2s both;
+  -webkit-animation: animate-svg-stroke-22 0.5s
+    cubic-bezier(0.47, 0, 0.745, 0.715) 4.2s both;
+  animation: animate-svg-stroke-22 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 4.2s
+    both;
+}
+
+.line {
+  position: absolute;
+  left: 20px;
+  top: 563px;
+  width: 0px;
+  height: 40px;
+  background: url(./assets/images/bg/system1/15.jpg) no-repeat;
+  z-index: 30;
+}
+.hand {
+  position: absolute;
+  left: -40px;
+  top: 523px;
+  width: 423px;
+  height: 396px;
+  z-index: 50;
+  opacity: 0;
+  background: url(./assets/images/bg/system1/hand.png) no-repeat;
+}
+/* #About .panel:nth-child(1) {
+  background: url(./assets/images/bg/system1/16.jpg) no-repeat;
+} */
+/* .title_text_stagger {
+  width: 1000px;
+  height: 800px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+.title_text_stagger p {
+  color: #fff;
+  font-size: 90px;
+  font-weight: 700;
+} */
+#Service{
+  background-image: url(./assets/images/bg/system1/07.jpg);
+}
+#Solution{
+  background-image: url(./assets/images/bg/system1/08.jpg);
+}
+#Experience{
+  background-image: url(./assets/images/bg/system1/09.jpg);
+}
+#Recruit{
+  background-image: url(./assets/images/bg/system1/10.jpg);
+}
+#Contact{
+  background-image: url(./assets/images/bg/system1/11.jpg);
+}
+#C{
+  background-image: url(./assets/images/bg/system1/12.jpg);
+}
+#D{
+  background-image: url(./assets/images/bg/system1/13.jpg);
 }

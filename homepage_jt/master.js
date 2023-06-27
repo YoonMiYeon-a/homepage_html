@@ -6,28 +6,28 @@ gsap.set(".wrapper", { xPercent: -40, yPercent: -30 });
 gsap.set("#no03", { y: 160 });
 gsap.set("#no04", { y: 679 });
 
-const springAnim = gsap.timeline();
+// const springAnim = gsap.timeline();
 
-springAnim.to(
-  ".system_mark_wrap span:nth-child(1)",
-  { y: -10, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
-  "+=0.6"
-);
-springAnim.to(
-  ".system_mark_wrap span:nth-child(2)",
-  { y: -5, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
-  "+0.6"
-);
-springAnim.to(
-  ".system_mark_wrap span:nth-child(3)",
-  { y: 5, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
-  "+0.6"
-);
-springAnim.to(
-  ".system_mark_wrap span:nth-child(4)",
-  { y: 10, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
-  "+0.6"
-);
+// springAnim.to(
+//   ".system_mark_wrap span:nth-child(1)",
+//   { y: -10, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
+//   "+=0.6"
+// );
+// springAnim.to(
+//   ".system_mark_wrap span:nth-child(2)",
+//   { y: -5, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
+//   "+0.6"
+// );
+// springAnim.to(
+//   ".system_mark_wrap span:nth-child(3)",
+//   { y: 5, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
+//   "+0.6"
+// );
+// springAnim.to(
+//   ".system_mark_wrap span:nth-child(4)",
+//   { y: 10, yoyo: true, repeat: -1, ease: "Power1.easeInOut", duration: 1 },
+//   "+0.6"
+// );
 
 var boxWidth = 1626,
   totalWidth = boxWidth * 3, //  * n of boxes
@@ -161,51 +161,50 @@ function introScene() {
     { x: 300, opacity: 0 },
     { x: 0, opacity: 1 }
   );
+
+  introScene.to(".jt_mark_wrap", { opacity: 1 }, "+=0.1");
+
   introScene.fromTo(
-    ".system_mark_wrap",
-    { opacity: 0 },
-    { opacity: 1 },
-    "+=0.1"
-  );
-  introScene.fromTo(
-    ".system_mark_wrap span",
-    { opacity: 0, x: 20 },
-    { opacity: 1, x: 0, stagger: 0.2 },
+    ".jt_mark_svg",
+    { display: "none", opacity: 0, x: 20 },
+    { display: "block", opacity: 1, x: 0 },
     "start"
   );
-  introScene.add(() => {
-    springAnim.play(); // springAnim 실행
-  });
 
-  introScene.to(".cross_link a:first-child", { display: "block" });
-  introScene.fromTo(
-    ".cross_link a:first-child",
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1 }
-  );
-  introScene.to(".arrow_svg1", { display: "block", duration: 6 });
-  introScene.to(".arrow_svg1", { opacity: 0 }, "-=0.6");
-  introScene.to(".arrow_svg1", { display: "none" });
-  introScene.to(".crossboard_main", { opacity: 0 });
-  introScene.to(".system_mark_wrap", { opacity: 0 });
-  introScene.to(".system_mark_wrap span", { opacity: 0 });
-  introScene.to(".cross_link a:first-child", { opacity: 0 });
-  introScene.to(".cross_link a:first-child", { display: "none" });
+  // introScene.add(() => {
+  //   springAnim.play(); // springAnim 실행
+  // });
 
-  introScene.fromTo(".system_mark_wrap", { opacity: 0 }, { opacity: 1 });
-  introScene.fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 });
-  introScene.add(() => {
-    crossboardWrap.classList.toggle("system-on");
-    crossboardWrap.classList.toggle("jt-on");
-    no03.classList.toggle("system-on");
-    no03.classList.toggle("jt-on");
-    no04.classList.toggle("system-on");
-    no04.classList.toggle("jt-on");
-  });
+  // introScene.to(".cross_link a:first-child", { display: "block" });
+
+  // introScene.to(".arrow_svg1", { display: "block", duration: 6 });
+  // introScene.to(".arrow_svg1", { opacity: 0 }, "-=0.6");
+  // introScene.to(".arrow_svg1", { display: "none" });
+  // introScene.to(".crossboard_main", { opacity: 0 });
+  // introScene.to(".system_mark_wrap", { opacity: 0 });
+  // introScene.to(".system_mark_wrap span", { opacity: 0 });
+  // introScene.to(".cross_link a:first-child", { opacity: 0 });
+  // introScene.to(".cross_link a:first-child", { display: "none" });
+
+  // introScene.fromTo(".system_mark_wrap", { opacity: 0 }, { opacity: 1 });
+  // introScene.fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 });
+  // introScene.add(() => {
+  //   crossboardWrap.classList.toggle("system-on");
+  //   crossboardWrap.classList.toggle("jt-on");
+  //   no03.classList.toggle("system-on");
+  //   no03.classList.toggle("jt-on");
+  //   no04.classList.toggle("system-on");
+  //   no04.classList.toggle("jt-on");
+  // });
+
   introScene.to(".crossboard_main", { opacity: 1 });
   introScene.to(no03, { opacity: 0, duration: 2 });
   introScene.to(no03, { display: "none" });
-
+  introScene.fromTo(
+    ".cross_link a:last-child",
+    { y: 50, opacity: 0, display: "none" },
+    { y: 0, opacity: 1, display: "block" }
+  );
   introScene
     .to(".jt_mark_svg", { display: "block" })
     .to(".cross_link a:last-child", { opacity: 1, duration: 1 })
@@ -213,6 +212,7 @@ function introScene() {
     .to(".crossboard_wrap", { opacity: 0, duration: 3 })
     .to(".crossboard_wrap", { display: "none" })
     .to("header nav > a", { color: "#000" })
+    .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
     .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })
@@ -347,40 +347,55 @@ let tl = gsap.timeline({
   scrollTrigger: {
     trigger: oneContainer,
     start: "top top",
-    end: "bottom -1000%",
+    end: "bottom -1500%",
     pin: true,
     scrub: 1,
-  }}
-);
+  },
+});
 
-tl.to("#creative_group", {  
+tl.to("#creative_group", {
   display: "block",
 }).delay(7);
+tl.set(".hand", { x: -800, y: 110, delay: 0, opacity: 1 });
+tl.set(".line2", { x: 275 });
+tl.to(".hand", { x: 350, y: 0, delay: 0 });
+tl.to(".line2", { duration: 7, width: 700 });
+tl.to(".hand", { x: 1050, y: 0, duration: 7 }, "<");
+// tl.to(".hand", { x: 1750, y: -70, delay: 0 });
+// tl.to(".hand", { x: 1720, y: 0, delay: 0 });
+// tl.to(".hand", { x: 1700, y: -15, delay: 0 });
 tl.set(".ball", { y: 90 });
 tl.to(".ball", { opacity: 1, duration: 1 });
+tl.to(".hand", { x: 1750, y: -70, ease: { ease: Power1.easeInOut } });
+tl.to(".hand", { x: 1720, y: 0, delay: 0 });
+tl.to(".hand", { x: 1700, y: -15, delay: 0 });
+tl.to(".hand", { x: 1800, y: 30, delay: 0 });
+tl.to(".hand", { x: 2400, y: 30, delay: 0 });
+tl.to(".hand", { display: "none" });
+tl.to(".line2", { opacity: 0 });
 tl.to("body", { overflow: "hidden" });
-tl.to(".ball", { x: -700 , scale: 300 ,duration: 1});
-tl.to('body',{ backgroundColor: '#000' })
-tl.to(".ball", {display: "none"});
-tl.to("#creative_group",{display:"none"});
+tl.to(".ball", { x: -700, scale: 350, duration: 1 });
+tl.to("#creative_group", { display: "none" });
+tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
+tl.to("body", { backgroundColor: "#000" });
+tl.to(".ball", { display: "none" });
+tl.to("header nav > a", { color: "#fff" });
+tl.to(".ball", { display: "none" });
 tl.to("body", { overflow: "auto" });
-tl.set(".rocket",{display: "block", y: 900});
-tl.set(".cloud1",{display: "block", y: -650});
-tl.set(".cloud2",{display: "block", x:200, y: -650});
-tl.to(".rocket",{ y: -120 , duration: 2});
-tl.to(".rocket",{ y: 30 });
-tl.to(".rocket",{ x: -800 ,rotate: -20 });
-tl.to(".rocket",{ x: -100, rotate: 20,scale: 0.5});
-tl.to(".rocket",{ x: 300, rotate: 0});
-tl.to(".cloud1",{ y: 1300});
-tl.set(".cloud1",{ y: 6500});
-tl.to(".rocket",{ x: -200, rotate: -20,scale: 1});
-tl.to(".cloud2",{ y: 1300});
-tl.set(".cloud2",{ y: 650});
-tl.set(".cloud2",{ y: -650});
-
-
-
+// tl.set(".rocket", { display: "block", y: 900 });
+// tl.set(".cloud1", { display: "block", y: -650 });
+// tl.set(".cloud2", { display: "block", x: 200, y: -650 });
+// tl.to(".rocket", { y: -120, duration: 2 });
+// tl.to(".rocket", { y: 30 });
+// tl.to(".rocket", { x: -800, rotate: -20 });
+// tl.to(".rocket", { x: -100, rotate: 20, scale: 0.5 });
+// tl.to(".rocket", { x: 300, rotate: 0 });
+// tl.to(".cloud1", { y: 1300 });
+// tl.set(".cloud1", { y: 6500 });
+// tl.to(".rocket", { x: -200, rotate: -20, scale: 1 });
+// tl.to(".cloud2", { y: 1300 });
+// tl.set(".cloud2", { y: 650 });
+// tl.set(".cloud2", { y: -650 });
 
 
 let sections = gsap.utils.toArray("section[data-target]");
