@@ -64,7 +64,13 @@ table {
   clip-path: inset(50%) !important;
   white-space: nowrap !important;
 }
-
+.text_article{
+  font-size: 300px;
+  font-weight: 700;
+  -webkit-text-stroke: 10px white;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
 html {
   overflow-y: scroll;
   height: 400%;
@@ -105,17 +111,50 @@ header {
   align-items: center;
   z-index: 10;
 }
-header > * {
-  margin: 20px 40px;
+header h1 {
+  display: flex;
+  align-items: center;
+  margin: 30px 40px;
 }
-
-header nav > a {
+header h1 a {
+  margin-left: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+header nav{
+  margin: 30px 40px;
+}
+header nav a p{
   position: relative;
   margin-left: 20px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
+  color: #fff;
   transition: all 0.5s ease-in-out;
 }
+.allmenu_btn{
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.allmenu_btn span:first-child{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-color:#fff;
+  width: 100%;
+  height: 2px;
+}
+.allmenu_btn span:last-child{
+  position: absolute;
+  left: 0;
+  top: calc(50% + 9px);
+  background-color:#fff;
+  width: 75%;
+  height: 2px;
+}
+
 
 .link_nav {
   position: fixed;
@@ -135,38 +174,159 @@ header nav > a {
   height: 100%;
   background-color: #c2c2c2;
 }
-
-.link_nav a {
-  color: #c2c2c2;
-  font-size: 1.3em;
-  line-height: 1.7;
-  text-decoration: none;
+.progress_page{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.progress_page p{
+  font-size: 20px;
+  line-height: 20px;
+  color: #1766fe;
+  font-weight: 600;
   writing-mode: vertical-rl;
-  padding: 4px 0;
+  margin-bottom: 10px;
+}
+.progress_wrap{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all .5s;
+}
+.progress_wrap:after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #1766fe;
+  z-index: -1;
+}
+.progress_wrap span{
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  border: 1px solid #1766fe;
+  background-color: #fff;
+  margin: 10px auto 0;
+  scale: 1;
+  transition: all .5s;
+}
+.progress_wrap span.active{
+  background-color: #1766fe;
+  scale: 1.3;
+}
+.progress_wrap span:last-child{
+  margin: 10px auto;
+}
+
+.link_nav a,
+.link_nav a span{
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
   text-align: center;
   display: block;
 }
-.link_nav a:last-child {
-  margin-bottom: 0;
-}
-.link_nav a:hover {
-  text-decoration: underline;
-}
-
 .link_nav a.active {
   position: relative;
   color: #000;
 }
-/* .link_nav a.active::after{
-	content: "";
-	position: absolute;
-	left: -10px;
-	top: 0;
-	width: 3px;
-	height: 100%;
-	background-color: #000;	
-} */
-.link_nav span {
+.link_nav .about_link{
+  background: url(./assets/images/visual/01_About_link.png) no-repeat;
+  background-position: center;
+}
+.link_nav .about_link span{
+  background: url(./assets/images/visual/01_About_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .about_link.active span{
+  background: url(./assets/images/visual/01_About_link_on.png) no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .service_link{
+  background: url(./assets/images/visual/02_Service_link.png)no-repeat;
+  background-position: center;
+}
+.link_nav .service_link span{
+  background: url(./assets/images/visual/02_Service_link_on.png)no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .service_link.active span{
+  background: url(./assets/images/visual/02_Service_link_on.png)no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .solution_link{
+  background: url(./assets/images/visual/03_Solution_link.png)no-repeat;
+  background-position: center;
+}
+.link_nav .solution_link span{
+  background: url(./assets/images/visual/03_Solution_link_on.png)no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .solution_link.active span{
+  background: url(./assets/images/visual/03_Solution_link_on.png)no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .experience_link{
+  background: url(./assets/images/visual/04_Expirence_link.png)no-repeat;
+  background-position: center;
+}
+.link_nav .experience_link span{
+  background: url(./assets/images/visual/04_Expirence_link_on.png)no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .experience_link.active span{
+  background: url(./assets/images/visual/04_Expirence_link_on.png)no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .recruit_link{
+  background: url(./assets/images/visual/05_Recruit_link.png)no-repeat;
+  background-position: center;
+}
+.link_nav .recruit_link span{
+  background: url(./assets/images/visual/05_Recruit_link_on.png)no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .recruit_link.active span{
+  background: url(./assets/images/visual/05_Recruit_link_on.png)no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .contact_link{
+  background: url(./assets/images/visual/06_Contact_link.png)no-repeat;
+  background-position: center;
+}
+.link_nav .contact_link span{
+  background: url(./assets/images/visual/06_Contact_link_on.png)no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .contact_link.active span{
+  background: url(./assets/images/visual/06_Contact_link_on.png)no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+.link_nav > span {
   position: absolute;
   left: 0px;
   top: 0;
@@ -305,6 +465,11 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   display: flex;
   flex-direction: column;
 }
+#About .panel:nth-child(1) p{
+  color: #000;
+  text-align: left;
+  font-weight: 200;
+}
 #About .panel:nth-child(1)::after {
   position: absolute;
   left: 50%;
@@ -336,7 +501,7 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   left: 8%;
   top: 12%;
   z-index: 10;
-  font-weight: 300;
+  font-weight: 200;
 }
 #About .panel:nth-child(1) .title_text p {
   line-height: 60px;
@@ -469,7 +634,7 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   color: #000;
 }
 .card a:hover .title_text {
-  color:#000;
+  color: #000;
 }
 #Recruit {
   height: 100vh;
