@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./assets/css/svg.css" />
     <link rel="stylesheet" href="./assets/css/sample.css" />
     <link rel="stylesheet" href="./assets/css/intro_common.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollToPlugin.min.js"></script>
@@ -15,7 +22,7 @@
   <body>
     <header>
       <h1 class="logo">
-        <img src="./assets/images/logo.png" alt="누리어 로고">
+        <img src="./assets/images/logo.png" alt="누리어 로고" />
         <a href="./index.html">
           <p><strong>누리어</strong>시스템</p>
         </a>
@@ -217,13 +224,87 @@
           <div class="panel"></div>
           <div class="panel"></div>
         </section>
-        <section id="Service" class="Service" data-target="Service">          <div class="panel"></div>
-          <div class="panel"></div></section>
-        <section
-          id="Solution"
-          class="Solution"
-          data-target="Solution"
-        ></section>
+        <section id="Service" class="Service" data-target="Service">
+          <div class="panel">
+            <div class="txt_img">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="sub_text_left">
+              <div class="text_box">
+                <div class="title">스마트/인터넷금융</div>
+                <div class="text">
+                  인터넷 금융사이트의 전략적 고도화 및 차세대 대응 개발로
+                  고객에게 전문성, 편의성을 제공하고, 스마트폰,태블릿,스마트워치
+                  등 다양한환경의 모바일 기기에서도 고객중심 UI/UX 전략을
+                  기반으로 이질감 없이 고객이 편리하게 금융 서비스를 이용할 수
+                  있도록 합니다.
+                </div>
+              </div>
+              <div class="text_box">
+                <div class="title">일반기업SI</div>
+                <div class="text">
+                  다양한 콘텐츠와 이용자 서비스의 확대, 업무 전반에 걸친
+                  프로세스 개선등을 위해 최신 정보기술 및 기법을 적용하여
+                  고객사의 기업가치를 극대화시키는 정보시스템으로 통합
+                  구축합니다.
+                </div>
+              </div>
+            </div>
+            <div class="sub_text_right">
+              <div class="text_box">
+                <div class="title">금융상품 마케팅</div>
+                <div class="text">
+                  효과적인 금융상품 마케팅 및 서비스 품질 향상을 위해 차별화된
+                  컨텐츠, UI/UI 서비스를 제공할 수 있는 전문 마케팅 플랫폼을
+                  구축합니다.
+                </div>
+              </div>
+              <div class="text_box">
+                <div class="title">ioT/비대면</div>
+                <div class="text">
+                  Voice 뱅킹, 냉장고 뱅킹, AI 로봇 뱅커 등 ioT/비대면 특화
+                  금융서비스와 비대면 실명확인 및 계좌개설 등 다양한 비대면 금융
+                  서비스 시스템 구축을 통해 비대면 마케팅 채널을 활성화하고
+                  고객서비스 경쟁력을 제고할 수 있습니다.
+                </div>
+              </div>
+            </div>
+            <img
+              class="bg1"
+              src="./assets/images/visual/service_circle.png"
+              alt="파란색 도넛 모양"
+            />
+            <span class="text_article">Service</span>
+          </div>
+        </section>
+        <section id="Solution" class="Solution" data-target="Solution">
+          <div class="panel">
+            <a class="soultion_card"href="#">
+              <h3>N-PDS</h3>
+              <div class="text_box">
+                <strong>이상징후 탐지 시스템</strong>
+                <p>사용자 디바이스에 대한 정보 추출 및 패턴인식 기술</p>
+              </div>
+            </a>
+            <a class="soultion_card"href="#">
+              <h3>N-PAS</h3>
+              <div class="text_box">
+                <strong>안티스크래핑 시스템</strong>
+                <p>스크래핑으로부터 데이터를 보호하는 완벽한 안티스크래핑 시스템</p>
+              </div>
+            </a>
+            <a class="soultion_card"href="#">
+              <h3>FIDO</h3>
+              <div class="text_box">
+                <strong>생체/간편인증 솔루션</strong>
+                <p>사용자의 편의성, 서비스 보안성 및 확장성을 보장</p>
+              </div>
+            </a>
+            <span class="text_article">Solution</span>
+          </div>
+        </section>
         <section id="Experience" class="Experience" data-target="Experience">
           <div class="experience_container">
             <article class="card">
@@ -306,8 +387,7 @@
       <nav class="link_nav">
         <div class="progress_page">
           <p>TEXT</p>
-          <div class="progress_wrap">
-          </div>
+          <div class="progress_wrap"></div>
         </div>
         <a href="#About" class="about_link"><span></span></a>
         <a href="#Service" class="service_link"><span></span></a>
@@ -318,7 +398,12 @@
         <span></span>
       </nav>
       <div id="custom_cursor" class="custom-cursor">
-        <div class="custom-cursor-icon"></div>
+        <svg class="custom-cursor-icon" viewBox="0 0 100 100">
+          <circle id="circle_line"cx="50" cy="50" r="50" style="fill: #1766fe;"/>
+          <text id="mainText" fill="#1766fe"  >
+            <textPath id="masterTextPath" xlink:href="#circle_line" startOffset="0%">Placeholder</textPath>
+          </text>
+        </svg>
       </div>
     </main>
     <script src="./master.js"></script>

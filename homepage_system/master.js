@@ -213,7 +213,9 @@ function introScene() {
     //   .to(".arrow_svg2", { display: "block", duration: 3 })
     .to(".crossboard_wrap", { opacity: 0, duration: 3 })
     .to(".crossboard_wrap", { display: "none" })
-    .to("header", { color: "#000" })
+    .to(".logo p", { color: "#000" })
+    .to("header nav p", { color: "#000" }, ">")
+    .to(".allmenu_btn span", { backgroundColor: "#000" }, ">")
     .to("body", { backgroundColor: "#fff", duration: 1 })
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })
@@ -456,6 +458,13 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseover", custom_hover_cursor);
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
+
+const tl = gsap.time();
+
+document.querySelector(".custom-cursor-icon").textContent =
+  "NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION";
+
+  tl.from("")
 // var pos = document.documentElement;
 // pos.addEventListener("mousemove", (e) => {
 //   pos.style.setProperty("--x", e.clientX + "px");
