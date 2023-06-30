@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./assets/css/svg.css" />
     <link rel="stylesheet" href="./assets/css/sample.css" />
     <link rel="stylesheet" href="./assets/css/intro_common.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollToPlugin.min.js"></script>
@@ -15,11 +22,19 @@
   <body>
     <header>
       <h1 class="logo">
-        <a href="./index.html"><img src="./assets/images/logo_system_eng_white.png" alt="누리어로고" /></a>
+        <img src="./assets/images/logo.png" alt="누리어 로고" />
+        <a href="./index.html">
+          <p><strong>누리어</strong>시스템</p>
+        </a>
       </h1>
+      <div class="allmenu_btn">
+        <span></span>
+        <span></span>
+      </div>
       <nav>
-        <a href="./index.html" class="system"><strong>누리어</strong>시스템</a>
-        <a href="../homepage_jt/index.html" class="jt"><strong>누리어</strong>제이티</a>
+        <a href="./index.html">
+          <p><strong>누리어</strong>제이티</p>
+        </a>
       </nav>
     </header>
     <main>
@@ -36,7 +51,7 @@
       <section class="about">
         <div class="intro_crossboard">
           <p class="scale-txt">SYSTEM GROUP</p>
-          <span class="scroll_rolling">SCROLL DOWN</span>
+          <span class="scroll_rolling"></span>
           <div class="crossboard_wrap system-on">
             <div class="crossboard_title">
               <p>WE</p>
@@ -179,44 +194,122 @@
       <div class="section_container">
         <section id="About" class="About container" data-target="About">
           <div class="panel">
-              <div class="title_text">
-                <p>누리어는</p>
-                <span class="replace_text"></span>
-                <p>총 4가지 주요사업을</p>
-                <p>영위하고 있습니다.</p>
+            <div class="title_text">
+              <p>누리어는</p>
+              <span class="replace_text"></span>
+              <p>총 4가지 주요사업을</p>
+              <p>영위하고 있습니다.</p>
+            </div>
+            <div class="sub_text">
+              <p>
+                누리어는 앞서가는 기술력과 노하우로 <br />
+                현재업계 선두를 달리고 있는 대표적인 회사입니다. <br />
+                지난 수년간의 노력과 시행착오를통해 저희기업은 고객님들과 함께
+                더불어 성장 하였습니다.
+              </p>
+              <p>
+                <strong
+                  >e-Business를 위한 컨설팅 부터 안정된 비즈니스를 위한
+                  솔루션까지!</strong
+                ><br />
+                고객의 요구를 만족시킬 수 있도록 노력하는 누리어시스템이 되도록
+                하겠습니다.<br />
+                언제든지 누리어의 문을 두드려 주십시오<br />
+                감사합니다.
+              </p>
+            </div>
+            <span class="text_article">About</span>
+          </div>
+          <div class="panel"></div>
+          <div class="panel"></div>
+          <div class="panel"></div>
+        </section>
+        <section id="Service" class="Service" data-target="Service">
+          <div class="panel">
+            <div class="txt_img">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="sub_text_left">
+              <div class="text_box">
+                <div class="title">스마트/인터넷금융</div>
+                <div class="text">
+                  인터넷 금융사이트의 전략적 고도화 및 차세대 대응 개발로
+                  고객에게 전문성, 편의성을 제공하고, 스마트폰,태블릿,스마트워치
+                  등 다양한환경의 모바일 기기에서도 고객중심 UI/UX 전략을
+                  기반으로 이질감 없이 고객이 편리하게 금융 서비스를 이용할 수
+                  있도록 합니다.
+                </div>
               </div>
-              <div class="sub_text">
-                <p>
-                  누리어는 앞서가는 기술력과 노하우로 <br />
-                  현재업계 선두를 달리고 있는 대표적인 회사입니다. <br />
-                  지난 수년간의 노력과 시행착오를통해 저희기업은 고객님들과 함께
-                  더불어 성장 하였습니다.
-                </p>
-                <p>
-                  <strong>e-Business를 위한 컨설팅 부터 안정된 비즈니스를 위한
-                    솔루션까지!</strong><br />
-                  고객의 요구를 만족시킬 수 있도록 노력하는 누리어시스템이
-                  되도록 하겠습니다.<br />
-                  언제든지 누리어의 문을 두드려 주십시오<br />
-                  감사합니다.
-                </p>
+              <div class="text_box">
+                <div class="title">일반기업SI</div>
+                <div class="text">
+                  다양한 콘텐츠와 이용자 서비스의 확대, 업무 전반에 걸친
+                  프로세스 개선등을 위해 최신 정보기술 및 기법을 적용하여
+                  고객사의 기업가치를 극대화시키는 정보시스템으로 통합
+                  구축합니다.
+                </div>
               </div>
             </div>
-            <div class="panel"></div>
-            <div class="panel"></div>
-            <div class="panel"></div>
+            <div class="sub_text_right">
+              <div class="text_box">
+                <div class="title">금융상품 마케팅</div>
+                <div class="text">
+                  효과적인 금융상품 마케팅 및 서비스 품질 향상을 위해 차별화된
+                  컨텐츠, UI/UI 서비스를 제공할 수 있는 전문 마케팅 플랫폼을
+                  구축합니다.
+                </div>
+              </div>
+              <div class="text_box">
+                <div class="title">ioT/비대면</div>
+                <div class="text">
+                  Voice 뱅킹, 냉장고 뱅킹, AI 로봇 뱅커 등 ioT/비대면 특화
+                  금융서비스와 비대면 실명확인 및 계좌개설 등 다양한 비대면 금융
+                  서비스 시스템 구축을 통해 비대면 마케팅 채널을 활성화하고
+                  고객서비스 경쟁력을 제고할 수 있습니다.
+                </div>
+              </div>
+            </div>
+            <img
+              class="bg1"
+              src="./assets/images/visual/service_circle.png"
+              alt="파란색 도넛 모양"
+            />
+            <span class="text_article">Service</span>
+          </div>
         </section>
-        <section id="Service" class="Service" data-target="Service"></section>
-        <section
-          id="Solution"
-          class="Solution"
-          data-target="Solution"
-        ></section>
+        <section id="Solution" class="Solution" data-target="Solution">
+          <div class="panel">
+            <a class="soultion_card"href="#">
+              <h3>N-PDS</h3>
+              <div class="text_box">
+                <strong>이상징후 탐지 시스템</strong>
+                <p>사용자 디바이스에 대한 정보 추출 및 패턴인식 기술</p>
+              </div>
+            </a>
+            <a class="soultion_card"href="#">
+              <h3>N-PAS</h3>
+              <div class="text_box">
+                <strong>안티스크래핑 시스템</strong>
+                <p>스크래핑으로부터 데이터를 보호하는 완벽한 안티스크래핑 시스템</p>
+              </div>
+            </a>
+            <a class="soultion_card"href="#">
+              <h3>FIDO</h3>
+              <div class="text_box">
+                <strong>생체/간편인증 솔루션</strong>
+                <p>사용자의 편의성, 서비스 보안성 및 확장성을 보장</p>
+              </div>
+            </a>
+            <span class="text_article">Solution</span>
+          </div>
+        </section>
         <section id="Experience" class="Experience" data-target="Experience">
           <div class="experience_container">
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -224,7 +317,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -232,7 +325,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -240,7 +333,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -248,7 +341,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -256,7 +349,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -264,7 +357,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -272,7 +365,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -280,7 +373,7 @@
             </article>
             <article class="card">
               <a href="#">
-                <img src="./assets/images/visual/durmmy.png" alt="더미">
+                <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <p class="sub_text">2022 NH농협 올원뱅크</p>
                 <p class="title_text">차세대플랫폼 구축</p>
                 <p>금융</p>
@@ -292,16 +385,25 @@
         <section id="Contact" class="Contact" data-target="Contact"></section>
       </div>
       <nav class="link_nav">
-        <a href="#About">About</a>
-        <a href="#Service">Service</a>
-        <a href="#Solution">Solution</a>
-        <a href="#Experience">Experince</a>
-        <a href="#Recruit">Recruit</a>
-        <a href="#Contact">Contact</a>
+        <div class="progress_page">
+          <p>TEXT</p>
+          <div class="progress_wrap"></div>
+        </div>
+        <a href="#About" class="about_link"><span></span></a>
+        <a href="#Service" class="service_link"><span></span></a>
+        <a href="#Solution" class="solution_link"><span></span></a>
+        <a href="#Experience" class="experience_link"><span></span></a>
+        <a href="#Recruit" class="recruit_link"><span></span></a>
+        <a href="#Contact" class="contact_link"><span></span></a>
         <span></span>
       </nav>
       <div id="custom_cursor" class="custom-cursor">
-        <div class="custom-cursor-icon"></div>
+        <svg class="custom-cursor-icon" viewBox="0 0 100 100">
+          <circle id="circle_line"cx="50" cy="50" r="50" style="fill: #1766fe;"/>
+          <text id="mainText" fill="#1766fe"  >
+            <textPath id="masterTextPath" xlink:href="#circle_line" startOffset="0%">Placeholder</textPath>
+          </text>
+        </svg>
       </div>
     </main>
     <script src="./master.js"></script>
