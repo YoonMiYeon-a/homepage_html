@@ -458,13 +458,56 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseover", custom_hover_cursor);
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
+gsap.set("text.circles__text", { transformOrigin: "50% 50%" });
+gsap.to("text.circles__text", {
+  duration: 10,
+  ease: "none",
+  rotation: "+=360",
+  repeat: -1,
+});
+let solutionLinks = document.querySelectorAll(".solution_card");
 
-const tl = gsap.time();
+solutionLinks.forEach((link) => {
+  link.addEventListener("mouseover", () => {
+    const mouseoverPanel = document.querySelector("#Solution .panel:nth-child(1)");
+    const mouseAnim = gsap.timeline({
+      scrollTrigger: {
+        trigger: mouseoverPanel,
+        start: "top bottom",
+        end: "bottom bottom",
+      },
+    });
+    mouseAnim.to(".custom-cursor .custom-cursor-icon", {
+      scale: 10, duration: 0.1
+    });
+    mouseAnim.to(".circles", {
+      "--dim": "30vmin", duration: 0.2
+    },"-=1");
+    mouseAnim.to(".custom-cursor p", {
+      opacity: 1
+    });
+  });
+  link.addEventListener("mouseleave", () => {
+    const mouseoverPanel = document.querySelector("#Solution .panel:nth-child(1)");
+    const mouseAnim = gsap.timeline({
+      scrollTrigger: {
+        trigger: mouseoverPanel,
+        start: "top bottom",
+        end: "bottom bottom",
+      },
+    });
+    mouseAnim.to(".custom-cursor .custom-cursor-icon", {
+      scale: 1, duration: 0.1,
+    });
+    mouseAnim.to(".circles", {
+      "--dim": "0vmin", duration: 0.2
+    },"-=1");
+    mouseAnim.to(".custom-cursor p", {
+      opacity: 0
+    });
+  });
+});
 
-document.querySelector(".custom-cursor-icon").textContent =
-  "NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION";
-
-  tl.from("")
 // var pos = document.documentElement;
 // pos.addEventListener("mousemove", (e) => {
 //   pos.style.setProperty("--x", e.clientX + "px");
