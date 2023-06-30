@@ -64,7 +64,6 @@ table {
   clip-path: inset(50%) !important;
   white-space: nowrap !important;
 }
-<<<<<<< HEAD
 .text_article {
   position: absolute;
   right: -14%;
@@ -78,9 +77,6 @@ table {
   z-index: 1;
   opacity: 0.5;
 }
-=======
-
->>>>>>> main
 html {
   overflow-y: scroll;
   height: 400%;
@@ -121,7 +117,6 @@ header {
   align-items: center;
   z-index: 10;
 }
-<<<<<<< HEAD
 header h1 {
   display: flex;
   align-items: center;
@@ -166,20 +161,6 @@ header nav a p {
   height: 2px;
 }
 
-=======
-header > * {
-  margin: 20px 40px;
-}
-
-header nav > a {
-  position: relative;
-  margin-left: 20px;
-  font-size: 17px;
-  font-weight: 400;
-  transition: all 0.5s ease-in-out;
-}
-
->>>>>>> main
 .link_nav {
   position: fixed;
   top: 50%;
@@ -198,7 +179,6 @@ header nav > a {
   height: 100%;
   background-color: #c2c2c2;
 }
-<<<<<<< HEAD
 .progress_page {
   display: flex;
   flex-direction: column;
@@ -252,31 +232,14 @@ header nav > a {
 .link_nav a span {
   width: 24px;
   height: 24px;
-=======
-
-.link_nav a {
-  color: #c2c2c2;
-  font-size: 1.3em;
-  line-height: 1.7;
->>>>>>> main
   text-decoration: none;
-  writing-mode: vertical-rl;
-  padding: 4px 0;
   text-align: center;
   display: block;
 }
-.link_nav a:last-child {
-  margin-bottom: 0;
-}
-.link_nav a:hover {
-  text-decoration: underline;
-}
-
 .link_nav a.active {
   position: relative;
   color: #000;
 }
-<<<<<<< HEAD
 .link_nav .about_link {
   background: url(./assets/images/visual/01_About_link.png) no-repeat;
   background-position: center;
@@ -369,18 +332,6 @@ header nav > a {
 }
 
 .link_nav > span {
-=======
-/* .link_nav a.active::after{
-	content: "";
-	position: absolute;
-	left: -10px;
-	top: 0;
-	width: 3px;
-	height: 100%;
-	background-color: #000;	
-} */
-.link_nav span {
->>>>>>> main
   position: absolute;
   left: 0px;
   top: 0;
@@ -508,14 +459,11 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   display: flex;
   flex-direction: column;
 }
-<<<<<<< HEAD
 #About .panel:nth-child(1) p {
   color: #000;
   text-align: left;
   font-weight: 200;
 }
-=======
->>>>>>> main
 #About .panel:nth-child(1)::after {
   position: absolute;
   left: 50%;
@@ -547,7 +495,7 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   left: 8%;
   top: 12%;
   z-index: 10;
-  font-weight: 300;
+  font-weight: 200;
 }
 #About .panel:nth-child(1) .title_text p {
   line-height: 60px;
@@ -788,7 +736,7 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   color: #000;
 }
 .card a:hover .title_text {
-  color:#000;
+  color: #000;
 }
 #Recruit {
   height: 100vh;
