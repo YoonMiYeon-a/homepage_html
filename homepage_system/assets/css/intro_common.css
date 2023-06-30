@@ -20,6 +20,36 @@ body {
   background-color: #000;
   overflow: auto;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+header > * {
+  margin: 20px 40px;
+}
+
+nav > a {
+  position: relative;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 100;
+  transition: all 0.5s ease-in-out;
+}
+
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 .visual_main {
   width: 100%;
   height: 100%;
@@ -75,6 +105,8 @@ body {
 
 .scroll_rolling {
   position: absolute;
+<<<<<<< HEAD
+<<<<<<< HEAD
   left: 50%;
   top: 95%;
   transform:translateX(-50%);
@@ -85,6 +117,30 @@ body {
   z-index: 2;
   background: url(../images/visual/scroll_down_icon.png);
 }
+=======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+  left: 3%;
+  top: 95%;
+  color: #a1a1a1;
+  vertical-align: bottom;
+  z-index: 2;
+}
+.scroll_rolling::before {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+  animation: scrollRolling 1s ease-in Infinite;
+  content: "";
+  width: 24px;
+  height: 29px;
+}
+
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 /* marquee */
 .wrapper {
   position: fixed;
