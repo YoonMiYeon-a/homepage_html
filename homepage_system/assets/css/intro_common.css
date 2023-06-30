@@ -21,7 +21,10 @@ body {
   overflow: auto;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 header {
   position: fixed;
   width: 100%;
@@ -43,6 +46,9 @@ nav > a {
   transition: all 0.5s ease-in-out;
 }
 
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 .visual_main {
   width: 100%;
@@ -100,6 +106,7 @@ nav > a {
 .scroll_rolling {
   position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
   left: 50%;
   top: 95%;
   transform:translateX(-50%);
@@ -111,6 +118,8 @@ nav > a {
   background: url(../images/visual/scroll_down_icon.png);
 }
 =======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
   left: 3%;
   top: 95%;
   color: #a1a1a1;
@@ -128,6 +137,9 @@ nav > a {
   height: 29px;
 }
 
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 /* marquee */
 .wrapper {

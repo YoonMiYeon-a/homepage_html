@@ -3,10 +3,13 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .panel.description {
   padding-bottom: 60px;
 }
 =======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 .panel h1 {
   font-size: 1.8em;
   color: white;
@@ -32,6 +35,9 @@
 .panel li {
   margin: 0;
 }
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 .gray {
   background-color: #777;
@@ -70,7 +76,11 @@ html, body {
 .panel {
 	width: 100vw;
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 100vh;
+=======
+  height: 100%;
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 =======
   height: 100%;
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
@@ -80,9 +90,15 @@ html, body {
   font-size: 1.5em;
   text-align: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+=======
+  color: white;
+  position: relative;
+  box-sizing: border-box;
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 =======
   color: white;
   position: relative;
@@ -96,12 +112,18 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 h1, h2, p, li {
   max-width: 800px;
 }
 
 
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 /* SCROLL DOWN */ 
 .scroll-down {

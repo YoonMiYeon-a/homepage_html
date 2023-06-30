@@ -194,6 +194,7 @@ function introScene() {
 
   introScene.fromTo(".system_mark_wrap", { opacity: 0 }, { opacity: 1 });
 <<<<<<< HEAD
+<<<<<<< HEAD
   introScene
     .fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 })
     // introScene.add(() => {
@@ -219,6 +220,8 @@ function introScene() {
     .to(".allmenu_btn span", { backgroundColor: "#000" }, ">")
     .to("body", { backgroundColor: "#fff", duration: 1 })
 =======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
   introScene.fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 })
   // introScene.add(() => {
   //   crossboardWrap.classList.toggle("system-on");
@@ -241,6 +244,9 @@ function introScene() {
     .to("header nav > a", { color: "#000" })
     .to(".logo img",{attr: {src: "./assets/images/logo_black.png"}})
     .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })
@@ -272,6 +278,7 @@ master
       marquee2.delay(introIsol().endTime()),
     ]);
   })
+<<<<<<< HEAD
 <<<<<<< HEAD
   .add(introScene());
 
@@ -432,6 +439,8 @@ cardLink.addEventListener("mousemove", (e) => {
   cardLink.style.setProperty("--mask-position", `${x}px ${y}px`);
 });
 =======
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
   .add(introScene())
 
 
@@ -579,6 +588,9 @@ cardLink.addEventListener("mousemove", (e) => {
 
 		cardLink.style.setProperty("--mask-position", `${x}px ${y}px`);
 	});
+<<<<<<< HEAD
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
+=======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 
 var custom_cursor = document.getElementById("custom_cursor");
@@ -634,6 +646,7 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const tl = gsap.time();
 
@@ -641,6 +654,8 @@ document.querySelector(".custom-cursor-icon").textContent =
   "NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION";
 
   tl.from("")
+=======
+>>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 =======
 >>>>>>> bcf718a5e64ba7445f59f0e9887050a2b62ffc37
 // var pos = document.documentElement;
