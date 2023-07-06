@@ -452,7 +452,6 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseover", custom_hover_cursor);
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
-<<<<<<< HEAD
 // var pos = document.documentElement;
 // pos.addEventListener("mousemove", (e) => {
 //   pos.style.setProperty("--x", e.clientX + "px");
@@ -497,5 +496,3 @@ function toggleAccordion(el) {
     targetAccIcon.classList.add("anime");
   }
 }
-=======
->>>>>>> 742c4586d5ee29fe8001662d4e6d8832dfc6b258
