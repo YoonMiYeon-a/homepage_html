@@ -139,7 +139,7 @@ function introScene() {
   let marquee4;
   introScene
     .to(scaleTxt, { opacity: 1 })
-    .to(scaleTxt, { scale: 200, duration: 5 })
+    .to(scaleTxt, { scale: 200, duration: 2 })
     .to(scaleTxt, { scale: 25 })
     .to(scaleTxt, { opacity: 0 });
   introScene.fromTo(
@@ -207,9 +207,9 @@ function introScene() {
   );
   introScene
     .to(".jt_mark_svg", { display: "block" })
-    .to(".cross_link a:last-child", { opacity: 1, duration: 1 })
-    .to(".arrow_svg2", { display: "block", duration: 3 })
-    .to(".crossboard_wrap", { opacity: 0, duration: 3 })
+    .to(".cross_link a:last-child", { opacity: 1 })
+    .to(".arrow_svg2", { display: "block" })
+    .to(".crossboard_wrap", { opacity: 0 })
     .to(".crossboard_wrap", { display: "none" })
     .to("header nav > a", { color: "#000" })
     .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
@@ -223,9 +223,9 @@ function introScene() {
     trigger: about,
     pin: true,
     start: "top top",
-    end: "bottom -1000%",
+    end: "bottom -100%",
     scrub: true,
-    animation: introScene,
+    // animation: introScene,
   });
   return introScene;
 }
@@ -352,36 +352,40 @@ let tl = gsap.timeline({
     scrub: 1,
   },
 });
-
-tl.to("#creative_group", {
-  display: "block",
-}).delay(7);
-tl.set(".hand", { x: -800, y: 110, delay: 0, opacity: 1 });
-tl.set(".line2", { x: 275 });
-tl.to(".hand", { x: 350, y: 0, delay: 0 });
+tl.set(".text_box", { x: 545 });
+tl.set(".hand", { x: -750, y: 110, delay: 0, opacity: 1 });
+tl.to(".hand", { x: 165, y: -15, delay: 0 });
 tl.to(".line2", { duration: 7, width: 700 });
-tl.to(".hand", { x: 1050, y: 0, duration: 7 }, "<");
+tl.to(".hand", { x: 860, y: 10, duration: 7 }, "<");
 // tl.to(".hand", { x: 1750, y: -70, delay: 0 });
 // tl.to(".hand", { x: 1720, y: 0, delay: 0 });
 // tl.to(".hand", { x: 1700, y: -15, delay: 0 });
-tl.set(".ball", { y: 90 });
+tl.set(".ball", { x: -80, y: 36 });
 tl.to(".ball", { opacity: 1, duration: 1 });
-tl.to(".hand", { x: 1750, y: -70, ease: { ease: Power1.easeInOut } });
-tl.to(".hand", { x: 1720, y: 0, delay: 0 });
-tl.to(".hand", { x: 1700, y: -15, delay: 0 });
+tl.to(".text_box", { x: -545 });
+tl.to(".hand", { x: 1650, y: -45, ease: { ease: Power1.easeInOut } });
+tl.to(".hand", { x: 1550, y: -35, delay: 0 });
+tl.to(".hand", { x: 1500, y: -70, delay: 0 });
 tl.to(".hand", { x: 1800, y: 30, delay: 0 });
 tl.to(".hand", { x: 2400, y: 30, delay: 0 });
 tl.to(".hand", { display: "none" });
 tl.to(".line2", { opacity: 0 });
 tl.to("body", { overflow: "hidden" });
-tl.to(".ball", { x: -700, scale: 350, duration: 1 });
-tl.to("#creative_group", { display: "none" });
+tl.to(".ball", { x: -700, scale: 390, duration: 1 });
+// tl.to("#creative_group", { display: "none" });
 tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
 tl.to("body", { backgroundColor: "#000" });
 tl.to(".ball", { display: "none" });
 tl.to("header nav > a", { color: "#fff" });
 tl.to(".ball", { display: "none" });
 tl.to("body", { overflow: "auto" });
+tl.to(".text_box2 .text_icon", { opacity: 1 });
+tl.to(".text_box2 .text_icon", { display: "block" });
+tl.fromTo(".text_box2 .title p", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
+tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
+tl.to(".text_box2 .dot_icon", { display: "block" });
+tl.to(".text_box2 .arrow_icon", { display: "block" });
+
 // tl.set(".rocket", { display: "block", y: 900 });
 // tl.set(".cloud1", { display: "block", y: -650 });
 // tl.set(".cloud2", { display: "block", x: 200, y: -650 });
@@ -396,7 +400,101 @@ tl.to("body", { overflow: "auto" });
 // tl.to(".cloud2", { y: 1300 });
 // tl.set(".cloud2", { y: 650 });
 // tl.set(".cloud2", { y: -650 });
-
+const serviceSection = document.querySelector("#Service");
+let svtl = gsap.timeline({
+  scrollTrigger: {
+    trigger: serviceSection,
+    markers: true,
+    start: "top top",
+    end: "bottom -1000%",
+    pin: true,
+    scrub: 1,
+  },
+});
+svtl.set("#Service .text_box1", { y: -550 });
+svtl.set("#Service .text_box2", { y: -550 });
+svtl.set("#Service .text_box3", { y: -550 });
+svtl.set("#Service .text_box4", { y: -550 });
+svtl.to("#Service .text_box1", { opacity: 1 });
+svtl.to("#Service .text_box1", { y: 0 });
+svtl.to(".svg_ux", { display: "block" });
+svtl.fromTo(
+  "#Service .text_box1 .sub_title",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.fromTo(
+  "#Service .text_box1 .sub_text",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.to("#Service .text_box1", { y: 700 },">4");
+svtl.to("#Service .text_box1", { opacity: 0 });
+svtl.to("#Service .text_box1", { display: "none" });
+svtl.to("#Service .text_box2", { opacity: 1 });
+svtl.to("#Service .text_box2", { y: 0 });
+svtl.to(".svg_platform", { display: "block" });
+svtl.fromTo(
+  "#Service .text_box2 .sub_title",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.fromTo(
+  "#Service .text_box2 .sub_text",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.to("#Service .text_box2", { y: 700 },">4");
+svtl.to("#Service .text_box2", { opacity: 0 });
+svtl.to("#Service .text_box2", { display: "none" });
+svtl.to("#Service .text_box2", { opacity: 1 });
+svtl.to("#Service .text_box2", { y: 0 });
+svtl.to(".svg_platform", { display: "block" });
+svtl.fromTo(
+  "#Service .text_box2 .sub_title",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.fromTo(
+  "#Service .text_box2 .sub_text",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.to("#Service .text_box2", { y: 700 },">4");
+svtl.to("#Service .text_box2", { opacity: 0 });
+svtl.to("#Service .text_box2", { display: "none" });
+svtl.to("#Service .text_box3", { opacity: 1 });
+svtl.to("#Service .text_box3", { y: 0 });
+svtl.to(".svg_mobile", { display: "block" });
+svtl.fromTo(
+  "#Service .text_box3 .sub_title",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.fromTo(
+  "#Service .text_box3 .sub_text",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.to("#Service .text_box3", { y: 700 },">4");
+svtl.to("#Service .text_box3", { opacity: 0 });
+svtl.to("#Service .text_box3", { display: "none" });
+svtl.to("#Service .text_box4", { opacity: 1 });
+svtl.to("#Service .text_box4", { y: 0 });
+svtl.to(".svg_service", { display: "block" });
+svtl.fromTo(
+  "#Service .text_box4 .sub_title",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.fromTo(
+  "#Service .text_box4 .sub_text",
+  { x: 100, opacity: 0 },
+  { x: 0, opacity: 1 }
+);
+svtl.to("#Service .text_box4", { y: 700 },">4");
+svtl.to("#Service .text_box4", { opacity: 0 });
+svtl.to("#Service .text_box4", { display: "none" });
 
 let sections = gsap.utils.toArray("section[data-target]");
 

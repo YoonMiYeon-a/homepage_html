@@ -71,11 +71,6 @@ body {
   overflow-y: scroll;
 }
 
-h1, h2, p, li {
-  max-width: 800px;
-}
-
-
 /* SCROLL DOWN */ 
 .scroll-down {
   position: absolute; 

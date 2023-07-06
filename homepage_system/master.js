@@ -128,7 +128,7 @@ function marquee(which, time, direction, repeat) {
 // }
 
 function introScene() {
-  const about = document.querySelector(".about");
+  const intro = document.querySelector(".intro");
   const scaleTxt = document.querySelector(".intro_crossboard p");
   const crossboardWrap = document.querySelector(".crossboard_wrap");
 
@@ -139,7 +139,7 @@ function introScene() {
   let marquee4;
   introScene
     .to(scaleTxt, { opacity: 1 })
-    .to(scaleTxt, { scale: 200, duration: 5 })
+    .to(scaleTxt, { scale: 200, duration: 2 })
     .to(scaleTxt, { scale: 25 })
     .to(scaleTxt, { opacity: 0 });
   introScene.fromTo(
@@ -223,12 +223,12 @@ function introScene() {
     .to("#no04", { display: "none" });
 
   ScrollTrigger.create({
-    trigger: about,
+    trigger: intro,
     pin: true,
     start: "top top",
     end: "bottom -1000%",
     scrub: true,
-    animation: introScene,
+    // animation: introScene,
   });
   return introScene;
 }
@@ -371,7 +371,42 @@ gsap.to("#About .panel", {
     end: () => "+=" + (oneContainer.offsetWidth - innerWidth),
   },
 });
-
+let twoContainer = document.querySelector(".Service.container");
+gsap.to("#Service .panel", {
+  x: () => -(twoContainer.scrollWidth - window.innerWidth),
+  ease: "none",
+  scrollTrigger: {
+    trigger: twoContainer,
+    pin: true,
+    scrub: 1,
+    start: "bottom bottom",
+    end: () => "+=" + (twoContainer.offsetWidth - innerWidth),
+  },
+});
+let threeContainer = document.querySelector(".Solution.container");
+gsap.to("#Solution .panel", {
+  x: () => -(threeContainer.scrollWidth - window.innerWidth),
+  ease: "none",
+  scrollTrigger: {
+    trigger: threeContainer,
+    pin: true,
+    scrub: 1,
+    start: "bottom bottom",
+    end: () => "+=" + (threeContainer.offsetWidth - innerWidth),
+  },
+});
+let fourContainer = document.querySelector(".Recruit.container");
+gsap.to("#Recruit .panel", {
+  x: () => -(fourContainer.scrollWidth - window.innerWidth),
+  ease: "none",
+  scrollTrigger: {
+    trigger: fourContainer,
+    pin: true,
+    scrub: 1,
+    start: "bottom bottom",
+    end: () => "+=" + (fourContainer.offsetWidth - innerWidth),
+  },
+});
 let aboutPanelone = document.querySelector("#About .panel:first-child");
 gsap.to("#About .panel:first-child", {
   scrollTrigger: {
@@ -382,6 +417,8 @@ gsap.to("#About .panel:first-child", {
     toggleClass: "active",
   },
 });
+
+
 let sections = gsap.utils.toArray("section[data-target]");
 
 sections.forEach((section) => {
@@ -458,8 +495,6 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseover", custom_hover_cursor);
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
-<<<<<<< HEAD
-=======
 gsap.set("text.circles__text", { transformOrigin: "50% 50%" });
 gsap.to("text.circles__text", {
   duration: 10,
@@ -468,11 +503,12 @@ gsap.to("text.circles__text", {
   repeat: -1,
 });
 let solutionLinks = document.querySelectorAll(".solution_card");
->>>>>>> origin/jihoon
 
 solutionLinks.forEach((link) => {
   link.addEventListener("mouseover", () => {
-    const mouseoverPanel = document.querySelector("#Solution .panel:nth-child(1)");
+    const mouseoverPanel = document.querySelector(
+      "#Solution .panel:nth-child(1)"
+    );
     const mouseAnim = gsap.timeline({
       scrollTrigger: {
         trigger: mouseoverPanel,
@@ -481,17 +517,25 @@ solutionLinks.forEach((link) => {
       },
     });
     mouseAnim.to(".custom-cursor .custom-cursor-icon", {
-      scale: 10, duration: 0.1
+      scale: 10,
+      duration: 0.1,
     });
-    mouseAnim.to(".circles", {
-      "--dim": "30vmin", duration: 0.2
-    },"-=1");
+    mouseAnim.to(
+      ".circles",
+      {
+        "--dim": "30vmin",
+        duration: 0.2,
+      },
+      "-=1"
+    );
     mouseAnim.to(".custom-cursor p", {
-      opacity: 1
+      opacity: 1,
     });
   });
   link.addEventListener("mouseleave", () => {
-    const mouseoverPanel = document.querySelector("#Solution .panel:nth-child(1)");
+    const mouseoverPanel = document.querySelector(
+      "#Solution .panel:nth-child(1)"
+    );
     const mouseAnim = gsap.timeline({
       scrollTrigger: {
         trigger: mouseoverPanel,
@@ -500,26 +544,71 @@ solutionLinks.forEach((link) => {
       },
     });
     mouseAnim.to(".custom-cursor .custom-cursor-icon", {
-      scale: 1, duration: 0.1,
+      scale: 1,
+      duration: 0.1,
     });
-    mouseAnim.to(".circles", {
-      "--dim": "0vmin", duration: 0.2
-    },"-=1");
+    mouseAnim.to(
+      ".circles",
+      {
+        "--dim": "0vmin",
+        duration: 0.2,
+      },
+      "-=1"
+    );
     mouseAnim.to(".custom-cursor p", {
-      opacity: 0
+      opacity: 0,
     });
   });
 });
 
-<<<<<<< HEAD
-document.querySelector(".custom-cursor-icon").textContent =
-  "NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION . NURIER SYSTEM SOLUTION";
+/* recruit - accodian menu */
+// variables
+var accordionBtn = document.querySelectorAll(".accordionTitle");
+var allTexts = document.querySelectorAll(".text");
+var accIcon = document.querySelectorAll(".accIcon");
 
-  tl.from("")
-=======
->>>>>>> origin/jihoon
-// var pos = document.documentElement;
-// pos.addEventListener("mousemove", (e) => {
-//   pos.style.setProperty("--x", e.clientX + "px");
-//   pos.style.setProperty("--y", e.clientY + "px");
-// });
+// event listener
+accordionBtn.forEach(function (el) {
+  el.addEventListener("click", toggleAccordion);
+});
+
+// function
+function toggleAccordion(el) {
+  var targetText = el.currentTarget.nextElementSibling.classList;
+  var targetAccIcon = el.currentTarget.children[0];
+  var target = el.currentTarget;
+
+  if (targetText.contains("show")) {
+    targetText.remove("show");
+    targetAccIcon.classList.remove("anime");
+    target.classList.remove("accordionTitleActive");
+  } else {
+    accordionBtn.forEach(function (el) {
+      el.classList.remove("accordionTitleActive");
+
+      allTexts.forEach(function (el) {
+        el.classList.remove("show");
+      });
+
+      accIcon.forEach(function (el) {
+        el.classList.remove("anime");
+      });
+    });
+
+    targetText.add("show");
+    target.classList.add("accordionTitleActive");
+    targetAccIcon.classList.add("anime");
+  }
+}
+
+
+/*recruit tab menu*/ 
+$(function(){
+	$('.tabcontent > div').hide();
+	$('.tabnav a').click(function () {
+		$('.tabcontent > div').hide().filter(this.hash).fadeIn();
+		$('.tabnav a').removeClass('is_on');
+		$(this).addClass('is_on');
+		return false;
+	}).filter(':eq(0)').click();
+  });
