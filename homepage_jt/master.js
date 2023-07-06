@@ -235,10 +235,6 @@ tl.fromTo(".text_box2 .title p", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.to(".text_box2 .dot_icon", { display: "block" });
 tl.to(".text_box2 .arrow_icon", { display: "block" });
-<<<<<<< HEAD
-=======
-
->>>>>>> 742c4586d5ee29fe8001662d4e6d8832dfc6b258
 const serviceSection = document.querySelector("#Service");
 let svtl = gsap.timeline({
   scrollTrigger: {
