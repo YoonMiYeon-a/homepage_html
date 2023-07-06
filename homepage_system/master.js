@@ -601,14 +601,3 @@ function toggleAccordion(el) {
   }
 }
 
-
-/*recruit tab menu*/ 
-$(function(){
-	$('.tabcontent > div').hide();
-	$('.tabnav a').click(function () {
-		$('.tabcontent > div').hide().filter(this.hash).fadeIn();
-		$('.tabnav a').removeClass('is_on');
-		$(this).addClass('is_on');
-		return false;
-	}).filter(':eq(0)').click();
-  });

@@ -13,6 +13,9 @@ a:active {
   text-decoration: none;
 }
 /* Common */
+body{
+  overflow-x: hidden;
+}
 body,
 p,
 h1,
@@ -65,6 +68,20 @@ table {
   white-space: nowrap !important;
 }
 
+.text_article {
+  position: absolute;
+  right: -14%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  font-size: 300px;
+  font-weight: 700;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  box-sizing: border-box;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
 html {
   overflow-y: scroll;
   height: 400%;
@@ -292,13 +309,25 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
  **************************************************/
 
 .rocket {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: none;
+  z-index: -1;
 }
 .cloud1 {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: none;
+  z-index: -1;
 }
 .cloud2 {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: none;
+  z-index: -1;
 }
 
 #creative_group {
@@ -446,6 +475,9 @@ height: 0;
   display: block;
   text-align: left;
   margin-bottom: 25px;
+}
+#Service {
+
 }
 #Service .svg_ux{
   position: absolute;
@@ -645,7 +677,7 @@ height: 0;
 
 #Experience {
   height: 163vh;
-  background: url(./assets/images/bg/system1/experience_page1.png);
+  background-color: #50B048;
   background-size: contain;
 }
 #Experience .experience_container {
@@ -730,7 +762,9 @@ height: 0;
   color: #000;
 }
 #Recruit {
+  background-color: #fff;
   height: 100vh;
+  overflow: hidden;
 }
 #Recruit.container {
   width: 300%;
@@ -739,6 +773,7 @@ height: 0;
   flex-wrap: nowrap;
 }
 #Recruit .panel:nth-child(1) {
+  color: #000;
   background-color: #e5e5e5;
   border-radius: 0 0 200px 0;
 }
@@ -748,16 +783,16 @@ height: 0;
   justify-content: space-between;
   width: 100%;
 }
-#Recruit .panel:nth-child(1) .text_box {
+#Recruit .panel:nth-child(1) .re_cruit_text_box {
   display: flex;
   flex-direction: column;
 }
-#Recruit .panel:nth-child(1) .text_box .title p:nth-child(3) {
+#Recruit .panel:nth-child(1) .re_cruit_text_box .title p:nth-child(3) {
   position: relative;
   padding-left: 280px;
   margin-bottom: 16px;
 }
-#Recruit .panel:nth-child(1) .text_box .title span {
+#Recruit .panel:nth-child(1) .re_cruit_text_box .title span {
   position: absolute;
   left: -110px;
   top: 0;
@@ -765,19 +800,19 @@ height: 0;
   height: 111px;
   background: url(./assets/images/visual/recruit_text_img.png) no-repeat;
 }
-#Recruit .panel:nth-child(1) .text_box .title {
+#Recruit .panel:nth-child(1) .re_cruit_text_box .title {
   text-align: left;
   display: inline-block;
   font-size: 60px;
   font-weight: 900;
 }
-#Recruit .panel:nth-child(1) .text_box .sub_title {
+#Recruit .panel:nth-child(1) .re_cruit_text_box .sub_title {
   text-align: left;
 }
-#Recruit .panel:nth-child(1) .text_box .sub_title .text {
+#Recruit .panel:nth-child(1) .re_cruit_text_box .sub_title .text {
   margin-bottom: 30px;
 }
-#Recruit .panel:nth-child(1) .text_box .sub_title a {
+#Recruit .panel:nth-child(1) .re_cruit_text_box .sub_title a {
   position: relative;
   display: block;
   width: 250px;
@@ -1076,7 +1111,12 @@ height: 0;
 
 #Contact {
   height: 100vh;
+  background-color: #fff;
   position: relative;
+  overflow: hidden;
+}
+#Contact .panel{
+  color: #000;
 }
 .contact_inquiry {
   width: 1100px;
@@ -1084,7 +1124,8 @@ height: 0;
   position: absolute;
   right: 0;
   bottom: 0;
-  background: url(./assets/images/bg/system1/contact_bg.png) no-repeat;
+  border-radius: 100px 0 0 0;
+  background-color: #f0f0f0;
   background-position: right bottom;
 }
 .contact_inquiry .contact_title {
@@ -1099,7 +1140,7 @@ height: 0;
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   border-radius: 0 100px 0 0;
   background: url(../homepage_system/assets/images/bg/system1/contact_map_img.png)
     no-repeat;

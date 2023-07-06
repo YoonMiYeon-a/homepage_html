@@ -225,7 +225,7 @@ function introScene() {
     start: "top top",
     end: "bottom -100%",
     scrub: true,
-    // animation: introScene,
+    animation: introScene,
   });
   return introScene;
 }
@@ -385,26 +385,10 @@ tl.fromTo(".text_box2 .title p", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.to(".text_box2 .dot_icon", { display: "block" });
 tl.to(".text_box2 .arrow_icon", { display: "block" });
-
-// tl.set(".rocket", { display: "block", y: 900 });
-// tl.set(".cloud1", { display: "block", y: -650 });
-// tl.set(".cloud2", { display: "block", x: 200, y: -650 });
-// tl.to(".rocket", { y: -120, duration: 2 });
-// tl.to(".rocket", { y: 30 });
-// tl.to(".rocket", { x: -800, rotate: -20 });
-// tl.to(".rocket", { x: -100, rotate: 20, scale: 0.5 });
-// tl.to(".rocket", { x: 300, rotate: 0 });
-// tl.to(".cloud1", { y: 1300 });
-// tl.set(".cloud1", { y: 6500 });
-// tl.to(".rocket", { x: -200, rotate: -20, scale: 1 });
-// tl.to(".cloud2", { y: 1300 });
-// tl.set(".cloud2", { y: 650 });
-// tl.set(".cloud2", { y: -650 });
 const serviceSection = document.querySelector("#Service");
 let svtl = gsap.timeline({
   scrollTrigger: {
     trigger: serviceSection,
-    markers: true,
     start: "top top",
     end: "bottom -1000%",
     pin: true,
@@ -496,6 +480,45 @@ svtl.to("#Service .text_box4", { y: 700 },">4");
 svtl.to("#Service .text_box4", { opacity: 0 });
 svtl.to("#Service .text_box4", { display: "none" });
 
+const servicePanel = document.querySelector("#Service .panel");
+
+let rocket = gsap.timeline({
+  scrollTrigger: {
+    trigger: servicePanel,
+    start: "top top",
+    end: "bottom -1000%",
+    markers:true,
+    pin: true,
+    scrub: true,
+  },
+});
+rocket.set(".rocket", { display: "block", x: 800,y: -500 });
+rocket.set(".cloud1", { x: 1000,y: -1000 });
+rocket.set(".cloud2", { x: 1000,y: -1000 });
+rocket.to(".rocket", { x: 800,y: 100, scale: 1.1 });
+rocket.to(".cloud1", { display: "block", x: 1000,y: 1000 });
+rocket.to(".cloud2", { display: "block", x: 300,y: 1000 });
+rocket.set(".cloud1", { x: 1900,y: -1000 });
+rocket.set(".cloud2", { x: 2400,y: -1000 });
+
+rocket.to(".rocket", { x: 600,y: 100, scale: 1.0 ,rotation: -40,});
+rocket.to(".rocket", {  rotation: -20});
+rocket.to(".rocket", {  rotation: 0});
+rocket.to(".rocket", {  rotation: 20});
+rocket.to(".rocket", { x: 600,y: 100, scale: 1.3 ,rotation: 40, duration: 3});
+rocket.to(".cloud1", { display: "block", x: -1000,y: 1000 });
+rocket.to(".cloud2", { display: "block", x: 1200,y: 1000 });
+rocket.to(".rocket", { x: 900,y: 100, scale: 1.1 ,duration: 1});
+rocket.to(".rocket", {  rotation: 0});
+
+
+
+
+// const masterTimeline = gsap.timeline();
+// masterTimeline.add(svtl).add(rocket, 0);
+// masterTimeline.play();
+
+
 let sections = gsap.utils.toArray("section[data-target]");
 
 sections.forEach((section) => {
@@ -511,6 +534,9 @@ sections.forEach((section) => {
     },
   });
 });
+
+
+
 const cardLink = document.querySelector(".card a");
 
 cardLink.addEventListener("mousemove", (e) => {
@@ -577,3 +603,42 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
 //   pos.style.setProperty("--x", e.clientX + "px");
 //   pos.style.setProperty("--y", e.clientY + "px");
 // });
+
+
+var accordionBtn = document.querySelectorAll(".accordionTitle");
+var allTexts = document.querySelectorAll(".text");
+var accIcon = document.querySelectorAll(".accIcon");
+
+// event listener
+accordionBtn.forEach(function (el) {
+  el.addEventListener("click", toggleAccordion);
+});
+
+// function
+function toggleAccordion(el) {
+  var targetText = el.currentTarget.nextElementSibling.classList;
+  var targetAccIcon = el.currentTarget.children[0];
+  var target = el.currentTarget;
+
+  if (targetText.contains("show")) {
+    targetText.remove("show");
+    targetAccIcon.classList.remove("anime");
+    target.classList.remove("accordionTitleActive");
+  } else {
+    accordionBtn.forEach(function (el) {
+      el.classList.remove("accordionTitleActive");
+
+      allTexts.forEach(function (el) {
+        el.classList.remove("show");
+      });
+
+      accIcon.forEach(function (el) {
+        el.classList.remove("anime");
+      });
+    });
+
+    targetText.add("show");
+    target.classList.add("accordionTitleActive");
+    targetAccIcon.classList.add("anime");
+  }
+}
