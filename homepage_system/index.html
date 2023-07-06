@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="./master.css" />
     <link rel="stylesheet" href="./assets/css/svg.css" />
     <link rel="stylesheet" href="./assets/css/sample.css" />
-    <link rel="stylesheet" href="./assets/css/intro_common.css" />
-    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/font.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,23 +26,151 @@
     <title>system</title>
   </head>
   <body>
-    <header>
+    <!-- Header -->
+    <header id="header">
       <h1 class="logo">
-        <img src="./assets/images/logo.png" alt="누리어 로고" />
-        <a href="./index.html">
-          <p><strong>누리어</strong>시스템</p>
+        <a href="../homepage_jt/index.html">
+          <span class="logo_img"><img src="./assets/images/visual/logo_black.png" alt="누리어로고"></span>
+          <strong>누리어</strong>제이티
         </a>
       </h1>
-      <div class="allmenu_btn">
-        <span></span>
-        <span></span>
-      </div>
       <nav>
-        <a href="./index.html">
-          <p><strong>누리어</strong>제이티</p>
-        </a>
+        <div class="nav-btn">
+          <input type="checkbox" id="trigger">
+          <label for="trigger">
+            <span></span>
+            <span></span>
+          </label>
+          <div class="sidebar">
+            <ul class="depth1">
+              <li>
+                <a href="#Home">Home</a>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" id="svg_depth1_arrow" data-name="레이어 2" viewBox="0 0 1408 22.29">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #1766fe;
+                      }
+                    </style>
+                  </defs>
+                  <g id="svg_depth1_arrow01" data-name="레이어 1">
+                    <path class="cls-1" d="m1407.96,11.01c.03-.06.04-.13.04-.2,0-.28-.22-.5-.5-.5h-.29l-10.16-10.16c-.2-.2-.51-.2-.71,0-.2.2-.2.51,0,.71l9.45,9.45H.5C.22,10.3,0,10.53,0,10.8s.22.5.5.5h1405.76l-10.14,10.11c-.2.2-.2.53,0,.73.2.2.53.2.73,0l10.59-10.56c.07-.02.15-.06.2-.12.06-.06.09-.13.12-.2l.06-.06c.05-.05.09-.12.12-.19Z"></path>
+                  </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="svg_depth1_circle" data-name="레이어 2" viewBox="0 0 88 87.99">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #1766fe;
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <g id="svg_depth1_circle01" data-name="레이어 1">
+                    <path class="cls-1" d="m44,0c24.3,0,44,19.7,44,44s-19.7,44-44,44S0,68.29,0,44,19.7,0,44,0Z"></path>
+                  </g>
+                </svg>
+                  y="0px" width="1408px" height="23px" viewBox="0 0 1408 23" enable-background="new 0 0 1408 23" xml:space="preserve"
+                  style="position: absolute;" class="">
+                  <image id="image0" width="1408" height="23" x="0" y="0"
+                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABYAAAAAXCAMAAACF1BtAAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAVFBMVEX///8gbP4XZv4XZv4X Zv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4XZv4X Zv4XZv4XZv4XZv7///+wZ+A4AAAAGnRSTlMAMwaWtgOp2/xL7Vk9TDxN7E5PO+tQUTrqzvmRurAA AAABYktHRACIBR1IAAAAB3RJTUUH5wcEBTk2PSIQFQAAAkV6VFh0UmF3IHByb2ZpbGUgdHlwZSB4 bXAAADiNlVVbkuMgDPznFHsErCccxw7mb6vmc46/LXCSGY+TmrUrxgahllotkj7/fqQ/cXnRxDfu XjzbYmybqQtlI1Nzq7ZzI9r7tm2dCPPVJGbUWaVxluZZGLbFapLiq2Ojsq+yqxhGOGTGJiLuvFPm mxdevRg2WgswWyjHt91sd461FAiIRqxHHLzOhYf5iOTpBnNb7JDHDspapGlOFMF1H1NcaedMDfFk 3EBlj7nxTfiJERNcqBndaM4RM3XOiSkGPBsvmFzxFDyJwdXppiPNcGW8KonA85FiOnKci5FmccGd eUVa3cdFu8MIkUXkDuCFa9xHCB2wlKhNJxjZUadgxgvSAwDWT1EgBJQMBSGrg7EKpmDhlKYB6Cbg geCIahL8tSZB9M94B9g+S5UG86ATnhtSKYgnR/CD9n7tUhpUdHKbvvt97xYO24VzdlGkplck/955 iNzBFxxRVxoUBkeEDRrfFpI5sMO9BMEKJxK10wDodnuKMx3qzOiXPox4vOUhNwEqVqno6LzYADUw 1SfE4GuVOnQUJbcIXqXKqNs0QkJ1NOrKoXGDdqBWqKjwIpAvGnPBm4oymhbtCZOCMWNBBXrFInZL dMQZOVJi1+jF0NwTOB3IcolcfyK/Ak535Ptx8Q1dh4IN6PjAe9Qtz3KPaq/B3KQm/Rc39jrC9Iab r8gvublTky6R/ffc3IHRIpMd6u87/Gw1T6PHLI7a01k8ly7+EDQEOdKheZanfwLIbnOjVQO+AAAA mUlEQVR42u3VyRHCUBBDQbPjz2aMMUv+gVLFiQjQYboj0Omp6wD4m8UyvQCgqNVagQEiNlsFBshQ YIAUBQZIUWCAFAUGSFFggBQFBkhRYICUb4F3bwAC9ukTAKipb4f0BICS+nZMTwAo6dTO6QkAJV0G /QVIuOovQMQ43NITAEoaJ/0FSLjrL0DEPD3SEwBKmp/6CxDx+unvBzGzkZ98LXxAAAAAJXRFWHRk YXRlOmNyZWF0ZQAyMDIzLTA3LTA0VDA1OjU3OjU0KzAwOjAwmeAiIQAAACV0RVh0ZGF0ZTptb2Rp ZnkAMjAyMy0wNy0wNFQwNTo1Nzo1NCswMDowMOi9mp0AAAAodEVYdGRhdGU6dGltZXN0YW1wADIw MjMtMDctMDRUMDU6NTc6NTQrMDA6MDC/qLtCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJl YWR5ccllPAAAAABJRU5ErkJggg==" />
+                  <style data-made-with="vivus-instant">
+                    @keyframes CeaEHOck_draw {
+                      100% {
+                        stroke-dashoffset: 0;
+                      }
+                    }
+                
+                    @keyframes CeaEHOck_fade {
+                      0% {
+                        stroke-opacity: 1;
+                      }
+                
+                      95.91836734693878% {
+                        stroke-opacity: 1;
+                      }
+                
+                      100% {
+                        stroke-opacity: 0;
+                      }
+                    }
+                  </style>
+                </svg> -->
+              </li>
+              <li>
+                <a href="#About">About</a>
+                <div class="depth2">
+                  <a href="#">Oranization</a>
+                  <a href="#">History</a>
+                  <a href="#">CI</a>
+                  <a href="#">Client</a>
+                  <a href="#">News</a>
+                  <a href="#">Contact</a>
+                </div>
+              </li>
+              <li>
+                <a href="#Service">Service</a>
+                <div class="depth2">
+                  <a href="#">SI</a>
+                  <a href="#">SM</a>
+                  <a href="#">Agency</a>
+                  <a href="#">Solution</a>
+                </div>
+              </li>
+              <li>
+                <a href="#Solution">Solution</a>
+                <div class="depth2">
+                  <a href="#">N-PDS</a>
+                  <a href="#">N-PAS</a>
+                </div>
+              </li>
+              <li>
+                <a href="#Experience">Experience</a>
+              </li>
+              <li>
+                <a href="#Recruit">Recruit</a>
+                <div class="depth2">
+                  <a href="#">Recruit</a>
+                  <a href="#">Process</a>
+                  <a href="#">Benefit</a>
+                </div>
+              </li>
+              <li>
+                <a href="#Contact">Contact</a>
+                <div class="depth2">
+                  <a href="#">Oranization</a>
+                  <a href="#">History</a>
+                  <a href="#">Cl</a>
+                  <a href="#">Client</a>
+                  <a href="#">News</a>
+                  <a href="#">Contact</a>
+                </div>
+              </li>
+            </ul>
+            <div class="sidefoot">
+              <div class="logo">
+                <span><strong>누리어</strong>시스템</span>
+                <span><strong>누리어</strong>제이티</span>
+              </div>
+              <address>
+                경기도 하남시 미사대로 520 현대지식산업센터 한강미사2차 C동 301~903호
+                <div>
+                  <span>T. 02-575-4481</span>
+                  <span>F. 031-794-7596</span>
+                  <span>contact@nurier.co.kr</span>
+                </div>
+              </address>
+              <div class="btn">
+                <a href="#">회사소개서 다운로드</a>
+                <a href="#">브런치 스토리</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
+      <a href="#" class="system"><strong>누리어</strong>시스템</a>
     </header>
+    <!-- Header -->
     <main>
       <div id="no03" class="wrapper">
         <div class="boxes">
@@ -1533,6 +1661,18 @@
       </div>
     </footer>
     <script>
+       // header
+       var header = $("#header").offset().top;
+      $(window).scroll(function() {
+          var window = $(this).scrollTop();
+
+          if(header <= window) {
+            $("#header").addClass("fixed");
+          } else {
+            $("#header").removeClass("fixed");
+          }
+      })
+      // Top버튼
       $(function () {
         $(window).scroll(function () {
           if ($(this).scrollTop() > 250) {

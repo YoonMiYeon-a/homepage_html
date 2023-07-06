@@ -32,6 +32,7 @@ function marquee(which, time, direction, repeat) {
   });
   return action;
 }
+
 function introScene() {
   const about = document.querySelector(".about");
   const scaleTxt = document.querySelector(".intro_crossboard p");
@@ -103,7 +104,7 @@ function introScene() {
     start: "top top",
     end: "bottom -100%",
     scrub: true,
-    animation: introScene,
+    // animation: introScene,
   });
   return introScene;
 }
@@ -337,7 +338,6 @@ let rocket = gsap.timeline({
     trigger: servicePanel,
     start: "top top",
     end: "bottom -1000%",
-    markers:true,
     pin: true,
     scrub: true,
   },
@@ -448,11 +448,6 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseover", custom_hover_cursor);
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
-// var pos = document.documentElement;
-// pos.addEventListener("mousemove", (e) => {
-//   pos.style.setProperty("--x", e.clientX + "px");
-//   pos.style.setProperty("--y", e.clientY + "px");
-// });
 
 
 var accordionBtn = document.querySelectorAll(".accordionTitle");

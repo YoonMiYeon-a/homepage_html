@@ -116,57 +116,214 @@ body {
   box-sizing: border-box;
 }
 
+/* Header */
 header {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
+  background:transparent;
+  z-index: 100;
 }
-header h1 {
-  display: flex;
-  align-items: center;
-  margin: 30px 40px;
+header.fixed {}
+header.fixed a {
+  color:#000;
 }
-header h1 a {
-  margin-left: 4px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
+header > * {
+  margin: 20px 40px;
+}
+header a {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 19px;
+  color:#fff;
+}
+header .logo_img {
+  width: 45px;
+  height: 30px;
+  display: inline-block;
+  overflow: hidden;
+  margin-top: -11px;
+  vertical-align: middle;
+}
+header .logo_img img {
+  height: 100%;
+  margin-right: -147px;
+  display: inline-block;
 }
 header nav {
   margin: 30px 40px;
 }
-header nav a p {
+header.fixed nav label[for=trigger] span {
+  background-color: #000;
+}
+.sidebar {
+  background-color: #000;
+  width: 100%;
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: -100%;
+  left:0;
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+.sidebar a {
+  color:#fff;
+}
+.sidebar li {
+  overflow: hidden;
+}
+.sidebar li > a {
+  display: inline-block;
+  margin: 15px;
+  text-align: left;
+  color:#fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 45px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.sidebar:hover {}
+.sidebar .depth1 li > a {
+  width: 172px;
+}
+.sidebar .depth1 li > a:hover {
+  color:gray;
+}
+.sidebar .depth2 {
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -28px;
+}
+.sidebar .depth2 a {
+  margin-right: 30px;
+  color: #b7b7b7;
+  font-size: 18px;
+}
+.sidebar .depth2 a:hover {
+  color:#fff;
+}
+.sidefoot {
+  display: flex;
+  align-self: self-end;
+  margin-bottom: 7%;
+  flex-direction: column;
+  color:#fff;
+}
+.sidefoot .logo {
+    margin-bottom: 15px;
+}
+.sidefoot .logo span {
+  font-size: 18px;
+  margin-right: 12px;
+}
+.sidefoot .logo span:last-child {
+  margin-right: 0;
+}
+.sidefoot .logo span:before {
+  content: '';
+  width: 30px;
+  height: 20px;
+  margin-right: 7px;
+  display: inline-block;  
+  background: url(./assets/images/visual/logo_black.png) no-repeat;
+  background-size: cover;
+}
+.sidefoot .logo span:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: #fff;
+  margin-left: 15px;
+}
+.sidefoot .logo span:last-child:after {
+  display: none;
+}
+.sidefoot address {
+    font-style: normal;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+.sidefoot address span {margin-right: 33px;}
+.sidefoot address div {
+  margin: 3px 0;
+}
+.sidefoot .btn {}
+.sidefoot .btn a {
+  display: inline-block;
+  border: 1px solid #fff;
+  font-size: 18px;
+  color: #fff;
+  padding: 20px;
+  width: 250px;
+  position: relative;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.sidefoot .btn a::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/visual/ico_download.png) no-repeat;
+  vertical-align: middle;
+  position: absolute;
+  right: 20px;
+  top: 23px;
+}
+.sidefoot .btn a:nth-child(2):after {
+  background: url(../images/visual/ico_arrow_double.png) no-repeat;
+}
+.sidefoot .btn a:last-child {
+  margin-right: 0;
+}
+nav > a {
   position: relative;
   margin-left: 20px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
+  font-size: 17px;
+  font-weight: 100;
   transition: all 0.5s ease-in-out;
 }
-.allmenu_btn {
-  position: relative;
-  width: 48px;
-  height: 48px;
+
+nav input[id=trigger] {
+  display: none;
 }
-.allmenu_btn span:first-child {
+nav label[for=trigger] {
+  width: 40px;
+  height: 30px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+nav label[for=trigger] span {
   position: absolute;
-  left: 0;
-  top: 50%;
+  height: 2px;
   background-color: #fff;
   width: 100%;
-  height: 2px;
-}
-.allmenu_btn span:last-child {
-  position: absolute;
   left: 0;
-  top: calc(50% + 9px);
-  background-color: #fff;
-  width: 75%;
-  height: 2px;
+  transition: 0.3s;
 }
+nav label[for=trigger] span:nth-child(1) {
+  top: 0;
+}
+nav label[for=trigger] span:nth-child(2) {
+  top: 50%;
+  width: 27px;
+}
+nav input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+nav input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
+  top: 50%;
+  transform: rotate(-45deg);
+  width: 40px;
+}
+nav input[id=trigger]:checked ~ .sidebar {
+  top: 80px;
+}
+
 /*link_nav start*/
 .link_nav {
   position: fixed;
@@ -242,6 +399,13 @@ header nav a p {
   text-decoration: none;
   text-align: center;
   display: block;
+}
+
+.link_nav a {
+  margin-bottom: 10px;
+}
+.link_nav a:last-child {
+  margin-bottom: 0;
 }
 .link_nav a.active {
   position: relative;
@@ -794,6 +958,10 @@ img {
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  transition: all 0.2s;
+}
+#About .panel:nth-child(5) .grid_wrap a:hover {
+  background:#ededed;
 }
 #About .panel:nth-child(5) .grid_wrap a img {
   margin: 0 auto;
