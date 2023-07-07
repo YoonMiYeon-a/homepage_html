@@ -1255,7 +1255,6 @@
     <script>
       // header
       var header = $("#header").offset().top;
-<<<<<<< HEAD
       $(window).scroll(function() {
           var window = $(this).scrollTop();
           if(header <= window) {
@@ -1268,17 +1267,6 @@
         $("#header").toggleClass('active')
       });
       
-=======
-      $(window).scroll(function () {
-        var window = $(this).scrollTop();
-
-        if (header <= window) {
-          $("#header").addClass("fixed");
-        } else {
-          $("#header").removeClass("fixed");
-        }
-      });
->>>>>>> 42c48bf319f0b000cf139b0e0cf0a714ae2e6192
 
       // Top버튼
       $(function () {

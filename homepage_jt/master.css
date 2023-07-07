@@ -158,13 +158,6 @@ header .logo_img img {
 header nav {
   margin: 30px 40px;
 }
-<<<<<<< HEAD
-
-=======
-header.fixed nav label[for="trigger"] span {
-  background-color: #000;
-}
->>>>>>> 42c48bf319f0b000cf139b0e0cf0a714ae2e6192
 .sidebar {
   background-color: #000;
   width: 100%;
