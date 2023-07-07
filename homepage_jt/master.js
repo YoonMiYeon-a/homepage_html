@@ -90,7 +90,7 @@ function introScene() {
     .to(".crossboard_wrap", { opacity: 0 })
     .to("header nav > a", { color: "#000" })
     .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
-    // .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
+    .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })
     .to("#no03", { display: "none" })
