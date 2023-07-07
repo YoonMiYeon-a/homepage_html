@@ -88,9 +88,11 @@ function introScene() {
     .to(".jt_mark_svg", { display: "block" })
     .to(".arrow_svg2", { display: "block", duration: 2})
     .to(".crossboard_wrap", { opacity: 0 })
-    .to("header nav > a", { color: "#000" })
     .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
     .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
+    .to("header", { borderColor: "transparent" },">")
+    .to("header > a", { color: "#000" },">")
+        
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })
     .to("#no03", { display: "none" })
@@ -260,6 +262,8 @@ tl.to("body", { overflow: "hidden" });
 tl.to(".ball2", {scale: 400, duration: 1 });
 tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
 tl.to("body", { backgroundColor: "#000" });
+tl.to("header", { borderColor: "transparent" },">")
+tl.to("header > a", { color: "#fff" },">")
 tl.to(".ball", { display: "none" });
 tl.to("header nav > a", { color: "#fff" });
 tl.to(".ball", { display: "none" });
@@ -362,6 +366,9 @@ svtl.fromTo(
   { x: 0, opacity: 1 }
 );
 svtl.to("#Service .text_box4", { y: 700 },">4");
+svtl.to("#Service", {backgroundColor:"#50b048"});
+svtl.to(".ball2_green", {display:"none"});
+svtl.to("body", {overflow:"hidden"});
 
 const servicePanel = document.querySelector("#Service .panel");
 
@@ -394,6 +401,9 @@ rocket.to(".rocket", { x: 900,y: 100, scale: 1.1 ,duration: 1});
 rocket.to(".rocket", {  rotation: 0});
 rocket.fromTo(".ball2_green",{opacity: 0, y: 0},{opacity:1, y: -200})
 rocket.to(".ball2_green", {scale: 400, duration: 1 });
+
+
+
 
 
 

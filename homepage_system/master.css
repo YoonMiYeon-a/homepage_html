@@ -2056,6 +2056,9 @@ img {
   margin-bottom: 35px;
   display: flex;
 }
+.input_checkbox label {
+  cursor: pointer;
+}
 .grid_wrap {
   width: 880px;
   display: grid;
@@ -2072,6 +2075,10 @@ img {
   border-radius: 8px;
   font-size: 20px;
   font-family: "SCoreDream";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .input_box {
   display: flex;
