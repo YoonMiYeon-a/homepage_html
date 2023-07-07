@@ -16,10 +16,6 @@
   white-space: nowrap !important;
 }
 
-body {
-  background-color: #000;
-  overflow-x: hidden;
-}
 header {
   position: fixed;
   width: 100%;
