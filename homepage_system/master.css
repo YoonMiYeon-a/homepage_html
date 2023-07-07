@@ -1991,6 +1991,9 @@ img {
   background-color: #d9d9d9;
   letter-spacing: 0.5px;
 }
+.accordion .item .text ul > ul {
+  margin-top: 7px;
+}
 
 /* Text Content - Class for JS to hide and show */
 .accordion .item .text.show {
