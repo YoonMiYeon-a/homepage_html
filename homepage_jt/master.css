@@ -110,7 +110,7 @@ header {
   z-index: 100;
 }
 header.fixed {
-  background: #fff;
+  background: transparent;
   border: 1px solid #000;
   border-width: 1px 0;
 }

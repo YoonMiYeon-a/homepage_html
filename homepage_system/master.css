@@ -121,7 +121,9 @@ header {
   background:transparent;
   z-index: 100;
 }
-header.fixed {}
+header.fixed {
+  background: transparent;
+}
 header.fixed a {
   color:#000;
 }
@@ -278,14 +280,14 @@ header.fixed nav label[for=trigger] span {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url(./aesets/images/visual/ico_download.png) no-repeat;
+  background: url(./assets/images/visual/ico_download.png) no-repeat;
   vertical-align: middle;
   position: absolute;
   right: 20px;
   top: 23px;
 }
 .sidefoot .btn a:nth-child(2):after {
-  background: url(./aesets/images/visual/ico_arrow_double.png) no-repeat;
+  background: url(./assets/images/visual/ico_arrow_double.png) no-repeat;
 }
 .sidefoot .btn a:last-child {
   margin-right: 0;
