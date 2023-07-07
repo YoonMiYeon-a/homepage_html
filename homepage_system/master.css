@@ -125,6 +125,19 @@ header.fixed {}
 header.fixed a {
   color:#000;
 }
+header.active {
+  background:#000;
+}
+header.active a {
+  color:#fff;
+}
+header.active nav label[for=trigger] span {
+  background: #fff;
+  transition: none;
+}
+header.fixed.active nav label[for=trigger] span {
+  background: #fff;
+}
 header > * {
   margin: 20px 40px;
 }
@@ -265,14 +278,14 @@ header.fixed nav label[for=trigger] span {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url(../images/visual/ico_download.png) no-repeat;
+  background: url(./aesets/images/visual/ico_download.png) no-repeat;
   vertical-align: middle;
   position: absolute;
   right: 20px;
   top: 23px;
 }
 .sidefoot .btn a:nth-child(2):after {
-  background: url(../images/visual/ico_arrow_double.png) no-repeat;
+  background: url(./aesets/images/visual/ico_arrow_double.png) no-repeat;
 }
 .sidefoot .btn a:last-child {
   margin-right: 0;
@@ -2081,6 +2094,8 @@ img {
   flex-grow: 1;
   border-radius: 4px;
   border: 1px solid #dadada;
+  font-size: 16px;
+  padding: 0 10px;
 }
 .box1 {
   grid-column: 1/2;

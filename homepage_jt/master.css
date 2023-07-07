@@ -114,6 +114,22 @@ header.fixed {
 header.fixed a {
   color:#000;
 }
+header.fixed nav label[for=trigger] span {
+  background-color: #000;
+}
+header.active {
+  background:#000;
+}
+header.active a {
+  color:#fff;
+}
+header.active nav label[for=trigger] span {
+  background: #fff;
+  transition: none;
+}
+header.fixed.active nav label[for=trigger] span {
+  background: #fff;
+}
 header > * {
   margin: 20px 40px;
 }
@@ -139,9 +155,7 @@ header .logo_img img {
 header nav {
   margin: 30px 40px;
 }
-header.fixed nav label[for=trigger] span {
-  background-color: #000;
-}
+
 .sidebar {
   background-color: #000;
   width: 100%;
@@ -1389,6 +1403,8 @@ height: 0;
   flex-grow: 1;
   border-radius: 4px;
   border: 1px solid #dadada;
+  font-size: 16px;
+  padding: 0 10px;
 }
 .box1 {
   grid-column: 1/2;

@@ -1426,13 +1426,16 @@
       var header = $("#header").offset().top;
       $(window).scroll(function() {
           var window = $(this).scrollTop();
-
           if(header <= window) {
             $("#header").addClass("fixed");
           } else {
             $("#header").removeClass("fixed");
           }
       })
+      $("nav input[id=trigger]").click(function(){
+        $("#header").toggleClass('active')
+      });
+      
 
       // Top버튼
       $(function () {
