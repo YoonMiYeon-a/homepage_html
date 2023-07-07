@@ -13,7 +13,7 @@ a:active {
   text-decoration: none;
 }
 /* Common */
-body{
+body {
   overflow-x: hidden;
 }
 body,
@@ -92,27 +92,30 @@ html {
   overflow-scrolling: touch;
 }
 body {
-  overflow-y: visible;
   position: relative;
-  height: unset;
+  /* background-color: #000; */
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 html,
 body {
-  overflow-x: hidden;
+  overflow: auto;
   margin: 0;
 }
 /* Header */
 header {
-  background:transparent;
+  background: transparent;
   z-index: 100;
 }
 header.fixed {
-  background:#fff;
+  background: #fff;
   border: 1px solid #000;
   border-width: 1px 0;
 }
 header.fixed a {
-  color:#000;
+  color: #000;
 }
 header > * {
   margin: 20px 40px;
@@ -121,7 +124,7 @@ header a {
   display: inline-block;
   font-weight: normal;
   font-size: 19px;
-  color:#fff;
+  color: #fff;
 }
 header .logo_img {
   width: 45px;
@@ -139,7 +142,7 @@ header .logo_img img {
 header nav {
   margin: 30px 40px;
 }
-header.fixed nav label[for=trigger] span {
+header.fixed nav label[for="trigger"] span {
   background-color: #000;
 }
 .sidebar {
@@ -148,7 +151,7 @@ header.fixed nav label[for=trigger] span {
   height: calc(100vh - 80px);
   position: fixed;
   top: -100%;
-  left:0;
+  left: 0;
   transition: 0.3s;
   display: flex;
   justify-content: space-around;
@@ -156,7 +159,7 @@ header.fixed nav label[for=trigger] span {
   z-index: 1000;
 }
 .sidebar a {
-  color:#fff;
+  color: #fff;
 }
 .sidebar li {
   overflow: hidden;
@@ -165,18 +168,19 @@ header.fixed nav label[for=trigger] span {
   display: inline-block;
   margin: 15px;
   text-align: left;
-  color:#fff;
-  font-family: 'Bebas Neue', sans-serif;
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 45px;
   font-weight: 500;
   text-transform: uppercase;
 }
-.sidebar:hover {}
+.sidebar:hover {
+}
 .sidebar .depth1 li > a {
   width: 172px;
 }
 .sidebar .depth1 li > a:hover {
-  color:gray;
+  color: gray;
 }
 .sidebar .depth2 {
   vertical-align: middle;
@@ -189,17 +193,17 @@ header.fixed nav label[for=trigger] span {
   font-size: 18px;
 }
 .sidebar .depth2 a:hover {
-  color:#fff;
+  color: #fff;
 }
 .sidefoot {
   display: flex;
   align-self: self-end;
   margin-bottom: 7%;
   flex-direction: column;
-  color:#fff;
+  color: #fff;
 }
 .sidefoot .logo {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 .sidefoot .logo span {
   font-size: 18px;
@@ -209,15 +213,15 @@ header.fixed nav label[for=trigger] span {
   margin-right: 0;
 }
 .sidefoot .logo span:before {
-  content: '';
+  content: "";
   width: 40px;
   height: 20px;
-  display: inline-block;  
+  display: inline-block;
   background: url(./assets/images/logo_black.png) no-repeat;
   background-size: cover;
 }
 .sidefoot .logo span:after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1px;
   height: 14px;
@@ -228,15 +232,18 @@ header.fixed nav label[for=trigger] span {
   display: none;
 }
 .sidefoot address {
-    font-style: normal;
-    font-size: 16px;
-    margin-bottom: 35px;
+  font-style: normal;
+  font-size: 16px;
+  margin-bottom: 35px;
 }
-.sidefoot address span {margin-right: 33px;}
+.sidefoot address span {
+  margin-right: 33px;
+}
 .sidefoot address div {
   margin: 3px 0;
 }
-.sidefoot .btn {}
+.sidefoot .btn {
+}
 .sidefoot .btn a {
   display: inline-block;
   border: 1px solid #fff;
@@ -249,7 +256,7 @@ header.fixed nav label[for=trigger] span {
   margin-right: 20px;
 }
 .sidefoot .btn a::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -273,10 +280,10 @@ nav > a {
   transition: all 0.5s ease-in-out;
 }
 
-nav input[id=trigger] {
+nav input[id="trigger"] {
   display: none;
 }
-nav label[for=trigger] {
+nav label[for="trigger"] {
   width: 40px;
   height: 30px;
   display: block;
@@ -284,7 +291,7 @@ nav label[for=trigger] {
   cursor: pointer;
 }
 
-nav label[for=trigger] span {
+nav label[for="trigger"] span {
   position: absolute;
   height: 2px;
   background-color: #fff;
@@ -292,26 +299,27 @@ nav label[for=trigger] span {
   left: 0;
   transition: 0.3s;
 }
-nav label[for=trigger] span:nth-child(1) {
+nav label[for="trigger"] span:nth-child(1) {
   top: 0;
 }
-nav label[for=trigger] span:nth-child(2) {
+nav label[for="trigger"] span:nth-child(2) {
   top: 50%;
   width: 27px;
 }
-nav input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
+nav input[id="trigger"]:checked + label[for="trigger"] span:nth-child(1) {
   top: 50%;
   transform: rotate(45deg);
 }
-nav input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
+nav input[id="trigger"]:checked + label[for="trigger"] span:nth-child(2) {
   top: 50%;
   transform: rotate(-45deg);
   width: 40px;
 }
-nav input[id=trigger]:checked ~ .sidebar {
+nav input[id="trigger"]:checked ~ .sidebar {
   top: 80px;
 }
 
+/*link_nav start*/
 .link_nav {
   position: fixed;
   top: 50%;
@@ -330,38 +338,151 @@ nav input[id=trigger]:checked ~ .sidebar {
   height: 100%;
   background-color: #c2c2c2;
 }
-
-.link_nav a {
-  color: #c2c2c2;
-  font-size: 1.3em;
-  line-height: 1.7;
-  text-decoration: none;
+.progress_page {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.progress_page p {
+  font-size: 20px;
+  line-height: 20px;
+  color: #50b048;
+  font-weight: 600;
   writing-mode: vertical-rl;
-  padding: 4px 0;
+  margin-bottom: 10px;
+}
+.progress_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+}
+.progress_wrap:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #50b048;
+  z-index: -1;
+}
+.progress_wrap span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  border: 1px solid #50b048;
+  background-color: #fff;
+  margin: 10px auto 0;
+  scale: 1;
+  transition: all 0.5s;
+}
+.progress_wrap span.active {
+  background-color: #50b048;
+  scale: 1.3;
+}
+.progress_wrap span:last-child {
+  margin: 10px auto;
+}
+
+.link_nav a,
+.link_nav a span {
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
   text-align: center;
   display: block;
+}
+
+.link_nav a {
+  margin-bottom: 10px;
 }
 .link_nav a:last-child {
   margin-bottom: 0;
 }
-.link_nav a:hover {
-  text-decoration: underline;
-}
-
 .link_nav a.active {
   position: relative;
   color: #000;
 }
-/* .link_nav a.active::after{
-	content: "";
-	position: absolute;
-	left: -10px;
-	top: 0;
-	width: 3px;
-	height: 100%;
-	background-color: #000;	
-} */
-.link_nav span {
+.link_nav .about_link {
+  background: url(./assets/images/visual/01_About_link.png) no-repeat;
+  background-position: center;
+}
+.link_nav .about_link span {
+  background: url(./assets/images/visual/01_About_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .about_link.active span {
+  background: url(./assets/images/visual/01_About_link_on.png) no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .service_link {
+  background: url(./assets/images/visual/02_Service_link.png) no-repeat;
+  background-position: center;
+}
+.link_nav .service_link span {
+  background: url(./assets/images/visual/02_Service_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .service_link.active span {
+  background: url(./assets/images/visual/02_Service_link_on.png) no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .experience_link {
+  background: url(./assets/images/visual/04_Expirence_link.png) no-repeat;
+  background-position: center;
+}
+.link_nav .experience_link span {
+  background: url(./assets/images/visual/04_Expirence_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .experience_link.active span {
+  background: url(./assets/images/visual/04_Expirence_link_on.png) no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .recruit_link {
+  background: url(./assets/images/visual/05_Recruit_link.png) no-repeat;
+  background-position: center;
+}
+.link_nav .recruit_link span {
+  background: url(./assets/images/visual/05_Recruit_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .recruit_link.active span {
+  background: url(./assets/images/visual/05_Recruit_link_on.png) no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.link_nav .contact_link {
+  background: url(./assets/images/visual/06_Contact_link.png) no-repeat;
+  background-position: center;
+}
+.link_nav .contact_link span {
+  background: url(./assets/images/visual/06_Contact_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.link_nav .contact_link.active span {
+  background: url(./assets/images/visual/06_Contact_link_on.png) no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+.link_nav > span {
   position: absolute;
   left: 0px;
   top: 0;
@@ -370,55 +491,44 @@ nav input[id=trigger]:checked ~ .sidebar {
   background-color: #000;
   transition: all 1s;
 }
-/* Nav */
-/* input[name="tabmenu"] {
-  display: none;
-}
-.tabs {
-  overflow: hidden;
-  position: relative;
-  height: 100vh;
-}
-.items {
-  height: 100vh;
-  width: 300%;
-  transition: 0.5s;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-input[name="tabmenu"] {
-  display: none;
-}
-.btn {
+
+/*link_nav end*/
+/* Top Button */
+.top_btn {
   position: fixed;
-  bottom: 20px;
-  width: 100%;
+  bottom: 8%;
+  right: 3%;
+  z-index: 300;
+}
+.top_btn a {
+  display: block;
+  position: relative;
+  width: 60px;
+  /* height: 100%; */
   text-align: center;
-  z-index: 10;
+  color: #000;
+  text-transform: uppercase;
 }
-.btn label {
-  display: inline-block;
-  height: 5px;
-  width: 50px;
-  background-color: #fff;
-  cursor: pointer;
+.top_btn a:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(./assets/images/visual/topbtn.png) no-repeat;
+  background-size: 105%;
+  background-position: 0 0;
 }
-input[id="tab1"]:checked ~ .tabs .items {
-  top: 0;
-}
-input[id="tab2"]:checked ~ .tabs .items {
-  top: -100%;
-}
-input[id="tab3"]:checked ~ .tabs .items {
-  top: -200%;
+a#topBtn {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  display: none;
+  z-index: 9999;
 }
 
-input[id="tab1"]:checked ~ .btn label[for="tab1"],
-input[id="tab2"]:checked ~ .btn label[for="tab2"],
-input[id="tab3"]:checked ~ .btn label[for="tab3"] {
-  background-color: #000;
-} */
+img {
+  cursor: pointer;
+}
 
 .custom-cursor {
   width: 0;
@@ -538,12 +648,15 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   height: 20px;
   opacity: 0;
 }
-.text_box{
+.ball2_green {
+  opacity: 0;
+}
+.text_box {
   display: flex;
   align-items: center;
   margin-left: -25%;
 }
-.about_svg1{
+.about_svg1 {
   width: 775px;
   height: 180px;
 }
@@ -556,7 +669,7 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
   margin-top: -19px;
   line-height: 116px;
   white-space: nowrap;
-  color:#000;
+  color: #000;
   opacity: 1;
   margin-left: 60px;
 }
@@ -575,9 +688,9 @@ input[id="tab3"]:checked ~ .btn label[for="tab3"] {
 }
 .line {
   position: absolute;
-left:-70px;
-top: 170px;
-height: 0;
+  left: -70px;
+  top: 170px;
+  height: 0;
   width: 0px;
   height: 40px;
   background: url(./assets/images/visual/bg_line.png) no-repeat;
@@ -596,17 +709,17 @@ height: 0;
 #About .panel {
   text-align: left;
 }
-#About .text_box2{
+#About .text_box2 {
   position: absolute;
   left: 50%;
   top: 30%;
   width: 1490px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#About .text_box2 .arrow_icon{
+#About .text_box2 .arrow_icon {
   position: absolute;
   left: 130px;
   top: 60px;
@@ -615,7 +728,7 @@ height: 0;
   display: none;
 }
 
-#About .text_box2 .dot_icon{
+#About .text_box2 .dot_icon {
   position: absolute;
   left: -16px;
   top: -16px;
@@ -627,20 +740,20 @@ height: 0;
 #About .text_box2 .title {
   display: flex;
 }
-#About .text_box2 .text_icon{
+#About .text_box2 .text_icon {
   width: 300px;
   height: 100px;
   opacity: 0;
   display: none;
 }
-#About .text_box2 .title p{
+#About .text_box2 .title p {
   margin-left: 20px;
   font-size: 71px;
   opacity: 0;
 }
 #About .sub_tit {
   font-size: 24px;
-  color:#C8C8C8;
+  color: #c8c8c8;
   font-weight: 200;
   text-align: center;
   opacity: 0;
@@ -649,13 +762,13 @@ height: 0;
   align-items: center;
 }
 #About .sub_tit.right {
-  align-items:end;
+  align-items: end;
 }
 #About .sub_tit.right p {
   text-align: right;
 }
 #About .sub_tit p {
-  color: #EEEEEE;
+  color: #eeeeee;
   font-size: 20px;
   line-height: 34px;
   font-weight: 300;
@@ -670,29 +783,28 @@ height: 0;
   margin-bottom: 25px;
 }
 #Service {
-  
 }
-#Service .svg_ux{
+#Service .svg_ux {
   position: absolute;
   left: -50px;
   top: 0;
   display: none;
 }
-#Service .svg_platform{
+#Service .svg_platform {
   position: absolute;
   left: 150px;
   top: 0;
   width: 700px;
   display: none;
 }
-#Service .svg_mobile{
+#Service .svg_mobile {
   position: absolute;
   left: 0;
   top: 0;
   width: 600px;
   display: none;
 }
-#Service .svg_service{
+#Service .svg_service {
   position: absolute;
   left: 50%;
   top: 0;
@@ -701,14 +813,14 @@ height: 0;
 }
 
 /*service common*/
-#Service .title{
+#Service .title {
   position: relative;
   font-weight: 600;
   font-size: 150px;
   line-height: 150px;
   margin-bottom: 30px;
 }
-#Service .text_box1 .title:before{
+#Service .text_box1 .title:before {
   position: absolute;
   left: -53px;
   top: -10px;
@@ -717,7 +829,8 @@ height: 0;
   height: 18px;
   background: url(./assets/images/visual/service_title_number01.png);
   opacity: 0;
-}#Service .text_box2 .title:before{
+}
+#Service .text_box2 .title:before {
   position: absolute;
   left: 150px;
   top: -10px;
@@ -726,7 +839,8 @@ height: 0;
   height: 18px;
   background: url(./assets/images/visual/service_title_number02.png);
   opacity: 0;
-}#Service .text_box3 .title:before{
+}
+#Service .text_box3 .title:before {
   position: absolute;
   left: 0;
   top: 0;
@@ -735,7 +849,8 @@ height: 0;
   height: 18px;
   background: url(./assets/images/visual/service_title_number03.png);
   opacity: 0;
-}#Service .text_box4 .title:before{
+}
+#Service .text_box4 .title:before {
   position: absolute;
   left: 180px;
   top: -20px;
@@ -745,108 +860,108 @@ height: 0;
   background: url(./assets/images/visual/service_title_number04.png);
   opacity: 0;
 }
-#Service .sub_title_box{
+#Service .sub_title_box {
   width: 900px;
 }
-#Service .sub_title{
+#Service .sub_title {
   font-weight: 400;
   font-size: 50px;
   margin-bottom: 10px;
 }
-#Service .sub_text{
+#Service .sub_text {
   font-weight: 100;
   font-size: 20px;
 }
 
 /*service common*/
 
-#Service .text_box1{
+#Service .text_box1 {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
 }
-#Service .text_box1 .title p{
+#Service .text_box1 .title p {
   padding-left: 200px;
 }
-#Service .text_box1 .sub_title_box{
+#Service .text_box1 .sub_title_box {
   padding-left: 150px;
   text-align: left;
 }
-#Service .text_box1 .sub_title{
+#Service .text_box1 .sub_title {
   opacity: 0;
 }
-#Service .text_box1 .sub_text{
+#Service .text_box1 .sub_text {
   opacity: 0;
 }
-#Service .text_box2{
+#Service .text_box2 {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
 }
-#Service .text_box2 .title p{
+#Service .text_box2 .title p {
   padding: 150px 150px 0 0;
 }
-#Service .text_box2 .sub_title_box{
+#Service .text_box2 .sub_title_box {
   text-align: right;
 }
-#Service .text_box2 .sub_title{
+#Service .text_box2 .sub_title {
   opacity: 0;
 }
-#Service .text_box2 .sub_text{
+#Service .text_box2 .sub_text {
   opacity: 0;
 }
-#Service .text_box3{
+#Service .text_box3 {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
 }
-#Service .text_box3 .title p{
+#Service .text_box3 .title p {
   padding: 170px 0 0 150px;
 }
-#Service .text_box3 .sub_title_box{
+#Service .text_box3 .sub_title_box {
   text-align: left;
 }
-#Service .text_box3 .sub_title{
+#Service .text_box3 .sub_title {
   opacity: 0;
 }
-#Service .text_box3 .sub_text{
+#Service .text_box3 .sub_text {
   opacity: 0;
 }
-#Service .text_box4{
+#Service .text_box4 {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
 }
-#Service .text_box4 .title p{
+#Service .text_box4 .title p {
   padding: 150px 0 0 0;
 }
-#Service .text_box4 .sub_title_box{
+#Service .text_box4 .sub_title_box {
   text-align: center;
 }
-#Service .text_box4 .sub_title{
+#Service .text_box4 .sub_title {
   opacity: 0;
 }
-#Service .text_box4 .sub_text{
+#Service .text_box4 .sub_text {
   opacity: 0;
 }
 /* #About .panel:nth-child(1) {
@@ -867,10 +982,9 @@ height: 0;
   font-weight: 700;
 } */
 
-
 #Experience {
   height: 163vh;
-  background-color: #50B048;
+  background-color: #50b048;
   background-size: contain;
 }
 #Experience .experience_container {
@@ -1180,7 +1294,8 @@ height: 0;
 .recruit_list {
   width: 700px;
 }
-.recruit_list > ul > li {}
+.recruit_list > ul > li {
+}
 .accordionTitle {
   padding: 20px;
   position: relative;
@@ -1311,7 +1426,7 @@ height: 0;
   position: relative;
   overflow: hidden;
 }
-#Contact .panel{
+#Contact .panel {
   color: #000;
 }
 .contact_inquiry {
