@@ -1,127 +1,127 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.set(".wrapper", { xPercent: -40, yPercent: -30 });
-gsap.set("#no03", { y: 160 });
-gsap.set("#no04", { y: 679 });
+// gsap.set(".wrapper", { xPercent: -40, yPercent: -30 });
+// gsap.set("#no03", { y: 160 });
+// gsap.set("#no04", { y: 679 });
 
 
-var boxWidth = 1626,
-  totalWidth = boxWidth * 3, //  * n of boxes
+// var boxWidth = 1626,
+//   totalWidth = boxWidth * 3, //  * n of boxes
 
-  no03 = document.querySelector("#no03 .box"),
-  no04 = document.querySelector("#no04 .box"),
-  dirFromLeft = "+=" + totalWidth,
-  dirFromRight = "-=" + totalWidth;
+//   no03 = document.querySelector("#no03 .box"),
+//   no04 = document.querySelector("#no04 .box"),
+//   dirFromLeft = "+=" + totalWidth,
+//   dirFromRight = "-=" + totalWidth;
 
-var mod = gsap.utils.wrap(0, totalWidth);
+// var mod = gsap.utils.wrap(0, totalWidth);
 
-function marquee(which, time, direction, repeat) {
-  gsap.set(which, {
-    x: function (i) {
-      return i * boxWidth;
-    },
-  });
-  var action = gsap.timeline().to(which, {
-    x: direction,
-    modifiers: {
-      x: (x) => mod(parseFloat(x)) + "px",
-    },
-    duration: time,
-    ease: "none",
-    repeat: repeat,
-  });
-  return action;
-}
+// function marquee(which, time, direction, repeat) {
+//   gsap.set(which, {
+//     x: function (i) {
+//       return i * boxWidth;
+//     },
+//   });
+//   var action = gsap.timeline().to(which, {
+//     x: direction,
+//     modifiers: {
+//       x: (x) => mod(parseFloat(x)) + "px",
+//     },
+//     duration: time,
+//     ease: "none",
+//     repeat: repeat,
+//   });
+//   return action;
+// }
 
-function introScene() {
-  const about = document.querySelector(".about");
-  const scaleTxt = document.querySelector(".intro_crossboard p");
-  const crossboardWrap = document.querySelector(".crossboard_wrap");
+// function introScene() {
+//   const about = document.querySelector(".about");
+//   const scaleTxt = document.querySelector(".intro_crossboard p");
+//   const crossboardWrap = document.querySelector(".crossboard_wrap");
 
-  var introScene = gsap.timeline();
+//   var introScene = gsap.timeline();
 
-  let marquee3;
-  let marquee4;
-  introScene
-    .to(scaleTxt, { opacity: 1 })
-    .to(scaleTxt, { scale: 200, duration: 2 })
-    .to(scaleTxt, { scale: 25 })
-    .to(scaleTxt, { opacity: 0 });
-  introScene.fromTo(
-    ".crossboard_title p",
-    { x: 300, opacity: 0 },
-    { x: 0, opacity: 1 }
-  );
-  introScene.add(() => {
-    marquee3 = marquee(no03, 7, dirFromLeft, -1);
-    marquee4 = marquee(no04, 7, dirFromRight, -1);
-  });
-  introScene.fromTo(
-    ".img_txt_wrap",
-    { x: 300, opacity: 0 },
-    { x: 0, opacity: 1 }
-  );
-  introScene.fromTo(
-    ".group_txt_wrap",
-    { x: 300, opacity: 0 },
-    { x: 0, opacity: 1 }
-  );
+//   let marquee3;
+//   let marquee4;
+//   introScene
+//     .to(scaleTxt, { opacity: 1 })
+//     .to(scaleTxt, { scale: 200, duration: 2 })
+//     .to(scaleTxt, { scale: 25 })
+//     .to(scaleTxt, { opacity: 0 });
+//   introScene.fromTo(
+//     ".crossboard_title p",
+//     { x: 300, opacity: 0 },
+//     { x: 0, opacity: 1 }
+//   );
+//   introScene.add(() => {
+//     marquee3 = marquee(no03, 7, dirFromLeft, -1);
+//     marquee4 = marquee(no04, 7, dirFromRight, -1);
+//   });
+//   introScene.fromTo(
+//     ".img_txt_wrap",
+//     { x: 300, opacity: 0 },
+//     { x: 0, opacity: 1 }
+//   );
+//   introScene.fromTo(
+//     ".group_txt_wrap",
+//     { x: 300, opacity: 0 },
+//     { x: 0, opacity: 1 }
+//   );
 
-  introScene.to(".jt_mark_wrap", { opacity: 1 }, "+=0.1");
+//   introScene.to(".jt_mark_wrap", { opacity: 1 }, "+=0.1");
 
-  introScene.fromTo(
-    ".jt_mark_svg",
-    { display: "none", opacity: 0, x: 20 },
-    { display: "block", opacity: 1, x: 0 },
-    "start"
-  );
+//   introScene.fromTo(
+//     ".jt_mark_svg",
+//     { display: "none", opacity: 0, x: 20 },
+//     { display: "block", opacity: 1, x: 0 },
+//     "start"
+//   );
 
-  introScene.to(".crossboard_main", { opacity: 1 });
-  introScene.to(no03, { opacity: 0, duration: 2 });
-  introScene.to(no03, { display: "none" });
-  introScene.fromTo(
-    ".cross_link a:last-child",
-    { y: 50, opacity: 0, display: "none" },
-    { y: 0, opacity: 1, display: "block" }
-  );
-  introScene
-    .to(".jt_mark_svg", { display: "block" })
-    .to(".arrow_svg2", { display: "block", duration: 2})
-    .to(".crossboard_wrap", { opacity: 0 })
-    .to("header nav > a", { color: "#000" })
-    .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
-    // .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
-    .to("#no03", { opacity: 0 })
-    .to("#no04", { opacity: 0 })
-    .to("#no03", { display: "none" })
-    .to("#no04", { display: "none" });
+//   introScene.to(".crossboard_main", { opacity: 1 });
+//   introScene.to(no03, { opacity: 0, duration: 2 });
+//   introScene.to(no03, { display: "none" });
+//   introScene.fromTo(
+//     ".cross_link a:last-child",
+//     { y: 50, opacity: 0, display: "none" },
+//     { y: 0, opacity: 1, display: "block" }
+//   );
+//   introScene
+//     .to(".jt_mark_svg", { display: "block" })
+//     .to(".arrow_svg2", { display: "block", duration: 2})
+//     .to(".crossboard_wrap", { opacity: 0 })
+//     .to("header nav > a", { color: "#000" })
+//     .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
+//     // .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
+//     .to("#no03", { opacity: 0 })
+//     .to("#no04", { opacity: 0 })
+//     .to("#no03", { display: "none" })
+//     .to("#no04", { display: "none" });
 
-  ScrollTrigger.create({
-    trigger: about,
-    pin: true,
-    start: "top top",
-    end: "bottom -100%",
-    scrub: true,
-    // animation: introScene,
-  });
-  return introScene;
-}
+//   ScrollTrigger.create({
+//     trigger: about,
+//     pin: true,
+//     start: "top top",
+//     end: "bottom -100%",
+//     scrub: true,
+//     // animation: introScene,
+//   });
+//   return introScene;
+// }
 
-var master = gsap.timeline();
-master.play();
-master
-  // .add(introIsol())
-  .add(function () {
-    // introIsol 애니메이션이 끝난 후에 실행되는 함수
-    var marquee1 = marquee(no01, 4, dirFromRight, 0);
-    var marquee2 = marquee(no02, 4, dirFromLeft, 0);
-    // introIsol, marquee1, marquee2가 동시에 시작되도록 설정
-    master.add([
-      marquee1.delay(introIsol().endTime()),
-      marquee2.delay(introIsol().endTime()),
-    ]);
-  })
-  .add(introScene());
+// var master = gsap.timeline();
+// master.play();
+// master
+//   // .add(introIsol())
+//   .add(function () {
+//     // introIsol 애니메이션이 끝난 후에 실행되는 함수
+//     var marquee1 = marquee(no01, 4, dirFromRight, 0);
+//     var marquee2 = marquee(no02, 4, dirFromLeft, 0);
+//     // introIsol, marquee1, marquee2가 동시에 시작되도록 설정
+//     master.add([
+//       marquee1.delay(introIsol().endTime()),
+//       marquee2.delay(introIsol().endTime()),
+//     ]);
+//   })
+//   .add(introScene());
 
 function handleClick(event) {
   event.preventDefault(); // 기본 동작 방지
@@ -242,9 +242,9 @@ let tl = gsap.timeline({
 });
 tl.set(".text_box", { x: 545 });
 tl.set(".hand", { x: -750, y: 110, delay: 0, opacity: 1 });
-tl.to(".hand", { x: 165, y: -15, delay: 0 });
+tl.to(".hand", { x: 0, y: -15, delay: 0 });
 tl.to(".line2", { duration: 7, width: 700 });
-tl.to(".hand", { x: 860, y: 10, duration: 7 }, "<");
+tl.to(".hand", { x: 770, y: 10, duration: 7 }, "<");
 tl.set(".ball", { x: -200, y: 36 });
 tl.to(".ball", { opacity: 1, duration: 1 });
 tl.set(".ball2", { x: -210, y: 36 });
@@ -362,18 +362,11 @@ svtl.fromTo(
   { x: 0, opacity: 1 }
 );
 svtl.to("#Service .text_box4", { y: 700 },">4");
+svtl.to("body",{overflow:"hidden"});
 
 const servicePanel = document.querySelector("#Service .panel");
 
-let rocket = gsap.timeline({
-  scrollTrigger: {
-    trigger: servicePanel,
-    start: "top top",
-    end: "bottom -1000%",
-    pin: true,
-    scrub: true,
-  },
-});
+let rocket = gsap.timeline({repeat: -1});
 rocket.set(".rocket", { display: "block", x: 800,y: -500 });
 rocket.set(".cloud1", { x: 1000,y: -1000 });
 rocket.set(".cloud2", { x: 1000,y: -1000 });
@@ -382,7 +375,6 @@ rocket.to(".cloud1", { display: "block", x: 1000,y: 1000 });
 rocket.to(".cloud2", { display: "block", x: 300,y: 1000 });
 rocket.set(".cloud1", { x: 1900,y: -1000 });
 rocket.set(".cloud2", { x: 2400,y: -1000 });
-
 rocket.to(".rocket", { x: 600,y: 100, scale: 1.0 ,rotation: -40,});
 rocket.to(".rocket", {  rotation: -20});
 rocket.to(".rocket", {  rotation: 0});
@@ -396,6 +388,16 @@ rocket.fromTo(".ball2_green",{opacity: 0, y: 0},{opacity:1, y: -200})
 rocket.to(".ball2_green", {scale: 400, duration: 1 });
 
 
+
+  scrollTrigger.create({
+    trigger: servicePanel,
+    start: "top top",
+    end: "bottom -1000%",
+    pin: true,
+    scrub: true,
+    animation: rocket,
+    markers:true,
+  })
 
 // const masterTimeline = gsap.timeline();
 // masterTimeline.add(svtl).add(rocket, 0);
