@@ -366,7 +366,15 @@ svtl.to("body",{overflow:"hidden"});
 
 const servicePanel = document.querySelector("#Service .panel");
 
-let rocket = gsap.timeline({repeat: -1});
+let rocket = gsap.timeline({
+  scrollTrigger: {
+    trigger: servicePanel,
+    start: "top top",
+    end: "bottom -1000%",
+    pin: true,
+    scrub: true,
+  },
+});
 rocket.set(".rocket", { display: "block", x: 800,y: -500 });
 rocket.set(".cloud1", { x: 1000,y: -1000 });
 rocket.set(".cloud2", { x: 1000,y: -1000 });
@@ -388,16 +396,6 @@ rocket.fromTo(".ball2_green",{opacity: 0, y: 0},{opacity:1, y: -200})
 rocket.to(".ball2_green", {scale: 400, duration: 1 });
 
 
-
-  scrollTrigger.create({
-    trigger: servicePanel,
-    start: "top top",
-    end: "bottom -1000%",
-    pin: true,
-    scrub: true,
-    animation: rocket,
-    markers:true,
-  })
 
 // const masterTimeline = gsap.timeline();
 // masterTimeline.add(svtl).add(rocket, 0);
