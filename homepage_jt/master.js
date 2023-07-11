@@ -76,29 +76,6 @@ gsap.registerPlugin(ScrollTrigger);
 //     "start"
 //   );
 
-<<<<<<< HEAD
-  introScene.to(".crossboard_main", { opacity: 1 });
-  introScene.to(no03, { opacity: 0, duration: 2 });
-  introScene.to(no03, { display: "none" });
-  introScene.fromTo(
-    ".cross_link a:last-child",
-    { y: 50, opacity: 0, display: "none" },
-    { y: 0, opacity: 1, display: "block" }
-  );
-  introScene
-    .to(".jt_mark_svg", { display: "block" })
-    .to(".arrow_svg2", { display: "block", duration: 2})
-    .to(".crossboard_wrap", { opacity: 0 })
-    .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
-    .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
-    .to("header", { borderColor: "transparent" },">")
-    .to("header > a", { color: "#000" },">")
-        
-    .to("#no03", { opacity: 0 })
-    .to("#no04", { opacity: 0 })
-    .to("#no03", { display: "none" })
-    .to("#no04", { display: "none" });
-=======
 //   introScene.to(".crossboard_main", { opacity: 1 });
 //   introScene.to(no03, { opacity: 0, duration: 2 });
 //   introScene.to(no03, { display: "none" });
@@ -118,7 +95,6 @@ gsap.registerPlugin(ScrollTrigger);
 //     .to("#no04", { opacity: 0 })
 //     .to("#no03", { display: "none" })
 //     .to("#no04", { display: "none" });
->>>>>>> origin/jihoon
 
 //   ScrollTrigger.create({
 //     trigger: about,
@@ -388,13 +364,9 @@ svtl.fromTo(
   { x: 0, opacity: 1 }
 );
 svtl.to("#Service .text_box4", { y: 700 },">4");
-<<<<<<< HEAD
 svtl.to("#Service", {backgroundColor:"#50b048"});
 svtl.to(".ball2_green", {display:"none"});
 svtl.to("body", {overflow:"hidden"});
-=======
-svtl.to("body",{overflow:"hidden"});
->>>>>>> origin/jihoon
 
 const servicePanel = document.querySelector("#Service .panel");
 
