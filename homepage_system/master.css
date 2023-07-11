@@ -984,9 +984,6 @@ img {
 #About .panel:nth-child(6) .grid_wrap a img {
   margin: 0 auto;
 }
-#About .panel:nth-child(7) {
-  background: url(./assets/images/bg/system1/about_news.png);
-}
 
 #Service .panel:nth-child(1) {
   height: 100vh;
@@ -2129,3 +2126,112 @@ footer {
   font-size: 15px;
   color: #fff;
 }
+
+/*07-11 추가*/
+#About .panel:nth-child(7) .content_wrap{
+  width: 1490px;
+  display: flex;
+  flex-direction: column;  
+}
+#About .panel:nth-child(7) .card_wrap{
+  height: 482px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-bottom: 64px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eaeaea;
+}
+#About .panel:nth-child(7) .card{
+  position: relative;
+  width: 341px;
+  height: 400px;
+  border: 3px solid #dddddd;
+  box-sizing: border-box;
+  border-radius: 30px 0 30px 0;
+  text-align: left; 
+  transition: all .5s;
+}
+#About .panel:nth-child(7) .card:hover{
+  width: 340px;
+  height: 531px;
+  border: 3px solid #0072ff;
+  box-sizing: border-box;
+  border-radius: 30px 0 30px 0;
+  color: #0072ff;
+  transition: all .5s;
+}
+#About .panel:nth-child(7) .card .card_text_box{
+  padding: 75px 70px 50px 56px;
+}
+#About .panel:nth-child(7) .card .card_date{
+  font-size: 12px;
+  margin-bottom: 48px;
+}
+#About .panel:nth-child(7) .title_text_article{
+  left: 140px;
+}
+#About .panel:nth-child(7) .card .card_title{
+  height: 90px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 111px;
+}
+#About .panel:nth-child(7) .card .card_more{
+  position: relative;
+  font-size: 12px; 
+}
+#About .panel:nth-child(7) .card .card_more::before{
+  position: absolute;
+  left: 10px;
+  top: -43px;
+  width: 291px;
+  height: 3px;
+  background-color: #dddddd;
+  transition: all .5s;
+  content: "";
+}
+#About .panel:nth-child(7) .card:hover .card_more::before{
+  background-color: #0072ff;
+  transition: all .5s;
+}
+#About .panel:nth-child(7) .card .card_more::after{
+  position: absolute;
+  left: 70px;
+  top: 60%;
+  transform: translate(-50%,-50%);
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: url(./assets/images/visual/About_page7_btn_icon.png);
+  transition: all .5s;
+}
+#About .panel:nth-child(7) .card:hover .card_more::after{
+  transition: all .5s;
+  background: url(./assets/images/visual/About_page7_btn_icon_blue.png);
+}
+#About .panel:nth-child(7) .pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+#About .panel:nth-child(7) .pages{
+  margin: 0 30px;
+}
+#About .panel:nth-child(7) .pages a{
+  padding: 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+}
+#About .panel:nth-child(7) .pagination .previous_btn{
+  width: 9px;
+  height: 14px;
+  background: url(./assets/images/visual/About_page7_page_btn_left.png);
+}
+#About .panel:nth-child(7) .pagination .next_btn{
+  width: 9px;
+  height: 14px;
+  background: url(./assets/images/visual/About_page7_page_btn_right.png);
+}
+/*07-11 추가*/
