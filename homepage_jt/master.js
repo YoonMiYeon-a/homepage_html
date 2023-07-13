@@ -153,7 +153,6 @@ let svtl = gsap.timeline({
   },
 });
 
-const servicePanel = document.querySelector("#Service .panel");
 const ruleNum1 = document.querySelector("#Service .text_box1 img");
 const ruleNum2 = document.querySelector("#Service .text_box2 img");
 const ruleNum3 = document.querySelector("#Service .text_box3 img");
