@@ -130,9 +130,8 @@ tl.to(".ball2", { scale: 400, duration: 1 });
 tl.to("#About .marquee", { display: "none" },">");
 tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
 tl.to("body", { backgroundColor: "#000" });
-tl.add(() => {
-    document.querySelector("header").classList.toggle("fixed");
-  },">");
+tl.to("header", { borderColor: "transparent" },">")
+tl.to("header > a", { color: "#fff" },">")
 tl.to(".ball", { display: "none" });
 tl.to(".ball", { display: "none" });
 tl.to("body", { overflow: "auto" });
@@ -245,8 +244,12 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box4", { y: 700 }, ">4");
-svtl.to("body", { overflow: "hidden" });
+svtl.to("#Service .text_box4", { y: 700 },">4");
+svtl.to("#Service", {backgroundColor:"#50b048"});
+svtl.to(".ball2_green", {display:"none"});
+svtl.to("body", {overflow:"hidden"});
+
+const servicePanel = document.querySelector("#Service .panel");
 
 let rocket = gsap.timeline({
   scrollTrigger: {
@@ -277,6 +280,9 @@ rocket.to(".rocket", { x: 900, y: 100, scale: 1.1, duration: 1 });
 rocket.to(".rocket", { rotation: 0 });
 rocket.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, y: -200 });
 rocket.to(".ball2_green", { scale: 400, duration: 1 });
+
+
+
 
 // const masterTimeline = gsap.timeline();
 // masterTimeline.add(svtl).add(rocket, 0);
