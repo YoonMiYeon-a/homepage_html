@@ -257,7 +257,6 @@ let rocket = gsap.timeline({
     end: "bottom -1000%",
     pin: true,
     scrub: true,
-    markers:true,
   },
 });
 rocket.set(".rocket", { display: "block", x: 800, y: 0 });

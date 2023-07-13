@@ -279,19 +279,64 @@ nav input[id=trigger]:checked ~ .sidebar {
   background-color: #1766fe;
   scale: 1.3;
 }
-.link_nav .solution_link {
-  background: url(../assets/images/common/03_Solution_link.png) no-repeat;
+.link_nav .about_link span{
+  background: url(/assets/images/st/visual/01_About_link_on.png) no-repeat;
   background-position: center;
-}
-.link_nav .solution_link span {
-  background: url(./assets/images/visual/03_Solution_link_on.png) no-repeat;
-  background-position: center;
-  transition: opacity 0.5s;
+  transition: opacity .5s;
   opacity: 0;
 }
-.link_nav .solution_link.active span {
-  background: url(./assets/images/visual/03_Solution_link_on.png) no-repeat;
+.link_nav .about_link.active span{
+  transition: opacity .5s;
+  opacity: 1;
+}
+.link_nav .service_link span{
+  background: url(/assets/images/st/visual/02_Service_link_on.png) no-repeat;
   background-position: center;
+  transition: opacity .5s;
+  opacity: 0;
+}
+.link_nav .service_link.active span{
+  transition: opacity .5s;
+  opacity: 1;
+}
+.link_nav .solution_link span{
+  background: url(/assets/images/st/visual/03_Solution_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity .5s;
+  opacity: 0;
+}
+.link_nav .solution_link.active span{
+  transition: opacity .5s;
+  opacity: 1;
+}
+.link_nav .experience_link span{
+  background: url(/assets/images/st/visual/04_Expirence_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity .5s;
+  opacity: 0;
+}
+.link_nav .experience_link.active span{
+  transition: opacity .5s;
+  opacity: 1;
+}
+.link_nav .recruit_link span{
+  background: url(/assets/images/st/visual/05_Recruit_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity .5s;
+  opacity: 0;
+}
+.link_nav .recruit_link.active span{
+  transition: opacity .5s;
+  opacity: 1;
+}
+.link_nav .contact_link span{
+  background: url(/assets/images/st/visual/06_Contact_link_on.png) no-repeat;
+  background-position: center;
+  transition: opacity .5s;
+  opacity: 0;
+}
+.link_nav .contact_link.active span{
+  transition: opacity .5s;
   opacity: 1;
 }
 .custom-cursor {

@@ -350,10 +350,14 @@ const observer = new MutationObserver(function (mutationsList) {
             `${element.attributes[0].value}`
           );
           const linkText = document.querySelector(".progress_page p");
-          linkText.innerText = element.attributes[0].value.slice(1).toUpperCase();
+          linkText.innerText = element.attributes[0].value
+            .slice(1)
+            .toUpperCase();
 
           const panels = Array.from(currentSection.querySelectorAll(".panel"));
-          const experienceContainers = Array.from(currentSection.querySelectorAll(".experience_container"));
+          const experienceContainers = Array.from(
+            currentSection.querySelectorAll(".experience_container")
+          );
           const containPage = [...panels, ...experienceContainers];
           const targetElement = document.querySelector(".progress_wrap");
 
@@ -371,13 +375,16 @@ const observer = new MutationObserver(function (mutationsList) {
               trigger: panel,
               start: "top center",
               end: "bottom center",
-              markers: true,
               onEnter: () => {
-                targetElement.querySelectorAll("span")[index].classList.add("active");
+                targetElement
+                  .querySelectorAll("span")
+                  [index].classList.add("active");
               },
               onLeaveBack: () => {
-                targetElement.querySelectorAll("span")[index].classList.remove("active");
-              }
+                targetElement
+                  .querySelectorAll("span")
+                  [index].classList.remove("active");
+              },
             });
           });
         }
@@ -457,7 +464,7 @@ sections.forEach((section) => {
     trigger: section,
     start: "top center",
     end: () => {
-      if ((section.offsetWidth - innerWidth) <= 0) {
+      if (section.offsetWidth - innerWidth <= 0) {
         return "bottom bottom";
       } else {
         return "+=" + (section.offsetWidth - innerWidth);
@@ -465,7 +472,7 @@ sections.forEach((section) => {
     },
     onToggle: (self) => {
       if (self.isActive) {
-        setActive(target); 
+        setActive(target);
       }
     },
   });

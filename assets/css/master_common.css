@@ -73,9 +73,6 @@ header {
   background:transparent;
   z-index: 100;
 }
-header > * {
-  margin: 20px 40px;
-}
 header.active {
   background:#000;
 }
@@ -83,12 +80,11 @@ header.active a {
   color:#fff;
 }
 header.active nav label[for=trigger] span {
-  background: #fff;
+  background: transparent;
   transition: none;
 }
 header.fixed {
   background:transparent;
-  border: 1px solid #000;
 }
 header.fixed a {
   color:#000;
@@ -372,7 +368,7 @@ nav input[id=trigger]:checked ~ .sidebar {
   background: url(../images/common/marquee_logo_transference.png) no-repeat;
   background-size: contain;
 }
-.about{
+.intro{
   position: relative;
   width: 100%;
   height: 100vh;
@@ -512,16 +508,6 @@ nav input[id=trigger]:checked ~ .sidebar {
   padding: 0px 10px;
   z-index: 2;
 }
-.link_nav::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3px;
-  height: 100%;
-  background-color: #c2c2c2;
-}
 .link_nav a {
   color: #c2c2c2;
   font-size: 1.3em;
@@ -551,97 +537,29 @@ nav input[id=trigger]:checked ~ .sidebar {
   position: relative;
   color: #000;
 }
-.link_nav span {
-  position: absolute;
-  left: 0px;
-  top: 0;
-  width: 3px;
-  height: 30px;
-  background-color: #000;
-  transition: all 1s;
-}
 .link_nav .about_link {
   background: url(../images/common/01_About_link.png) no-repeat;
   background-position: center;
-}
-.link_nav .about_link span {
-  background: url(../images/st/visual/01_About_link_on.png) no-repeat;
-  background-position: center;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.link_nav .about_link.active span {
-  background: url(../images/st/visual/01_About_link_on.png) no-repeat;
-  opacity: 1;
 }
 .link_nav .service_link {
   background: url(../images/common/02_Service_link.png) no-repeat;
   background-position: center;
 }
-.link_nav .service_link span {
-  background: url(../images/st/visual/02_Service_link_on.png) no-repeat;
+.link_nav .solution_link {
+  background: url(../images/common/03_Solution_link.png) no-repeat;
   background-position: center;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.link_nav .service_link.active span {
-  background: url(../images/st/visual/02_Service_link_on.png) no-repeat;
-  background-position: center;
-  opacity: 1;
 }
 .link_nav .experience_link {
-  background: url(../assets/images/common/04_Expirence_link.png) no-repeat;
+  background: url(../images/common/04_Expirence_link.png) no-repeat;
   background-position: center;
-}
-.link_nav .experience_link span {
-  background: url(./assets/images/visual/04_Expirence_link_on.png) no-repeat;
-  background-position: center;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.link_nav .experience_link.active span {
-  background: url(./assets/images/visual/04_Expirence_link_on.png) no-repeat;
-  background-position: center;
-  opacity: 1;
 }
 .link_nav .recruit_link {
-  background: url(../assets/images/common/05_Recruit_link.png) no-repeat;
+  background: url(../images/common/05_Recruit_link.png) no-repeat;
   background-position: center;
-}
-.link_nav .recruit_link span {
-  background: url(./assets/images/visual/05_Recruit_link_on.png) no-repeat;
-  background-position: center;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.link_nav .recruit_link.active span {
-  background: url(./assets/images/visual/05_Recruit_link_on.png) no-repeat;
-  background-position: center;
-  opacity: 1;
 }
 .link_nav .contact_link {
-  background: url(../assets/images/common/06_Contact_link.png) no-repeat;
+  background: url(../images/common/06_Contact_link.png) no-repeat;
   background-position: center;
-}
-.link_nav .contact_link span {
-  background: url(./assets/images/visual/06_Contact_link_on.png) no-repeat;
-  background-position: center;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.link_nav .contact_link.active span {
-  background: url(./assets/images/visual/06_Contact_link_on.png) no-repeat;
-  background-position: center;
-  opacity: 1;
-}
-.link_nav > span {
-  position: absolute;
-  left: 0px;
-  top: 0;
-  width: 3px;
-  height: 30px;
-  background-color: #000;
-  transition: all 1s;
 }
 /* Top Button */
 .top_btn {
