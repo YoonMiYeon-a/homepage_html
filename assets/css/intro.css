@@ -133,7 +133,7 @@ p {
 	-webkit-animation: scrollDown 1s infinite;
   display: block;
   transform: translateY(10px);
-  animation: arrows 3s linear infinite;
+  animation:scrollDown 3s linear infinite;
   background: #ffffff63;
 }
 .scrollDown span.a1 {
@@ -142,22 +142,19 @@ p {
 }
 
 .scrollDown span.a2 {
-  transform: translate(53.3333333333px, 0px) rotate(-45deg);
-  animation: arrows 1s linear infinite;
+  transform: translate(2px);
+  animation:scrollDown 1s linear infinite;
   background: #ffffffa1;
 }
 .scrollDown span.a3 {
-  transform: translate(53.3333333333px, 0px) rotate(-45deg);
-  animation: arrows 1s linear infinite;
+  transform: translate(2px);
+  animation:scrollDown 1s linear infinite;
   background: #ffffffcf;
 }
 /* .scrollDown span.a3 {	
 	animation-delay:0s;
 	-webkit-animation-delay:0s;
 } */
-
-
-
 
 /* Animation */
 @keyframes image {
@@ -180,17 +177,16 @@ p {
 }
 @keyframes scrollDown {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-3px);
   }
   10%, 90% {
     transform: translateY(0px);
   }
   50% {
-    
-    transform: translateY(0px);
+    transform: translateY(3px);
   }
   100% {
-    transform: translateY(10px);
+    transform: translateY(6px);
   }
 }
 
