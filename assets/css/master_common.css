@@ -1104,7 +1104,7 @@ height: 0;
   z-index: 9;
   left: 0;
   top: 0;
-  scale: 0;
+  scale: 1;
   transition: all 0.5s ease-in-out;
 }
 #Experience .card a:hover img {
@@ -1533,6 +1533,7 @@ height: 0;
 }
 .input_checkbox label {
   cursor: pointer;
+  margin-right: 20px;
 }
 .input_checkbox {
   font-size: 16px;

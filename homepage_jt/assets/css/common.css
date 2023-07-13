@@ -195,7 +195,7 @@ animation: escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
   100% {
   transform: translateY(50px);
   }
-  }
+}
   @keyframes escalade {
   0% {
   stroke-dasharray: 0 157px;
