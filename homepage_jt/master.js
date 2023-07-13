@@ -1,127 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// gsap.set(".wrapper", { xPercent: -40, yPercent: -30 });
-// gsap.set("#no03", { y: 160 });
-// gsap.set("#no04", { y: 679 });
-
-
-// var boxWidth = 1626,
-//   totalWidth = boxWidth * 3, //  * n of boxes
-
-//   no03 = document.querySelector("#no03 .box"),
-//   no04 = document.querySelector("#no04 .box"),
-//   dirFromLeft = "+=" + totalWidth,
-//   dirFromRight = "-=" + totalWidth;
-
-// var mod = gsap.utils.wrap(0, totalWidth);
-
-// function marquee(which, time, direction, repeat) {
-//   gsap.set(which, {
-//     x: function (i) {
-//       return i * boxWidth;
-//     },
-//   });
-//   var action = gsap.timeline().to(which, {
-//     x: direction,
-//     modifiers: {
-//       x: (x) => mod(parseFloat(x)) + "px",
-//     },
-//     duration: time,
-//     ease: "none",
-//     repeat: repeat,
-//   });
-//   return action;
-// }
-
-// function introScene() {
-//   const about = document.querySelector(".about");
-//   const scaleTxt = document.querySelector(".intro_crossboard p");
-//   const crossboardWrap = document.querySelector(".crossboard_wrap");
-
-//   var introScene = gsap.timeline();
-
-//   let marquee3;
-//   let marquee4;
-//   introScene
-//     .to(scaleTxt, { opacity: 1 })
-//     .to(scaleTxt, { scale: 200, duration: 2 })
-//     .to(scaleTxt, { scale: 25 })
-//     .to(scaleTxt, { opacity: 0 });
-//   introScene.fromTo(
-//     ".crossboard_title p",
-//     { x: 300, opacity: 0 },
-//     { x: 0, opacity: 1 }
-//   );
-//   introScene.add(() => {
-//     marquee3 = marquee(no03, 7, dirFromLeft, -1);
-//     marquee4 = marquee(no04, 7, dirFromRight, -1);
-//   });
-//   introScene.fromTo(
-//     ".img_txt_wrap",
-//     { x: 300, opacity: 0 },
-//     { x: 0, opacity: 1 }
-//   );
-//   introScene.fromTo(
-//     ".group_txt_wrap",
-//     { x: 300, opacity: 0 },
-//     { x: 0, opacity: 1 }
-//   );
-
-//   introScene.to(".jt_mark_wrap", { opacity: 1 }, "+=0.1");
-
-//   introScene.fromTo(
-//     ".jt_mark_svg",
-//     { display: "none", opacity: 0, x: 20 },
-//     { display: "block", opacity: 1, x: 0 },
-//     "start"
-//   );
-
-//   introScene.to(".crossboard_main", { opacity: 1 });
-//   introScene.to(no03, { opacity: 0, duration: 2 });
-//   introScene.to(no03, { display: "none" });
-//   introScene.fromTo(
-//     ".cross_link a:last-child",
-//     { y: 50, opacity: 0, display: "none" },
-//     { y: 0, opacity: 1, display: "block" }
-//   );
-//   introScene
-//     .to(".jt_mark_svg", { display: "block" })
-//     .to(".arrow_svg2", { display: "block", duration: 2})
-//     .to(".crossboard_wrap", { opacity: 0 })
-//     .to("header nav > a", { color: "#000" })
-//     .to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_black.png" } })
-//     // .to("body", { backgroundColor: "#fff", duration: 1, color: "#000" })
-//     .to("#no03", { opacity: 0 })
-//     .to("#no04", { opacity: 0 })
-//     .to("#no03", { display: "none" })
-//     .to("#no04", { display: "none" });
-
-//   ScrollTrigger.create({
-//     trigger: about,
-//     pin: true,
-//     start: "top top",
-//     end: "bottom -100%",
-//     scrub: true,
-//     // animation: introScene,
-//   });
-//   return introScene;
-// }
-
-// var master = gsap.timeline();
-// master.play();
-// master
-//   // .add(introIsol())
-//   .add(function () {
-//     // introIsol 애니메이션이 끝난 후에 실행되는 함수
-//     var marquee1 = marquee(no01, 4, dirFromRight, 0);
-//     var marquee2 = marquee(no02, 4, dirFromLeft, 0);
-//     // introIsol, marquee1, marquee2가 동시에 시작되도록 설정
-//     master.add([
-//       marquee1.delay(introIsol().endTime()),
-//       marquee2.delay(introIsol().endTime()),
-//     ]);
-//   })
-//   .add(introScene());
+gsap.registerPlugin(ScrollTrigger );
 
 function handleClick(event) {
   event.preventDefault(); // 기본 동작 방지
@@ -229,27 +106,18 @@ observer.observe(document.querySelector(".link_nav"), {
   subtree: true,
 });
 
-
 let oneContainer = document.querySelector(".About.container");
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: oneContainer,
-    start: "top top",
-    end: "bottom -1500%",
-    pin: true,
-    scrub: 1,
-  },
-});
+let tl = gsap.timeline();
 tl.set(".text_box", { x: 545 });
 tl.set(".hand", { x: -750, y: 110, delay: 0, opacity: 1 });
-tl.to(".hand", { x: 0, y: -15, delay: 0 });
-tl.to(".line2", { duration: 7, width: 700 });
-tl.to(".hand", { x: 770, y: 10, duration: 7 }, "<");
+tl.to(".hand", { x: 50, y: -15, delay: 0 });
+tl.to(".line2", { duration: 3, width: 700 });
+tl.to(".hand", { x: 770, y: 10, duration: 3 }, "<");
 tl.set(".ball", { x: -200, y: 36 });
 tl.to(".ball", { opacity: 1, duration: 1 });
 tl.set(".ball2", { x: -210, y: 36 });
-tl.to(".text_box", { x: -545 });
 tl.to(".hand", { x: 1350, y: -45, ease: { ease: Power1.easeInOut } });
+tl.to(".text_box", { x: -545 },">");
 tl.to(".hand", { x: 1250, y: -35, delay: 0 });
 tl.to(".hand", { x: 1170, y: -70, delay: 0 });
 tl.to(".hand", { x: 1500, y: 30, delay: 0 });
@@ -257,11 +125,15 @@ tl.to(".hand", { x: 2100, y: 30, delay: 0 });
 tl.to(".hand", { display: "none" });
 tl.to(".line2", { opacity: 0 });
 tl.to("body", { overflow: "hidden" });
-tl.to(".ball2", {scale: 400, duration: 1 });
+tl.to("#About .marquee", { opacity: 0 },"<");
+tl.to(".ball2", { scale: 400, duration: 1 });
+tl.to("#About .marquee", { display: "none" },">");
 tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
 tl.to("body", { backgroundColor: "#000" });
+tl.add(() => {
+    document.querySelector("header").classList.toggle("fixed");
+  },">");
 tl.to(".ball", { display: "none" });
-tl.to("header nav > a", { color: "#fff" });
 tl.to(".ball", { display: "none" });
 tl.to("body", { overflow: "auto" });
 tl.to(".text_box2 .text_icon", { opacity: 1 });
@@ -270,6 +142,7 @@ tl.fromTo(".text_box2 .title p", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.to(".text_box2 .dot_icon", { display: "block" });
 tl.to(".text_box2 .arrow_icon", { display: "block" });
+
 const serviceSection = document.querySelector("#Service");
 let svtl = gsap.timeline({
   scrollTrigger: {
@@ -280,6 +153,13 @@ let svtl = gsap.timeline({
     scrub: 1,
   },
 });
+
+const servicePanel = document.querySelector("#Service .panel");
+const ruleNum1 = document.querySelector("#Service .text_box1 img");
+const ruleNum2 = document.querySelector("#Service .text_box2 img");
+const ruleNum3 = document.querySelector("#Service .text_box3 img");
+const ruleNum4 = document.querySelector("#Service .text_box4 img");
+
 svtl.set("#Service .text_box1", { y: -550 });
 svtl.set("#Service .text_box2", { y: -550 });
 svtl.set("#Service .text_box3", { y: -550 });
@@ -287,6 +167,7 @@ svtl.set("#Service .text_box4", { y: -550 });
 svtl.to("#Service .text_box1", { opacity: 1 });
 svtl.to("#Service .text_box1", { y: 0 });
 svtl.to(".svg_ux", { display: "block" });
+svtl.to(ruleNum1,{opacity: 1},"<+=1")
 svtl.fromTo(
   "#Service .text_box1 .sub_title",
   { x: 100, opacity: 0 },
@@ -297,12 +178,13 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box1", { y: 700 },">4");
+svtl.to("#Service .text_box1", { y: 700 }, ">4");
 svtl.to("#Service .text_box1", { opacity: 0 });
 svtl.to("#Service .text_box1", { display: "none" });
 svtl.to("#Service .text_box2", { opacity: 1 });
 svtl.to("#Service .text_box2", { y: 0 });
 svtl.to(".svg_platform", { display: "block" });
+svtl.to(ruleNum2,{opacity: 1},"<+=1")
 svtl.fromTo(
   "#Service .text_box2 .sub_title",
   { x: 100, opacity: 0 },
@@ -313,12 +195,13 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box2", { y: 700 },">4");
+svtl.to("#Service .text_box2", { y: 700 }, ">4");
 svtl.to("#Service .text_box2", { opacity: 0 });
 svtl.to("#Service .text_box2", { display: "none" });
 svtl.to("#Service .text_box2", { opacity: 1 });
 svtl.to("#Service .text_box2", { y: 0 });
 svtl.to(".svg_platform", { display: "block" });
+svtl.to(ruleNum3,{opacity: 1},"<+=1")
 svtl.fromTo(
   "#Service .text_box2 .sub_title",
   { x: 100, opacity: 0 },
@@ -329,12 +212,13 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box2", { y: 700 },">4");
+svtl.to("#Service .text_box2", { y: 700 }, ">4");
 svtl.to("#Service .text_box2", { opacity: 0 });
 svtl.to("#Service .text_box2", { display: "none" });
 svtl.to("#Service .text_box3", { opacity: 1 });
 svtl.to("#Service .text_box3", { y: 0 });
 svtl.to(".svg_mobile", { display: "block" });
+svtl.to(ruleNum4,{opacity: 1},"<+=1")
 svtl.fromTo(
   "#Service .text_box3 .sub_title",
   { x: 100, opacity: 0 },
@@ -345,7 +229,7 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box3", { y: 700 },">4");
+svtl.to("#Service .text_box3", { y: 700 }, ">4");
 svtl.to("#Service .text_box3", { opacity: 0 });
 svtl.to("#Service .text_box3", { display: "none" });
 svtl.to("#Service .text_box4", { opacity: 1 });
@@ -361,10 +245,8 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box4", { y: 700 },">4");
-svtl.to("body",{overflow:"hidden"});
-
-const servicePanel = document.querySelector("#Service .panel");
+svtl.to("#Service .text_box4", { y: 700 }, ">4");
+svtl.to("body", { overflow: "hidden" });
 
 let rocket = gsap.timeline({
   scrollTrigger: {
@@ -373,34 +255,32 @@ let rocket = gsap.timeline({
     end: "bottom -1000%",
     pin: true,
     scrub: true,
+    markers:true,
   },
 });
-rocket.set(".rocket", { display: "block", x: 800,y: -500 });
-rocket.set(".cloud1", { x: 1000,y: -1000 });
-rocket.set(".cloud2", { x: 1000,y: -1000 });
-rocket.to(".rocket", { x: 800,y: 100, scale: 1.1 });
-rocket.to(".cloud1", { display: "block", x: 1000,y: 1000 });
-rocket.to(".cloud2", { display: "block", x: 300,y: 1000 });
-rocket.set(".cloud1", { x: 1900,y: -1000 });
-rocket.set(".cloud2", { x: 2400,y: -1000 });
-rocket.to(".rocket", { x: 600,y: 100, scale: 1.0 ,rotation: -40,});
-rocket.to(".rocket", {  rotation: -20});
-rocket.to(".rocket", {  rotation: 0});
-rocket.to(".rocket", {  rotation: 20});
-rocket.to(".rocket", { x: 600,y: 100, scale: 1.3 ,rotation: 40, duration: 3});
-rocket.to(".cloud1", { display: "block", x: -1000,y: 1000 });
-rocket.to(".cloud2", { display: "block", x: 1200,y: 1000 });
-rocket.to(".rocket", { x: 900,y: 100, scale: 1.1 ,duration: 1});
-rocket.to(".rocket", {  rotation: 0});
-rocket.fromTo(".ball2_green",{opacity: 0, y: 0},{opacity:1, y: -200})
-rocket.to(".ball2_green", {scale: 400, duration: 1 });
-
-
+rocket.set(".rocket", { display: "block", x: 800, y: 0 });
+rocket.set(".cloud1", { x: 1000, y: -1000 });
+rocket.set(".cloud2", { x: 1000, y: -1000 });
+rocket.to(".rocket", { x: 800, y: 100, scale: 1.1 });
+rocket.to(".cloud1", { display: "block", x: 1000, y: 1000 });
+rocket.to(".cloud2", { display: "block", x: 300, y: 1000 });
+rocket.set(".cloud1", { x: 1900, y: -1000 });
+rocket.set(".cloud2", { x: 2400, y: -1000 });
+rocket.to(".rocket", { x: 600, y: 100, scale: 1.0, rotation: -40 });
+rocket.to(".rocket", { rotation: -20 });
+rocket.to(".rocket", { rotation: 0 });
+rocket.to(".rocket", { rotation: 20 });
+rocket.to(".rocket", { x: 600, y: 100, scale: 1, rotation: 40, duration: 3 });
+rocket.to(".cloud1", { display: "block", x: -1000, y: 1000 });
+rocket.to(".cloud2", { display: "block", x: 1200, y: 1000 });
+rocket.to(".rocket", { x: 900, y: 100, scale: 1.1, duration: 1 });
+rocket.to(".rocket", { rotation: 0 });
+rocket.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, y: -200 });
+rocket.to(".ball2_green", { scale: 400, duration: 1 });
 
 // const masterTimeline = gsap.timeline();
 // masterTimeline.add(svtl).add(rocket, 0);
 // masterTimeline.play();
-
 
 let sections = gsap.utils.toArray("section[data-target]");
 
@@ -417,8 +297,6 @@ sections.forEach((section) => {
     },
   });
 });
-
-
 
 const cardLink = document.querySelector(".card a");
 
@@ -482,7 +360,6 @@ document.querySelectorAll(".mycustomclass").forEach((item) => {
   item.addEventListener("mouseleave", custom_unhover_cursor);
 });
 
-
 var accordionBtn = document.querySelectorAll(".accordionTitle");
 var allTexts = document.querySelectorAll(".text");
 var accIcon = document.querySelectorAll(".accIcon");
@@ -520,3 +397,33 @@ function toggleAccordion(el) {
     targetAccIcon.classList.add("anime");
   }
 }
+
+/*07-12 추가 intro marquee*/
+let currentScroll = 0;
+let isScrollingDown = true;
+
+let tween = gsap
+  .to(".marquee__part", {
+    xPercent: -100,
+    repeat: -1,
+    duration: 5,
+    ease: "linear",
+  })
+  .totalProgress(0.5);
+
+gsap.set(".marquee__inner", { xPercent: -50 });
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > currentScroll) {
+    isScrollingDown = true;
+  } else {
+    isScrollingDown = false;
+  }
+
+  gsap.to(tween, {
+    timeScale: isScrollingDown ? 1 : -1,
+  });
+
+  currentScroll = window.pageYOffset;
+});
+/*07-12 추가*/

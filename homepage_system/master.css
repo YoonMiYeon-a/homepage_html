@@ -277,7 +277,7 @@ header.fixed nav label[for=trigger] span {
 .sidefoot .btn a:last-child {
   margin-right: 0;
 }
-nav > a {
+header nav > a {
   position: relative;
   margin-left: 20px;
   font-size: 17px;
@@ -333,28 +333,21 @@ nav input[id=trigger]:checked ~ .sidebar {
   padding: 0px 10px;
   z-index: 2;
 }
-.link_nav::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3px;
-  height: 100%;
-  background-color: #c2c2c2;
-}
 .progress_page {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
 }
 .progress_page p {
+  display: inline;
   font-size: 20px;
   line-height: 20px;
   color: #1766fe;
   font-weight: 600;
   writing-mode: vertical-rl;
   margin-bottom: 10px;
+  animation-name: fadeIn;
+  animation-duration: 0.5s; 
 }
 .progress_wrap {
   position: relative;
@@ -368,10 +361,11 @@ nav input[id=trigger]:checked ~ .sidebar {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  width: 1px;
+  width: 2px;
   height: 100%;
   background-color: #1766fe;
   z-index: -1;
+  transition: all .5s;
 }
 .progress_wrap span {
   display: block;
@@ -382,7 +376,8 @@ nav input[id=trigger]:checked ~ .sidebar {
   background-color: #fff;
   margin: 10px auto 0;
   scale: 1;
-  transition: all 0.5s;
+  animation-name: fadeIn;
+  animation-duration: 0.5s; 
 }
 .progress_wrap span.active {
   background-color: #1766fe;
@@ -2233,5 +2228,14 @@ footer {
   width: 9px;
   height: 14px;
   background: url(./assets/images/visual/About_page7_page_btn_right.png);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; 
+  }
 }
 /*07-11 추가*/

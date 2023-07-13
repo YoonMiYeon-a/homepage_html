@@ -16,27 +16,6 @@
   white-space: nowrap !important;
 }
 
-header {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-header > * {
-  margin: 20px 40px;
-}
-
-nav > a {
-  position: relative;
-  margin-left: 20px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 100;
-  transition: all 0.5s ease-in-out;
-}
-
 .visual_main {
   width: 100%;
   height: 100%;

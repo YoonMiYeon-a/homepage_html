@@ -106,13 +106,21 @@ body {
 }
 /* Header */
 header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: transparent;
   z-index: 100;
+  transition: all .5s;
+  margin-top: 30px;
 }
 header.fixed {
   background: #fff;
   border: 1px solid #000;
-  border-width: 1px 0;
+  border-width: 2px 0;
+  transition: all .5s;
 }
 header.fixed a {
   color: #000;
@@ -706,6 +714,9 @@ img {
   opacity: 0;
   background: url(./assets/images/bg/system1/hand.png) no-repeat;
 }
+#About{
+  position: relative;
+}
 #About .panel {
   text-align: left;
 }
@@ -721,7 +732,7 @@ img {
 }
 #About .text_box2 .arrow_icon {
   position: absolute;
-  left: 130px;
+  left: 90px;
   top: 60px;
   width: 441px;
   height: 155px;
@@ -730,7 +741,7 @@ img {
 
 #About .text_box2 .dot_icon {
   position: absolute;
-  left: -16px;
+  left: -6px;
   top: -16px;
   width: 75px;
   height: 35px;
@@ -739,6 +750,7 @@ img {
 
 #About .text_box2 .title {
   display: flex;
+  margin-bottom: 50px;
 }
 #About .text_box2 .text_icon {
   width: 300px;
@@ -820,7 +832,7 @@ img {
   line-height: 150px;
   margin-bottom: 30px;
 }
-#Service .text_box1 .title:before {
+#Service .text_box1 img {
   position: absolute;
   left: -53px;
   top: -10px;
@@ -830,7 +842,7 @@ img {
   background: url(./assets/images/visual/service_title_number01.png);
   opacity: 0;
 }
-#Service .text_box2 .title:before {
+#Service .text_box2 img {
   position: absolute;
   left: 150px;
   top: -10px;
@@ -840,7 +852,7 @@ img {
   background: url(./assets/images/visual/service_title_number02.png);
   opacity: 0;
 }
-#Service .text_box3 .title:before {
+#Service .text_box3 img {
   position: absolute;
   left: 0;
   top: 0;
@@ -850,7 +862,7 @@ img {
   background: url(./assets/images/visual/service_title_number03.png);
   opacity: 0;
 }
-#Service .text_box4 .title:before {
+#Service .text_box4 img {
   position: absolute;
   left: 180px;
   top: -20px;
@@ -1551,4 +1563,34 @@ footer {
   font-weight: 100;
   font-size: 15px;
   color: #fff;
+}
+
+/*07-12 추가*/
+
+.marquee__part {
+  font-size: 20px;
+  line-height: 100px;
+  padding-right: 40px;
+  flex-shrink: 0;
+}
+
+.marquee {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 37px;
+  left: 0;
+  border: 2px solid #000;
+  border-width: 2px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.marquee__inner {  
+  -webkit-font-smoothing: antialiased;
+    width: fit-content;
+    display: flex;
+    flex: auto;
+    flex-direction: row;
 }

@@ -211,12 +211,12 @@ function introScene() {
     //   .to(".jt_mark_svg", { display: "block" })
     //   .to(".cross_link a:last-child", { opacity: 1, duration: 1 })
     //   .to(".arrow_svg2", { display: "block", duration: 3 })
-    .to(".crossboard_wrap", { opacity: 0, duration: 3 })
+    .to(".crossboard_wrap", { opacity: 0 })
     .to(".crossboard_wrap", { display: "none" })
     .to(".logo p", { color: "#000" })
     .to("header nav p", { color: "#000" }, ">")
     .to(".allmenu_btn span", { backgroundColor: "#000" }, ">")
-    .to("body", { backgroundColor: "#fff", duration: 1 })
+    .to("body", { backgroundColor: "#fff", duration: 1 }, ">")
     .to("#no03", { opacity: 0 })
     .to("#no04", { opacity: 0 })
     .to("#no03", { display: "none" })
@@ -226,8 +226,17 @@ function introScene() {
     trigger: intro,
     pin: true,
     start: "top top",
-    end: "bottom -1000%",
+    end: "bottom -10%",
     scrub: true,
+    onLeave: () => {
+      introScene.kill();
+      gsap.to(".intro", { opacity: 0 });
+      gsap.to("#no03", { opacity: 0 });
+      gsap.to("#no04", { opacity: 0 });
+      gsap.to("#no03", { display: "none" });
+      gsap.to("#no04", { display: "none" });
+      gsap.to("body", { backgroundColor: "#fff", duration: 1 }, ">");
+    },
     // animation: introScene,
   });
   return introScene;
@@ -236,17 +245,17 @@ function introScene() {
 var master = gsap.timeline();
 master.play();
 master
-  // .add(introIsol())
-  .add(function () {
-    // introIsol 애니메이션이 끝난 후에 실행되는 함수
-    var marquee1 = marquee(no01, 4, dirFromRight, 0);
-    var marquee2 = marquee(no02, 4, dirFromLeft, 0);
-    // introIsol, marquee1, marquee2가 동시에 시작되도록 설정
-    master.add([
-      marquee1.delay(introIsol().endTime()),
-      marquee2.delay(introIsol().endTime()),
-    ]);
-  })
+  // // .add(introIsol())
+  // .add(function () {
+  //   // introIsol 애니메이션이 끝난 후에 실행되는 함수
+  //   var marquee1 = marquee(no01, 4, dirFromRight, 0);
+  //   var marquee2 = marquee(no02, 4, dirFromLeft, 0);
+  //   // introIsol, marquee1, marquee2가 동시에 시작되도록 설정
+  //   master.add([
+  //     marquee1.delay(introIsol().endTime()),
+  //     marquee2.delay(introIsol().endTime()),
+  //   ]);
+  // })
   .add(introScene());
 
 // marquee,
@@ -313,7 +322,6 @@ function setActive(sectionId) {
       });
     }
   });
-
   if (activeLink) {
     activeLink.classList.add("active");
   }
@@ -341,27 +349,50 @@ const observer = new MutationObserver(function (mutationsList) {
           const currentSection = document.querySelector(
             `${element.attributes[0].value}`
           );
-          const containPage = currentSection.querySelectorAll(".panel");
+          const linkText = document.querySelector(".progress_page p");
+          linkText.innerText = element.attributes[0].value.slice(1).toUpperCase();
+
+          const panels = Array.from(currentSection.querySelectorAll(".panel"));
+          const experienceContainers = Array.from(currentSection.querySelectorAll(".experience_container"));
+          const containPage = [...panels, ...experienceContainers];
           const targetElement = document.querySelector(".progress_wrap");
 
-          for (let i = 0; i < containPage.length; i++) {
+          // Remove existing spans
+          const existingSpans = targetElement.querySelectorAll("span");
+          existingSpans.forEach((span) => {
+            span.remove();
+          });
+
+          containPage.forEach((panel, index) => {
             const spanElement = document.createElement("span");
             targetElement.appendChild(spanElement);
-          }
+
+            ScrollTrigger.create({
+              trigger: panel,
+              start: "top center",
+              end: "bottom center",
+              markers: true,
+              onEnter: () => {
+                targetElement.querySelectorAll("span")[index].classList.add("active");
+              },
+              onLeaveBack: () => {
+                targetElement.querySelectorAll("span")[index].classList.remove("active");
+              }
+            });
+          });
         }
       });
       break;
     }
   }
 });
-
-observer.observe(document.querySelector(".link_nav"), {
+observer.observe(document.querySelector(".links"), {
   attributes: true,
   subtree: true,
 });
 
 let oneContainer = document.querySelector(".About.container");
-gsap.to("#About .panel", {
+let aboutSection = gsap.to("#About .panel", {
   x: () => -(oneContainer.scrollWidth - window.innerWidth),
   ease: "none",
   scrollTrigger: {
@@ -372,7 +403,7 @@ gsap.to("#About .panel", {
   },
 });
 let twoContainer = document.querySelector(".Service.container");
-gsap.to("#Service .panel", {
+let serviceSection = gsap.to("#Service .panel", {
   x: () => -(twoContainer.scrollWidth - window.innerWidth),
   ease: "none",
   scrollTrigger: {
@@ -384,7 +415,7 @@ gsap.to("#Service .panel", {
   },
 });
 let threeContainer = document.querySelector(".Solution.container");
-gsap.to("#Solution .panel", {
+let solutionSection = gsap.to("#Solution .panel", {
   x: () => -(threeContainer.scrollWidth - window.innerWidth),
   ease: "none",
   scrollTrigger: {
@@ -396,7 +427,7 @@ gsap.to("#Solution .panel", {
   },
 });
 let fourContainer = document.querySelector(".Recruit.container");
-gsap.to("#Recruit .panel", {
+let recruitSection = gsap.to("#Recruit .panel", {
   x: () => -(fourContainer.scrollWidth - window.innerWidth),
   ease: "none",
   scrollTrigger: {
@@ -418,7 +449,6 @@ gsap.to("#About .panel:first-child", {
   },
 });
 
-
 let sections = gsap.utils.toArray("section[data-target]");
 
 sections.forEach((section) => {
@@ -426,10 +456,16 @@ sections.forEach((section) => {
   ScrollTrigger.create({
     trigger: section,
     start: "top center",
-    end: "bottom center",
+    end: () => {
+      if ((section.offsetWidth - innerWidth) <= 0) {
+        return "bottom bottom";
+      } else {
+        return "+=" + (section.offsetWidth - innerWidth);
+      }
+    },
     onToggle: (self) => {
       if (self.isActive) {
-        setActive(target);
+        setActive(target); 
       }
     },
   });
@@ -600,4 +636,3 @@ function toggleAccordion(el) {
     targetAccIcon.classList.add("anime");
   }
 }
-
