@@ -106,7 +106,7 @@ observer.observe(document.querySelector(".link_nav"), {
   subtree: true,
 });
 
-let oneContainer = document.querySelector(".About.container");
+let aboutSection = document.querySelector(".About");
 let tl = gsap.timeline();
 tl.set(".text_box", { x: 545 });
 tl.set(".hand", { x: -750, y: 110, delay: 0, opacity: 1 });
@@ -116,8 +116,8 @@ tl.to(".hand", { x: 770, y: 10, duration: 3 }, "<");
 tl.set(".ball", { x: -200, y: 36 });
 tl.to(".ball", { opacity: 1, duration: 1 });
 tl.set(".ball2", { x: -210, y: 36 });
-tl.to(".hand", { x: 1350, y: -45, ease: { ease: Power1.easeInOut } });
-tl.to(".text_box", { x: -545 },">");
+tl.to(".hand", { x: 1350, y: -45, ease: "Power1.easeInOut"  });
+tl.to(".text_box", { x: -545 },">-1");
 tl.to(".hand", { x: 1250, y: -35, delay: 0 });
 tl.to(".hand", { x: 1170, y: -70, delay: 0 });
 tl.to(".hand", { x: 1500, y: 30, delay: 0 });
@@ -126,7 +126,7 @@ tl.to(".hand", { display: "none" });
 tl.to(".line2", { opacity: 0 });
 tl.to("body", { overflow: "hidden" });
 tl.to("#About .marquee", { opacity: 0 },"<");
-tl.to(".ball2", { scale: 400, duration: 1 });
+tl.to(".ball2", { scale: 410, duration: 1 });
 tl.to("#About .marquee", { display: "none" },">");
 tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
 tl.to("body", { backgroundColor: "#000" });
@@ -147,7 +147,7 @@ let svtl = gsap.timeline({
   scrollTrigger: {
     trigger: serviceSection,
     start: "top top",
-    end: "bottom -1000%",
+    end: "bottom -850%",
     pin: true,
     scrub: 1,
   },
@@ -243,49 +243,98 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.to("#Service .text_box4", { y: 700 },">4");
+svtl.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, y: -200 });
+svtl.to("body", {overflow:"hidden"});
+svtl.to(".ball2_green", { scale: 400, duration: 4 });
 svtl.to("#Service", {backgroundColor:"#50b048"});
 svtl.to(".ball2_green", {display:"none"});
-svtl.to("body", {overflow:"hidden"});
 
 const servicePanel = document.querySelector("#Service .panel");
 
+
+const roc = document.querySelector(".rocket")
 let rocket = gsap.timeline({
+  repeat: -1,
   scrollTrigger: {
     trigger: servicePanel,
     start: "top top",
-    end: "bottom -1000%",
+    end: "bottom -1100%",
     pin: true,
-    scrub: true,
+    markers: true,
+    onLeave: () => {
+      rocket.to("#Service",{opacity: 0}) 
+    },
+    onLeaveBack: () => {
+      rocket.to("#Service",{opacity: 1}) 
+    },    
   },
 });
-rocket.set(".rocket", { display: "block", x: 800, y: 0 });
-rocket.set(".cloud1", { x: 1000, y: -1000 });
-rocket.set(".cloud2", { x: 1000, y: -1000 });
-rocket.to(".rocket", { x: 800, y: 100, scale: 1.1 });
-rocket.to(".cloud1", { display: "block", x: 1000, y: 1000 });
-rocket.to(".cloud2", { display: "block", x: 300, y: 1000 });
-rocket.set(".cloud1", { x: 1900, y: -1000 });
-rocket.set(".cloud2", { x: 2400, y: -1000 });
-rocket.to(".rocket", { x: 600, y: 100, scale: 1.0, rotation: -40 });
-rocket.to(".rocket", { rotation: -20 });
-rocket.to(".rocket", { rotation: 0 });
-rocket.to(".rocket", { rotation: 20 });
-rocket.to(".rocket", { x: 600, y: 100, scale: 1, rotation: 40, duration: 3 });
-rocket.to(".cloud1", { display: "block", x: -1000, y: 1000 });
-rocket.to(".cloud2", { display: "block", x: 1200, y: 1000 });
-rocket.to(".rocket", { x: 900, y: 100, scale: 1.1, duration: 1 });
-rocket.to(".rocket", { rotation: 0 });
-rocket.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, y: -200 });
-rocket.to(".ball2_green", { scale: 400, duration: 1 });
+rocket.set(roc, { x: 40, y: 20 });
+rocket.to(roc, {
+  x: "+=2",
+  yoyo: true,
+  repeat: 40,
+  duration: 0.05,
+  ease: "power1.easeInOut"
+})
+.to(roc,{y: -300, duration:1 ,ease: "Power2.easeInOut"})
+.to(roc,{x: 600, y: -50, scale: 1.5, duration:2, ease: "Power2.easeInOut"})
+.to(roc, {
+  x: "+=4",
+  yoyo: true,
+  repeat: 40,
+  duration: 0.05,
+  ease: "power1.easeOut"
+})
+
+.to(roc,{x: 650, scale: 2, duration:2,ease: "Power2.easeInOut"})
+.to(roc,{rotate: -10, x: -600, scale: 1, duration: 3,ease: "Power2.easeInOut"})
+.to(roc,{rotate: 0, ease: "Power1.easeOut"},">-0.5")
+rocket.to(roc, {
+  x: "+=2",
+  yoyo: true,
+  repeat: 20,
+  duration: 0.05,
+  ease: "power1.easeOut"
+})
+.to(roc,{x: 0, rotate: 10,duration:1.5, ease: "Power2.easeInOut"})
+.to(roc,{rotate: 0, ease: "Power1.easeOut"},">-0.5")
+.to(roc, { x: 40, y: 20 , ease: "Power2.easeInOut"});
 
 
 
+let cloud = gsap.timeline({ repeat: -1 });
 
-// const masterTimeline = gsap.timeline();
-// masterTimeline.add(svtl).add(rocket, 0);
-// masterTimeline.play();
+cloud.set(".cloud1", { x: 300, y: -1300 });
+cloud.set(".cloud2", { x: 400, y: -1300 });
+cloud.set(".cloud3", { x: 600, y: -1300 });
+cloud.set(".cloud4", { x: 900, y: -1300 });
+cloud.set(".cloud5", { x: 1400, y: -1300 });
+cloud.set(".cloud6", { x: 1600, y: -1300 });
+cloud.to(".cloud1", { display: "block", y: 1000, duration: 1 });
+cloud.to(".cloud6", { display: "block", y: 1000, duration: 4 });
+cloud.to(".cloud2", { display: "block", y: 1000, duration: 2 });
+cloud.to(".cloud4", { display: "block", y: 1000, duration: 3 });
+cloud.to(".cloud5", { display: "block", y: 1000, duration: 1 });
+cloud.to(".cloud3", { display: "block", y: 1000, duration: 2 });
+cloud.set(".cloud1", { x: 300, y: -1300, scale: 1.2 });
+cloud.set(".cloud2", { x: 400, y: -1300, scale: 1.4 });
+cloud.set(".cloud3", { x: 600, y: -1300, scale: 1.5 });
+cloud.set(".cloud4", { x: 900, y: -1300, scale: 1.8 });
+cloud.set(".cloud5", { x: 1400, y: -1300, scale: 0.7 });
+cloud.set(".cloud6", { x: 1600, y: -1300, scale: 0.5 });
+cloud.to(".cloud5", { display: "block", y: 1300 });
+cloud.to(".cloud2", { display: "block", y: 1300 });
+cloud.to(".cloud1", { display: "block", y: 1300 });
+cloud.to(".cloud3", { display: "block", y: 1300 });
+cloud.to(".cloud6", { display: "block", y: 1300 });
+cloud.to(".cloud4", { display: "block", y: 1300 });
 
+ScrollTrigger.create({
+  trigger: "#Service",
+  endTrigger: "#Experience",
+  animation: cloud,
+});
 let sections = gsap.utils.toArray("section[data-target]");
 
 sections.forEach((section) => {

@@ -253,19 +253,12 @@ header.fixed {
 
 .rocket {
   position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
+  left: 43%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   z-index: -1;
 }
-.cloud1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
-  z-index: -1;
-}
-.cloud2 {
+.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6 {
   position: absolute;
   left: 0;
   top: 0;
@@ -530,7 +523,7 @@ header.fixed {
   opacity: 0;
 }
 #Service .text_box1 .title p {
-  padding-left: 200px;
+  padding-left: 190px;
 }
 #Service .text_box1 .sub_title_box {
   padding-left: 150px;
@@ -826,8 +819,7 @@ footer {
   left: 0;
   border: 2px solid #000;
   border-width: 2px 0;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   overflow: hidden;
 }
 

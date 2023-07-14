@@ -835,17 +835,19 @@ nav input[id=trigger]:checked ~ .sidebar {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 40px 0 40px 40px;
   margin-right: 60px;
   box-sizing: border-box;
 }
 #Service .card img {
   width: 93px;
   height: 93px;
+  margin-bottom: 32px;
 }
 #Service .card .card_title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
+  margin-bottom: 18px;
 }
 #Service .card .card_text {
   font-size: 16px;
@@ -1585,3 +1587,29 @@ footer {
   }
 }
 /*07-11 추가*/
+.top_btn {
+  position: fixed;
+  bottom: 8%;
+  right: 3%;
+  z-index: 300;
+}
+.top_btn a {
+  display: block;
+  position: relative;
+  width: 44px;
+  /* height: 100%; */
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+.top_btn a:before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 53px;
+  background: url(/assets/images/st/visual/topbtn_st.png) no-repeat;
+  background-size: 105%;
+  background-position: 0 0;
+  padding-bottom: 10px;
+}
+/*07-14 추가*/

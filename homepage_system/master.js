@@ -183,34 +183,7 @@ function introScene() {
     { y: 50, opacity: 0 },
     { y: 0, opacity: 1 }
   );
-  introScene.to(".arrow_svg1", { display: "block", duration: 6 });
-  introScene.to(".arrow_svg1", { opacity: 0 }, "-=0.6");
-  introScene.to(".arrow_svg1", { display: "none" });
-  introScene.to(".crossboard_main", { opacity: 0 });
-  introScene.to(".system_mark_wrap", { opacity: 0 });
-  introScene.to(".system_mark_wrap span", { opacity: 0 });
-  introScene.to(".cross_link a:first-child", { opacity: 0 });
-  introScene.to(".cross_link a:first-child", { display: "none" });
-
-  introScene.fromTo(".system_mark_wrap", { opacity: 0 }, { opacity: 1 });
-  introScene
-    .fromTo(".jt_mark_wrap", { opacity: 0 }, { opacity: 1 })
-    // introScene.add(() => {
-    //   crossboardWrap.classList.toggle("system-on");
-    //   crossboardWrap.classList.toggle("jt-on");
-    //   no03.classList.toggle("system-on");
-    //   no03.classList.toggle("jt-on");
-    //   no04.classList.toggle("system-on");
-    //   no04.classList.toggle("jt-on");
-    // });
-    // introScene.to(".crossboard_main", { opacity: 1 });
-    // introScene.to(no03, { opacity: 0, duration: 2 });
-    // introScene.to(no03, { display: "none" });
-
-    // introScene
-    //   .to(".jt_mark_svg", { display: "block" })
-    //   .to(".cross_link a:last-child", { opacity: 1, duration: 1 })
-    //   .to(".arrow_svg2", { display: "block", duration: 3 })
+  introScene.to(".arrow_svg1", { display: "block", duration: 6 })
     .to(".crossboard_wrap", { opacity: 0 })
     .to(".crossboard_wrap", { display: "none" })
     .to(".logo p", { color: "#000" })
@@ -643,3 +616,14 @@ function toggleAccordion(el) {
     targetAccIcon.classList.add("anime");
   }
 }
+
+/*recruit tab menu*/ 
+$(function(){
+	$('.tabcontent > div').hide();
+	$('.tabnav a').click(function () {
+		$('.tabcontent > div').hide().filter(this.hash).fadeIn();
+		$('.tabnav a').removeClass('is_on');
+		$(this).addClass('is_on');
+		return false;
+	}).filter(':eq(0)').click();
+  });
