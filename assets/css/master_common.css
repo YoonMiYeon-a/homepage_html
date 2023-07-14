@@ -64,7 +64,7 @@ li {
   -webkit-text-stroke: 2px white;
   color: transparent;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 10;
   opacity: 0.5;
   pointer-events: none;
 }
@@ -980,9 +980,26 @@ height: 0;
   opacity: 0;
 }
 #Experience {
+  position: relative;
   height: 163vh;
   background-color: #50B048;
   background-size: contain;
+  overflow: hidden;
+}
+#Experience .text_article{
+  position: absolute;
+  right:-40%;
+  top: 95%;
+  transform: translate(-50%, -50%);
+  font-size: 300px;
+  font-weight: 700;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  box-sizing: border-box;
+  z-index: 10;
+  opacity: 0.2;
+  pointer-events: none;
+
 }
 #Experience .experience_container {
   padding: 8% 0 0 11%;

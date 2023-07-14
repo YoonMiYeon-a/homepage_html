@@ -333,11 +333,11 @@ header.fixed {
   position: absolute;
   left: -40px;
   top: 523px;
-  width: 423px;
-  height: 396px;
+  width: 466px;
+  height: 608px;
   z-index: 1;
   opacity: 0;
-  background: url(./assets/images/bg/system1/hand.png) no-repeat;
+  background: url(../assets/images/jt/hand.png) no-repeat;
 }
 #About{
   position: relative;
@@ -829,4 +829,36 @@ footer {
     display: flex;
     flex: auto;
     flex-direction: row;
+}
+/* Top Button */
+.top_btn {
+  position: fixed;
+  bottom: 8%;
+  right: 3%;
+  z-index: 300;
+}
+.top_btn a {
+  display: block;
+  position: relative;
+  width: 60px;
+  /* height: 100%; */
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+.top_btn a:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(/assets/images/common/topbtn.png) no-repeat;
+  background-size: 105%;
+  background-position: 0 0;
+}
+a#topBtn {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  display: none;
+  z-index: 9999;
 }

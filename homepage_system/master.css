@@ -1303,7 +1303,7 @@ nav input[id=trigger]:checked ~ .sidebar {
   background-size: cover;
 }
 #Experience {
-  background: url(./assets/images/bg/system1/experience_page1.png);
+  background-color: #1766fe;
 }
 /* Recruit */
 #Recruit .panel:nth-child(1) {

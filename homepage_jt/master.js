@@ -108,6 +108,7 @@ observer.observe(document.querySelector(".link_nav"), {
 
 let aboutSection = document.querySelector(".About");
 let tl = gsap.timeline();
+tl.set("html",{overflow:"hidden"});
 tl.set(".text_box", { x: 545 });
 tl.set(".hand", { x: -750, y: 110, delay: 0, opacity: 1 });
 tl.to(".hand", { x: 50, y: -15, delay: 0 });
@@ -131,7 +132,9 @@ tl.to("#About .marquee", { display: "none" },">");
 tl.to(".logo img", { attr: { src: "./assets/images/logo_jt_eng_white.png" } });
 tl.to("body", { backgroundColor: "#000" });
 tl.to("header", { borderColor: "transparent" },">")
-tl.to("header > a", { color: "#fff" },">")
+tl.to("header a", { color: "#fff" },">")
+tl.to("header label span", { backgroundColor:"#fff" },">")
+tl.to(".top_btn a", { color:"#fff" },">")
 tl.to(".ball", { display: "none" });
 tl.to(".ball", { display: "none" });
 tl.to("body", { overflow: "auto" });
@@ -141,6 +144,8 @@ tl.fromTo(".text_box2 .title p", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.to(".text_box2 .dot_icon", { display: "block" });
 tl.to(".text_box2 .arrow_icon", { display: "block" });
+tl.set("html", { overflow: "auto" });
+
 
 const serviceSection = document.querySelector("#Service");
 let svtl = gsap.timeline({
@@ -245,7 +250,7 @@ svtl.fromTo(
 );
 svtl.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, y: -200 });
 svtl.to("body", {overflow:"hidden"});
-svtl.to(".ball2_green", { scale: 400, duration: 4 });
+svtl.to(".ball2_green", { scale: 400, duration: 7 });
 svtl.to("#Service", {backgroundColor:"#50b048"});
 svtl.to(".ball2_green", {display:"none"});
 
@@ -260,12 +265,13 @@ let rocket = gsap.timeline({
     start: "top top",
     end: "bottom -1100%",
     pin: true,
-    markers: true,
     onLeave: () => {
-      rocket.to("#Service",{opacity: 0}) 
+      rocket.to(roc ,{opacity: 0})
+      rocket.to(".cloud" ,{opacity: 0})
     },
     onLeaveBack: () => {
-      rocket.to("#Service",{opacity: 1}) 
+      rocket.to(roc,{opacity: 1}) 
+      rocket.to(".cloud" ,{opacity: 1})
     },    
   },
 });
