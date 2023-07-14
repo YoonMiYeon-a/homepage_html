@@ -70,21 +70,6 @@ li {
   clip-path: inset(50%) !important;
   white-space: nowrap !important;
 }
-
-.text_article {
-  position: absolute;
-  right: -14%;
-  top: 90%;
-  transform: translate(-50%, -50%);
-  font-size: 300px;
-  font-weight: 700;
-  -webkit-text-stroke: 2px white;
-  color: transparent;
-  box-sizing: border-box;
-  z-index: 1;
-  opacity: 0.5;
-  pointer-events: none;
-}
 html {
   overflow-y: scroll;
   height: 400%;
@@ -342,28 +327,6 @@ header.fixed {
 #About{
   position: relative;
 }
-#About .panel {
-  text-align: left;
-}
-#About .text_box2 {
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  width: 1490px;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#About .text_box2 .arrow_icon {
-  position: absolute;
-  left: 90px;
-  top: 60px;
-  width: 441px;
-  height: 155px;
-  display: none;
-}
-
 #About .text_box2 .dot_icon {
   position: absolute;
   left: -6px;
@@ -655,6 +618,16 @@ header.fixed {
   padding: 0 0 0 16px;
   font-size: 16px;
 }
+#Recruit .panel:nth-child(1) .re_cruit_text_box .sub_title a::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 15px;
+  background: url(../images/common/btn_recruit_arrow.png) no-repeat;
+}
 #Recruit .tab_menu .tabnav > li a > span {
   display: block;
   font-size: 35px;
@@ -721,15 +694,7 @@ header.fixed {
   grid-auto-rows: minmax(48px, auto);
   padding-left: 60px;
 }
-.submit_btn {
-  width: 500px;
-  height: 64px;
-  border: 1px solid #666;
-  box-sizing: border-box;
-  border-radius: 8px;
-  font-size: 20px;
-  font-family: "SCoreDream";
-}
+
 .input_box {
   display: flex;
 }

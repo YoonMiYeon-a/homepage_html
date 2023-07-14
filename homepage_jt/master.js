@@ -108,19 +108,19 @@ observer.observe(document.querySelector(".link_nav"), {
 
 let aboutSection = document.querySelector(".About");
 let tl = gsap.timeline();
-tl.set("html",{overflow:"hidden"});
+tl.set("html",{overflow:"hidden"})
 tl.set(".text_box", { x: 545 });
 tl.set(".hand", { x: -750, y: 110, delay: 0, opacity: 1 });
 tl.to(".hand", { x: 50, y: -15, delay: 0 });
 tl.to(".line2", { duration: 3, width: 700 });
 tl.to(".hand", { x: 770, y: 10, duration: 3 }, "<");
-tl.set(".ball", { x: -200, y: 36 });
+tl.set(".ball", { x: -230, y: 30, scale : 2});
 tl.to(".ball", { opacity: 1, duration: 1 });
-tl.set(".ball2", { x: -210, y: 36 });
+tl.set(".ball2", { x: -236, y: 36 });
 tl.to(".hand", { x: 1350, y: -45, ease: "Power1.easeInOut"  });
 tl.to(".text_box", { x: -545 },">-1");
 tl.to(".hand", { x: 1250, y: -35, delay: 0 });
-tl.to(".hand", { x: 1170, y: -70, delay: 0 });
+tl.to(".hand", { x: 1130, y: -70, delay: 0 });
 tl.to(".hand", { x: 1500, y: 30, delay: 0 });
 tl.to(".hand", { x: 2100, y: 30, delay: 0 });
 tl.to(".hand", { display: "none" });
@@ -144,7 +144,7 @@ tl.fromTo(".text_box2 .title p", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.to(".text_box2 .dot_icon", { display: "block" });
 tl.to(".text_box2 .arrow_icon", { display: "block" });
-tl.set("html", { overflow: "auto" });
+tl.set("html",{overflow:"auto"})
 
 
 const serviceSection = document.querySelector("#Service");
@@ -248,9 +248,9 @@ svtl.fromTo(
   { x: 100, opacity: 0 },
   { x: 0, opacity: 1 }
 );
-svtl.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, y: -200 });
+svtl.fromTo(".ball2_green", { opacity: 0, y: 0 }, { opacity: 1, x: 600, y: -190 });
 svtl.to("body", {overflow:"hidden"});
-svtl.to(".ball2_green", { scale: 400, duration: 7 });
+svtl.to(".ball2_green", { scale: 450, duration: 7 });
 svtl.to("#Service", {backgroundColor:"#50b048"});
 svtl.to(".ball2_green", {display:"none"});
 

@@ -64,7 +64,7 @@ li {
   -webkit-text-stroke: 2px white;
   color: transparent;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 1;
   opacity: 0.5;
   pointer-events: none;
 }
@@ -738,8 +738,8 @@ height: 0;
 }
 #About .text_box2 .arrow_icon{
   position: absolute;
-  left: 130px;
-  top: 60px;
+  left: 100px;
+  top: 70px;
   width: 441px;
   height: 155px;
   display: none;
@@ -1003,40 +1003,30 @@ height: 0;
 }
 #Experience .experience_container {
   padding: 8% 0 0 11%;
-  display: grid;
-  grid-template-rows: repeat(3, 100%);
-  grid-template-columns: repeat(3, 30%);
+  display: flex;
+  flex-wrap: wrap;
 }
 #Experience .card {
-  position: relative;
   padding: 30px;
+  height: 400px;
+  width: 27%;
 }
 #Experience .card a img {
-  position: absolute;
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  z-index: 9;
-  left: 0;
-  top: 0;
-  scale: 0;
   transition: all 0.5s ease-in-out;
 }
 #Experience .card a:hover img {
-  position: absolute;
   scale: 1.3;
-  border-radius: 50%;
-  z-index: 9;
-  left: 0;
-  top: 0;
 }
 #Experience .card a {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
+  width: 350px;
+  height: 275px;
   color: #fff;
-  justify-content: center;
+  position: relative;
+  display: block;
+  margin: 0 auto;
 }
 #Experience .card p {
   padding-left: 80px;
@@ -1051,11 +1041,14 @@ height: 0;
   font-size: 32px;
   z-index: 10;
 }
-#Experience .card a:hover .sub_text {
+#Experience .card a:hover .txt_wrap {
   color: #000;
 }
-#Experience .card a:hover .title_text {
-  color: #000;
+#Experience .card .txt_wrap {
+  position: absolute;
+  bottom: -17px;
+  right: -36px;
+  z-index: 2;
 }
 /* Recruit */
 #Recruit {
@@ -1183,6 +1176,7 @@ height: 0;
 #Recruit .tab_menu .tabnav {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 #Recruit .tab_menu .tabnav > li {
   position: relative;
@@ -1410,6 +1404,14 @@ height: 0;
   right: 0;
   bottom: -36px;
   background-position: right bottom;
+}
+.contact_inquiry .input_checkbox input {
+  width: 20px;
+  height:20px;
+  vertical-align: middle;
+  border: 1px solid #80808070;
+  margin-top: 2px;
+  margin-right: 10px;
 }
 .contact_inquiry .contact_title {
   font-size: 50px;
