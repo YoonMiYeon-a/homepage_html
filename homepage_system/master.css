@@ -1354,6 +1354,13 @@ nav input[id=trigger]:checked ~ .sidebar {
 #Recruit .panel:nth-child(1) .recruit_contact li p:first-child {
   font-weight: 500;
 }
+#canvas{
+  position: absolute;
+  bottom: 20px;
+  left: 250px;
+  z-index: -1;
+
+}
 /* Text Content */
 .accordion .item .text {
   background-color: #d9d9d9;

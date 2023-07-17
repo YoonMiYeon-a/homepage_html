@@ -183,7 +183,8 @@ function introScene() {
     { y: 50, opacity: 0 },
     { y: 0, opacity: 1 }
   );
-  introScene.to(".arrow_svg1", { display: "block", duration: 6 })
+  introScene
+    .to(".arrow_svg1", { display: "block", duration: 6 })
     .to(".crossboard_wrap", { opacity: 0 })
     .to(".crossboard_wrap", { display: "none" })
     .to(".logo p", { color: "#000" })
@@ -617,13 +618,280 @@ function toggleAccordion(el) {
   }
 }
 
-/*recruit tab menu*/ 
-$(function(){
-	$('.tabcontent > div').hide();
-	$('.tabnav a').click(function () {
-		$('.tabcontent > div').hide().filter(this.hash).fadeIn();
-		$('.tabnav a').removeClass('is_on');
-		$(this).addClass('is_on');
-		return false;
-	}).filter(':eq(0)').click();
+/*recruit tab menu*/
+$(function () {
+  $(".tabcontent > div").hide();
+  $(".tabnav a")
+    .click(function () {
+      $(".tabcontent > div").hide().filter(this.hash).fadeIn();
+      $(".tabnav a").removeClass("is_on");
+      $(this).addClass("is_on");
+      return false;
+    })
+    .filter(":eq(0)")
+    .click();
+});
+
+/*canvas ball fool*/
+
+// 캔버스 요소와 그리기 컨텍스트 가져오기
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// 공 배열
+const balls = [];
+// 바닥 높이
+const floorHeight = 0;
+
+function drawBall(ball) {
+  ctx.beginPath();
+  ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+
+  if (ball.type === 1) {
+    ctx.fillStyle = "#1766fe";
+    ctx.strokeStyle = "transparent";
+    ctx.lineWidth = 0;
+    ctx.fill();
+    ctx.fillStyle = "#fff"; // 텍스트 컬러 지정
+    ctx.font = "bold 20px Arial"; // 폰트 크기 지정
+  } else if (ball.type === 2) {
+    ctx.fillStyle = "#edeff5";
+    ctx.strokeStyle = "transparent";
+    ctx.lineWidth = 0;
+    ctx.fill();
+    ctx.fillStyle = "#222"; // 텍스트 컬러 지정
+    ctx.font = "bold 16px Arial"; // 폰트 크기 지정
+  } else if (ball.type === 3) {
+    ctx.fillStyle = "rgba(0, 0, 0, 0)";
+    ctx.strokeStyle = "#edeff5";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  ctx.closePath();
+
+  if (ball.type !== 3) {
+    // 공 안에 텍스트 그리기
+    ctx.fillStyle = ball.textColor;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    // 줄바꿈 처리
+    const lines = ball.text; // 줄바꿈이 적용된 텍스트 배열
+    const lineHeight = 20; // 각 줄의 높이 (수정 가능)
+
+    for (let i = 0; i < lines.length; i++) {
+      const lineY = ball.y + (i - (lines.length - 1) / 2) * lineHeight;
+      ctx.fillText(lines[i], ball.x, lineY);
+    }
+  }
+}
+
+function updateBalls() {
+  balls.forEach((ball) => {
+    ball.dy += ball.gravity; // 중력 적용
+    ball.x += ball.dx;
+    ball.y += ball.dy;
+
+    if (ball.y + ball.radius > canvas.height - floorHeight) {
+      ball.y = canvas.height - floorHeight - ball.radius; // 바닥에 닿으면 위치 조정
+      ball.dy *= -0.8; // 바닥 충돌 시 방향 전환 및 감속
+      ball.onFloor = true; // 바닥에 닿았음을 표시
+    }
+    if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
+      ball.dx *= -0.8; // 벽면 충돌 시 방향 전환 및 감속
+    }
+
+    // 공이 캔버스 경계에 도달하면 위치 조정
+    if (ball.x + ball.radius > canvas.width) {
+      ball.x = canvas.width - ball.radius;
+    } else if (ball.x - ball.radius < 0) {
+      ball.x = ball.radius;
+    }
+    if (ball.y + ball.radius > canvas.height) {
+      ball.y = canvas.height - ball.radius;
+    } else if (ball.y - ball.radius < 0) {
+      ball.y = ball.radius;
+    }
+
+    balls.forEach((otherBall) => {
+      if (otherBall !== ball) {
+        checkCollision(ball, otherBall);
+      }
+    });
+
+    drawBall(ball);
   });
+}
+
+function checkCollision(ballA, ballB) {
+  const dx = ballB.x - ballA.x;
+  const dy = ballB.y - ballA.y;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance < ballA.radius + ballB.radius) {
+    const angle = Math.atan2(dy, dx);
+    const sin = Math.sin(angle);
+    const cos = Math.cos(angle);
+
+    // 충돌 후 속도 계산
+    const velA = {
+      dx: ballA.dx * cos + ballA.dy * sin,
+      dy: ballA.dy * cos - ballA.dx * sin,
+    };
+    const velB = {
+      dx: ballB.dx * cos + ballB.dy * sin,
+      dy: ballB.dy * cos - ballB.dx * sin,
+    };
+
+    // x 축 방향으로 속도 교환
+    [velA.dx, velB.dx] = [velB.dx, velA.dx];
+
+    // 충돌 시 위치 조정
+    const overlap = ballA.radius + ballB.radius - distance;
+    ballA.x -= overlap * Math.cos(angle);
+    ballA.y -= overlap * Math.sin(angle);
+    ballB.x += overlap * Math.cos(angle);
+    ballB.y += overlap * Math.sin(angle);
+
+    // 역변환
+    const finalVelA = {
+      dx: velA.dx * cos - velA.dy * sin,
+      dy: velA.dy * cos + velA.dx * sin,
+    };
+    const finalVelB = {
+      dx: velB.dx * cos - velB.dy * sin,
+      dy: velB.dy * cos + velB.dx * sin,
+    };
+
+    // 속도 업데이트
+    ballA.dx = finalVelA.dx * 0.8; // 속도 감소
+    ballA.dy = finalVelA.dy * 0.8; // 속도 감소
+    ballB.dx = finalVelB.dx * 0.8; // 속도 감소
+    ballB.dy = finalVelB.dy * 0.8; // 속도 감소
+  }
+}
+
+function createInitialBalls() {
+  const numberOfType1 = 4; // 타입 1 공 개수
+  const numberOfType2 = 9; // 타입 2 공 개수
+  const numberOfType3 = 6; // 타입 3 공 개수
+
+  const type1Texts = [
+    "우수사원/<br>장기근속근무자 포상",
+    "프로젝트 리프레쉬<br>휴가 제공",
+    "프로젝트<br>인센티브 지급",
+    "9시-5시 퇴근",
+  ];
+
+  const type2Texts = [
+    "주 5일 근무,<br>법정 근로/대체 휴가",
+    "각종<br>경조사 지원",
+    "연차/반차<br>자유 사용 가능",
+    "설/명절 선물지급",
+    "프로젝트 근무지<br>간식 제공",
+    "생일자<br>케이크 증정",
+    "출산/육아휴직,<br>배우자 출산 휴가",
+    "도서 구매 지원,<br>자격증 취득 지원",
+    "직무역량 관련<br>외부 교육비 지원",
+  ];
+
+  const splitType1Texts = type1Texts.map((text) => text.split("<br>")); // 줄바꿈 문자(\n)을 기준으로 분할된 텍스트 배열 생성
+
+  for (let i = 0; i < numberOfType1; i++) {
+    const radius = Math.random() * 30 + 100;
+    const x = Math.random() * (canvas.width - radius * 2) + radius;
+    const y = -radius;
+    const textColor = "#fff";
+    const dx = Math.random() * 2 - 1;
+    const dy = Math.random() * 2 + 1;
+    const gravity = 0.2;
+
+    const ball = {
+      x,
+      y,
+      radius,
+      type: 1,
+      textColor,
+      dx,
+      dy,
+      gravity,
+      onFloor: false,
+      text: splitType1Texts[i], // 줄바꿈이 적용된 텍스트 배열 할당
+    };
+    balls.push(ball);
+  }
+
+  const splitType2Texts = type2Texts.map((text) => text.split("<br>")); // 줄바꿈 태그로 분할된 텍스트 배열 생성
+
+  for (let i = 0; i < numberOfType2; i++) {
+    const radius = Math.random() * 40 + 80; // 반지름이 80px ~ 120px 사이의 랜덤 값
+    const x = Math.random() * (canvas.width - radius * 2) + radius;
+    const y = -radius;
+    const textColor = "#222";
+    const dx = Math.random() * 2 - 1;
+    const dy = Math.random() * 2 + 1;
+    const gravity = 0.2;
+
+    const ball = {
+      x,
+      y,
+      radius,
+      type: 2,
+      textColor,
+      dx,
+      dy,
+      gravity,
+      onFloor: false,
+      text: splitType2Texts[i], // 줄바꿈이 적용된 텍스트 배열 할당
+    };
+    balls.push(ball);
+  }
+
+  for (let i = 0; i < numberOfType3; i++) {
+    const radius = 60; // 반지름이 60px 고정
+    const x = Math.random() * (canvas.width - radius * 2) + radius;
+    const y = -radius;
+    const textColor = ""; // 텍스트 컬러 지정
+    const dx = Math.random() * 2 - 1;
+    const dy = Math.random() * 2 + 1;
+    const gravity = 0.2;
+
+    const ball = {
+      x,
+      y,
+      radius,
+      type: 3,
+      textColor,
+      dx,
+      dy,
+      gravity,
+      onFloor: false,
+    };
+    balls.push(ball);
+  }
+}
+
+function drawFloor() {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, canvas.height - floorHeight, canvas.width, floorHeight);
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawFloor();
+  updateBalls();
+
+  requestAnimationFrame(draw);
+}
+
+
+
+draw();
+
+function startAnimation() {
+  createInitialBalls(); // 초기 공 생성
+}
+
+canvas.addEventListener("click", startAnimation);
