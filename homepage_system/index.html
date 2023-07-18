@@ -15,11 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.min.js"
-      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollToPlugin.min.js"></script>
@@ -1213,7 +1209,7 @@
         <section id="Experience" class="Experience" data-target="Experience">
           <div class="experience_container">
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2022 우리종합금융</p>
@@ -1223,7 +1219,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/img_port02.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">NH콕마이데이터2.0</p>
@@ -1233,7 +1229,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/img_port03.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2022 NH농협 올원뱅크</p>
@@ -1243,7 +1239,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/img_port04.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2021 NH농협 기업</p>
@@ -1253,7 +1249,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/img_port05.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2021 KB국민카드</p>
@@ -1263,7 +1259,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2022 NH농협 올원뱅크</p>
@@ -1273,7 +1269,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2022 우리종합금융</p>
@@ -1283,7 +1279,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2022 NH농협 올원뱅크</p>
@@ -1293,7 +1289,7 @@
               </a>
             </article>
             <article class="card">
-              <a href="#">
+              <a href="#" class="modal-show">
                 <img src="./assets/images/visual/durmmy.png" alt="더미" />
                 <div class="txt_wrap">
                   <p class="sub_text">2022 NH농협 올원뱅크</p>
@@ -1693,6 +1689,45 @@
         </svg>
       </div>
     </main>
+    
+    <!-- 레이어 열기 버튼 -->
+    <div>
+      <button type="button" class="modal-show">Modal Open</button>
+    </div>
+    <!-- 레이어 팝업 -->
+    <div class="modal-layer">
+      <div class="modal-dimm">
+        <div class="modal">
+					<button type="button" class="modal-hide">Close Modal</button>
+					<div class="topCont" id="topcon">
+						<div class="txtCont">
+							<h3 id="detail_title1">광주은행 마이데이터  사업자 시스템 구축</h3>
+							<dl>
+								<dt>고객사</dt>
+								<dd id="detail_client" >광주은행</dd>
+								<dt>사 업 명</dt>
+								<dd id="detail_title">광주은행 마이데이터  사업자 시스템 구축</dd>
+								<dt>사업기간</dt>
+								<dd id="detail_stDay">2021-05-01~2021-09-01</dd>
+							</dl>
+							<div class="overview">
+								<h4>OVERVIEW</h4>
+								<p id="detail_content">광주은행 마이데이터 UI/UX  구축<br>기본서비스(회원가입, 내자산 조회/관리 등) <br>부가서비스 (수입지출, 부동산, 은퇴계산기 등)<br>모바일 접근성 준수<br>마이데이터 금융위원회 표준지침 준수</p>
+							</div>
+						</div>
+						<div class="imgCont" id="imgGetAttach1">
+							<a>
+								<img style="max-width: 100%; height: auto;" src="/assets/images/common/displayFile.png" alt="Attachment">
+							</a>
+						</div>
+					</div>
+					<div class="bottomCont" id="imgGetAttach">
+						<img src="/assets/images/common/displayFile1.jpg" alt="Attachment">
+					</div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="footer_wrap">
         <h3 class="footer_logo"></h3>
@@ -1729,7 +1764,7 @@
 
     <script>
        // header
-       var header = $("#header").offset().top;
+      var header = $("#header").offset().top;
       $(window).scroll(function() {
           var window = $(this).scrollTop();
 

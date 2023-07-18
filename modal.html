@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./homepage_system/master.css" />
+    <link rel="stylesheet" href="./assets/css/master_common.css" />
+  </head>
+  <body>
+    <!-- 레이어 열기 버튼 -->
+    <div>
+      <button type="button" class="modal-show">Modal Open</button>
+    </div>
+    <!-- 레이어 팝업 -->
+    <div class="modal-layer">
+      <div class="modal-dimm">
+        <div class="modal">
+					<button type="button" class="modal-hide">Close Modal</button>
+					<div class="topCont" id="topcon">
+						<div class="txtCont">
+							<h3 id="detail_title1">광주은행 마이데이터  사업자 시스템 구축</h3>
+							<dl>
+								<dt>고객사</dt>
+								<dd id="detail_client" >광주은행</dd>
+								<dt>사 업 명</dt>
+								<dd id="detail_title">광주은행 마이데이터  사업자 시스템 구축</dd>
+								<dt>사업기간</dt>
+								<dd id="detail_stDay">2021-05-01~2021-09-01</dd>
+							</dl>
+							<div class="overview">
+								<h4>OVERVIEW</h4>
+								<p id="detail_content">광주은행 마이데이터 UI/UX  구축<br>기본서비스(회원가입, 내자산 조회/관리 등) <br>부가서비스 (수입지출, 부동산, 은퇴계산기 등)<br>모바일 접근성 준수<br>마이데이터 금융위원회 표준지침 준수</p>
+							</div>
+						</div>
+						<div class="imgCont" id="imgGetAttach1">
+							<a>
+								<img style="max-width: 100%; height: auto;" src="/assets/images/common/displayFile.png" alt="Attachment">
+							</a>
+						</div>
+					</div>
+					<div class="bottomCont" id="imgGetAttach">
+						<img src="/assets/images/common/displayFile1.jpg" alt="Attachment">
+					</div>
+        </div>
+      </div>
+    </div>
+		<script>
+			/* modal */
+const modal = document.querySelector(".modal-layer");
+
+// Modal Open Button
+const showBtns = document.querySelectorAll(".modal-show");
+
+  showBtns.forEach((showBtn) => {
+    showBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // const modalId = showBtn.getAttribute("data-id");
+      // const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+
+      // if (modal) {
+        modal.style.display = "block";
+      // }
+    });
+  });
+// Modal Close Button
+const hideBtns = document.querySelectorAll(".modal-hide");
+
+  hideBtns.forEach((hideBtn) => {
+    hideBtn.addEventListener("click", (e) => {
+      // const modal = hideBtn.closest(".modal");
+      
+      // if (modal) {
+        modal.style.display = "none";
+    //   }
+    });
+  });
+
+// Modal Focus Trap
+const focusableEls = modal.querySelectorAll(
+  "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
+);
+const firstFocusableEl = focusableEls[0];
+const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+const modalTrapFocus = (event) => {
+  if (event.key === "Escape") {
+    modal.style.display = "none";
+  }
+  if (event.key === "Tab") {
+    if (document.activeElement === lastFocusableEl && !event.shiftKey) {
+      firstFocusableEl.focus();
+      event.preventDefault();
+    } else if (document.activeElement === firstFocusableEl && event.shiftKey) {
+      lastFocusableEl.focus();
+      event.preventDefault();
+    }
+  }
+};
+
+document.addEventListener("keydown", modalTrapFocus);
+
+		</script>
+  </body>
+</html>

@@ -895,3 +895,59 @@ function startAnimation() {
 }
 
 canvas.addEventListener("click", startAnimation);
+
+/* modal */
+const modal = document.querySelector(".modal-layer");
+const html = document.querySelector("html");
+
+// Modal Open Button
+const showBtns = document.querySelectorAll(".modal-show");
+  showBtns.forEach((showBtn) => {
+    showBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // const modalId = showBtn.getAttribute("data-id");
+      // const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+
+      // if (modal) {
+        modal.style.display = "block";
+        html.style.overflow = 'hidden';
+      // }
+    });
+  });
+// Modal Close Button
+const hideBtns = document.querySelectorAll(".modal-hide");
+
+  hideBtns.forEach((hideBtn) => {
+    hideBtn.addEventListener("click", (e) => {
+      // const modal = hideBtn.closest(".modal");
+      // if (modal) {
+        modal.style.display = "none";
+        html.style.overflow = 'auto';
+    //   }
+    });
+  });
+
+// Modal Focus Trap
+const focusableEls = modal.querySelectorAll(
+  "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
+);
+const firstFocusableEl = focusableEls[0];
+const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+const modalTrapFocus = (event) => {
+  if (event.key === "Escape") {
+    modal.style.display = "none";
+  }
+  if (event.key === "Tab") {
+    if (document.activeElement === lastFocusableEl && !event.shiftKey) {
+      firstFocusableEl.focus();
+      event.preventDefault();
+    } else if (document.activeElement === firstFocusableEl && event.shiftKey) {
+      lastFocusableEl.focus();
+      event.preventDefault();
+    }
+  }
+};
+
+document.addEventListener("keydown", modalTrapFocus);
