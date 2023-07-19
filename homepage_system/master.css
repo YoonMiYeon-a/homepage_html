@@ -1356,7 +1356,7 @@ nav input[id=trigger]:checked ~ .sidebar {
 }
 #canvas{
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 250px;
   z-index: -1;
 

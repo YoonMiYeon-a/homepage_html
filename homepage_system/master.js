@@ -639,7 +639,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 // 공 배열
-const balls = [];
+let balls = [];
 // 바닥 높이
 const floorHeight = 0;
 
@@ -871,6 +871,22 @@ function createInitialBalls() {
     balls.push(ball);
   }
 }
+function deleteBall() {
+  let count = 0;
+
+  if (balls.length === 0) {
+    createInitialBalls();
+  } else {
+    const interval = setInterval(() => {
+      if (count < 19) {
+        balls.shift();
+        count++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100);
+  }
+}
 
 function drawFloor() {
   ctx.fillStyle = "black";
@@ -886,12 +902,19 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-
-
 draw();
 
+gsap.to("#canvas", {
+  scrollTrigger: {
+    trigger: "#canvas",
+    containerAnimation: recruitSection,
+    start: "left right",
+    onEnter: () => createInitialBalls(),
+  },
+});
 function startAnimation() {
-  createInitialBalls(); // 초기 공 생성
+  console.log("hi imdelete");
+  deleteBall();
 }
 
 canvas.addEventListener("click", startAnimation);
@@ -902,31 +925,31 @@ const html = document.querySelector("html");
 
 // Modal Open Button
 const showBtns = document.querySelectorAll(".modal-show");
-  showBtns.forEach((showBtn) => {
-    showBtn.addEventListener("click", (e) => {
-      e.preventDefault();
+showBtns.forEach((showBtn) => {
+  showBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-      // const modalId = showBtn.getAttribute("data-id");
-      // const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+    // const modalId = showBtn.getAttribute("data-id");
+    // const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
 
-      // if (modal) {
-        modal.style.display = "block";
-        html.style.overflow = 'hidden';
-      // }
-    });
+    // if (modal) {
+    modal.style.display = "block";
+    html.style.overflow = "hidden";
+    // }
   });
+});
 // Modal Close Button
 const hideBtns = document.querySelectorAll(".modal-hide");
 
-  hideBtns.forEach((hideBtn) => {
-    hideBtn.addEventListener("click", (e) => {
-      // const modal = hideBtn.closest(".modal");
-      // if (modal) {
-        modal.style.display = "none";
-        html.style.overflow = 'auto';
+hideBtns.forEach((hideBtn) => {
+  hideBtn.addEventListener("click", (e) => {
+    // const modal = hideBtn.closest(".modal");
+    // if (modal) {
+    modal.style.display = "none";
+    html.style.overflow = "auto";
     //   }
-    });
   });
+});
 
 // Modal Focus Trap
 const focusableEls = modal.querySelectorAll(
