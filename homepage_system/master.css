@@ -1354,6 +1354,9 @@ nav input[id=trigger]:checked ~ .sidebar {
 #Recruit .panel:nth-child(1) .recruit_contact li p:first-child {
   font-weight: 500;
 }
+#Recruit .text_article {
+  z-index: -1;
+}
 #canvas{
   position: absolute;
   bottom: 0;

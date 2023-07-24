@@ -816,7 +816,7 @@ footer {
   display: block;
   width: 60px;
   height: 60px;
-  background: url(/assets/images/common/topbtn.png) no-repeat;
+  background: url(../assets/images/common/topbtn.png) no-repeat;
   background-size: 105%;
   background-position: 0 0;
 }
@@ -826,4 +826,7 @@ a#topBtn {
   bottom: 3%;
   display: none;
   z-index: 9999;
+}
+nav input[id=trigger]:checked ~ .sidebar {
+  top: 121px;
 }
