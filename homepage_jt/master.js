@@ -1,5 +1,31 @@
 gsap.registerPlugin(ScrollTrigger );
 
+const triggerCheckbox = document.getElementById('trigger');
+const pColors = [];
+
+// nav 안에 있는 모든 p 태그들의 color 값을 배열에 저장하는 함수를 정의합니다.
+function storePColors() {
+  const pTags = document.querySelectorAll('header.fixed a');
+  pTags.forEach(pTag => {
+    pColors.push(window.getComputedStyle(pTag).color);
+  });
+}
+
+// 체크박스 상태 변경 시 이벤트 핸들러를 등록합니다.
+triggerCheckbox.addEventListener('change', function () {
+  if (triggerCheckbox.checked) {
+    // 체크박스가 체크되었을 때, header의 color 속성을 "#fff"로 변경합니다.
+    gsap.to('header.fixed a', { color: '#fff' });
+    gsap.to('header.fixed .logo a', { color: '#fff' });
+  } else {
+    // 체크박스가 체크 해제되었을 때, 저장된 color 값을 가져와서 header의 color 속성을 복원합니다.
+    const headerNavPTags = document.querySelectorAll('header.fixed a');
+    headerNavPTags.forEach((pTag, index) => {
+      gsap.to(pTag, { color: pColors[index] });
+    });
+  }
+});
+
 function handleClick(event) {
   event.preventDefault(); // 기본 동작 방지
   const target = event.currentTarget.getAttribute("href");
@@ -145,6 +171,9 @@ tl.fromTo(".sub_tit", { x: 40, opacity: 0 }, { x: 0, opacity: 1 });
 tl.to(".text_box2 .dot_icon", { display: "block" });
 tl.to(".text_box2 .arrow_icon", { display: "block" });
 tl.set("html",{overflow:"auto"})
+tl.set("html",{overflowX:"hidden"})
+
+tl.duration(10);
 
 
 const serviceSection = document.querySelector("#Service");
@@ -486,3 +515,60 @@ window.addEventListener("scroll", function () {
   currentScroll = window.pageYOffset;
 });
 /*07-12 추가*/
+/*07-25 modal 추가*/ 
+const modal = document.querySelector(".modal-layer");
+const html = document.querySelector("html");
+
+// Modal Open Button
+const showBtns = document.querySelectorAll(".modal-show");
+showBtns.forEach((showBtn) => {
+  showBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // const modalId = showBtn.getAttribute("data-id");
+    // const modal = document.querySelector(`[data-modal-id="${modalId}"]`);
+
+    // if (modal) {
+    modal.style.display = "block";
+    html.style.overflow = "hidden";
+    // }
+  });
+});
+// Modal Close Button
+const hideBtns = document.querySelectorAll(".modal-hide");
+
+hideBtns.forEach((hideBtn) => {
+  hideBtn.addEventListener("click", (e) => {
+    // const modal = hideBtn.closest(".modal");
+    // if (modal) {
+    modal.style.display = "none";
+    html.style.overflow = "auto";
+    //   }
+  });
+});
+
+// Modal Focus Trap
+const focusableEls = modal.querySelectorAll(
+  "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
+);
+const firstFocusableEl = focusableEls[0];
+const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+const modalTrapFocus = (event) => {
+  if (event.key === "Escape") {
+    modal.style.display = "none";
+  }
+  if (event.key === "Tab") {
+    if (document.activeElement === lastFocusableEl && !event.shiftKey) {
+      firstFocusableEl.focus();
+      event.preventDefault();
+    } else if (document.activeElement === firstFocusableEl && event.shiftKey) {
+      lastFocusableEl.focus();
+      event.preventDefault();
+    }
+  }
+};
+
+document.addEventListener("keydown", modalTrapFocus);
+
+/*07-25 modal 추가*/ 

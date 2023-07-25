@@ -1,5 +1,38 @@
 gsap.registerPlugin(ScrollTrigger);
 
+
+const triggerCheckbox = document.getElementById('trigger');
+
+// header 내부의 nav 안에 있는 모든 p 태그들의 color 값을 저장할 배열을 생성합니다.
+const pColors = [];
+
+// nav 안에 있는 모든 p 태그들의 color 값을 배열에 저장하는 함수를 정의합니다.
+function storePColors() {
+  const pTags = document.querySelectorAll('header.fixed a');
+  pTags.forEach(pTag => {
+    pColors.push(window.getComputedStyle(pTag).color);
+  });
+}
+
+// 체크박스 상태 변경 시 이벤트 핸들러를 등록합니다.
+triggerCheckbox.addEventListener('change', function () {
+  if (triggerCheckbox.checked) {
+    // 체크박스가 체크되었을 때, header의 color 속성을 "#fff"로 변경합니다.
+    storePColors();
+    gsap.to('header.fixed a', { color: '#fff' });
+    gsap.to('header.fixed .logo a', { color: '#fff' });
+  } else {
+    // 체크박스가 체크 해제되었을 때, 저장된 color 값을 가져와서 header의 color 속성을 복원합니다.
+    const headerNavPTags = document.querySelectorAll('header.fixed a');
+    headerNavPTags.forEach((pTag, index) => {
+      gsap.to(pTag, { color: pColors[index] });
+    });
+  }
+});
+
+
+
+
 gsap.set(".wrapper", { xPercent: -40, yPercent: -30 });
 // gsap.set("#no01", { y: 244 });
 // gsap.set("#no02", { y: 728 });

@@ -73,24 +73,17 @@ header {
   background:transparent;
   z-index: 100;
 }
-header.active {
-  background:#000;
-}
-header.active a {
-  color:#fff;
-}
-header.active nav label[for=trigger] span {
-  background: transparent;
-  transition: none;
-}
 header.fixed {
-  background:transparent;
 }
 header.fixed a {
   color:#000;
+  z-index: 1001;
 }
-header.fixed.active nav label[for=trigger] span {
-  background: #fff;
+header.fixed .logo {
+  z-index: 1001;
+}
+header > * {
+  margin: 20px 40px;
 }
 header a {
   display: inline-block;
@@ -120,7 +113,7 @@ header.fixed nav label[for=trigger] span {
 .sidebar {
   background-color: #000;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
   position: fixed;
   top: -100%;
   left:0;
@@ -134,54 +127,24 @@ header.fixed nav label[for=trigger] span {
   color:#fff;
 }
 .sidebar li {
-  position: relative;
-}
-.sidebar li:before {
-  content: '';
-  background: url(../images/common/img_arrow_nav.png) no-repeat;
-  width: 100%;
-  height: 80px;
-  opacity: 0;
-  position: absolute;
-  left: -200%;
-  top: 0;
-  z-index: -2;
-  background-position: center right;
-  transition: all 0.5s;
+  overflow: hidden;
 }
 .sidebar li > a {
   display: inline-block;
   margin: 15px;
   text-align: left;
-  color: #fff;
-  font-family: "Bebas Neue", sans-serif;
+  color:#fff;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 45px;
   font-weight: 500;
   text-transform: uppercase;
 }
+.sidebar:hover {}
 .sidebar .depth1 li > a {
   width: 172px;
-  position: relative;
 }
-.sidebar .depth1 li > a:before {
-  content: '';
-  width: 90px;
-  height: 90px;
-  background: #1766fe;
-  position: absolute;
-  border-radius: 50%;
-  left: -47px;
-  top: -14px;
-  transition: all 0.5s;
-  opacity: 0;
-  z-index: -1;
-}
-.sidebar .depth1 li > a:hover:before {
-  opacity: 1;
-}
-.sidebar li:hover:before {
-  opacity: 1;
-  left: -76%;
+.sidebar .depth1 li > a:hover {
+  color:gray;
 }
 .sidebar .depth2 {
   vertical-align: middle;
@@ -215,11 +178,11 @@ header.fixed nav label[for=trigger] span {
 }
 .sidefoot .logo span:before {
   content: '';
-  display: inline-block;
   width: 30px;
   height: 20px;
   margin-right: 7px;
-  background: url(../images/common/logo_black.png) no-repeat;
+  display: inline-block;  
+  background: url(./assets/images/visual/logo_black.png) no-repeat;
   background-size: cover;
 }
 .sidefoot .logo span:after {
@@ -234,9 +197,9 @@ header.fixed nav label[for=trigger] span {
   display: none;
 }
 .sidefoot address {
-  font-style: normal;
-  font-size: 16px;
-  margin-bottom: 35px;
+    font-style: normal;
+    font-size: 16px;
+    margin-bottom: 35px;
 }
 .sidefoot address span {margin-right: 33px;}
 .sidefoot address div {
@@ -259,25 +222,26 @@ header.fixed nav label[for=trigger] span {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url(../images/common/ico_download.png) no-repeat;  
+  background: url(./assets/images/visual/ico_download.png) no-repeat;
   vertical-align: middle;
   position: absolute;
   right: 20px;
   top: 23px;
 }
 .sidefoot .btn a:nth-child(2):after {
-  background: url(../images/common/ico_arrow_double.png) no-repeat;
+  background: url(./assets/images/visual/ico_arrow_double.png) no-repeat;
 }
 .sidefoot .btn a:last-child {
   margin-right: 0;
 }
-nav > a {
+header nav > a {
   position: relative;
   margin-left: 20px;
   font-size: 17px;
   font-weight: 100;
   transition: all 0.5s ease-in-out;
 }
+
 nav input[id=trigger] {
   display: none;
 }
@@ -288,6 +252,7 @@ nav label[for=trigger] {
   position: relative;
   cursor: pointer;
 }
+
 nav label[for=trigger] span {
   position: absolute;
   height: 2px;
@@ -303,17 +268,22 @@ nav label[for=trigger] span:nth-child(2) {
   top: 50%;
   width: 27px;
 }
+nav input[id=trigger]:checked + label[for=trigger]{
+  z-index: 1001;
+}
 nav input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
   top: 50%;
   transform: rotate(45deg);
+  background-color: #fff;
 }
 nav input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
   top: 50%;
   transform: rotate(-45deg);
   width: 40px;
+  background-color: #fff;
 }
 nav input[id=trigger]:checked ~ .sidebar {
-  top: 80px;
+  top: 0px;
 }
 /* marquee */
 .wrapper {
@@ -838,7 +808,7 @@ height: 0;
   /* line-height: 150px; */
   margin-bottom: 30px;
 }
-#Service .text_box1 .title:before{
+/* #Service .text_box1 .title:before{
   position: absolute;
   left: -53px;
   top: -10px;
@@ -874,7 +844,7 @@ height: 0;
   height: 18px;
   background: url(./assets/images/visual/service_title_number04.png);
   opacity: 0;
-}
+} */
 #Service .sub_title_box{
   width: 900px;
 }
@@ -1251,7 +1221,8 @@ height: 0;
 #Recruit .tab_menu .tab_menu_list > li {
   position: relative;
   font-size: 16px;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 300;
   padding-left: 20px;
 }
 #Recruit .tab_menu .tab_menu_list > li::before {

@@ -12,213 +12,7 @@
   box-sizing: border-box;
 }
 
-/* Header */
-header {
-  background:transparent;
-  z-index: 100;
-}
-header.fixed {}
-header.fixed a {
-  color:#000;
-}
-header > * {
-  margin: 20px 40px;
-}
-header a {
-  display: inline-block;
-  font-weight: normal;
-  font-size: 19px;
-  color:#fff;
-}
-header .logo_img {
-  width: 45px;
-  height: 30px;
-  display: inline-block;
-  overflow: hidden;
-  margin-top: -11px;
-  vertical-align: middle;
-}
-header .logo_img img {
-  height: 100%;
-  margin-right: -147px;
-  display: inline-block;
-}
-header nav {
-  margin: 30px 40px;
-}
-header.fixed nav label[for=trigger] span {
-  background-color: #000;
-}
-.sidebar {
-  background-color: #000;
-  width: 100%;
-  height: calc(100vh - 80px);
-  position: fixed;
-  top: -100%;
-  left:0;
-  transition: 0.3s;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1000;
-}
-.sidebar a {
-  color:#fff;
-}
-.sidebar li {
-  overflow: hidden;
-}
-.sidebar li > a {
-  display: inline-block;
-  margin: 15px;
-  text-align: left;
-  color:#fff;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 45px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.sidebar:hover {}
-.sidebar .depth1 li > a {
-  width: 172px;
-}
-.sidebar .depth1 li > a:hover {
-  color:gray;
-}
-.sidebar .depth2 {
-  vertical-align: middle;
-  display: inline-block;
-  margin-top: -28px;
-}
-.sidebar .depth2 a {
-  margin-right: 30px;
-  color: #b7b7b7;
-  font-size: 18px;
-}
-.sidebar .depth2 a:hover {
-  color:#fff;
-}
-.sidefoot {
-  display: flex;
-  align-self: self-end;
-  margin-bottom: 7%;
-  flex-direction: column;
-  color:#fff;
-}
-.sidefoot .logo {
-    margin-bottom: 15px;
-}
-.sidefoot .logo span {
-  font-size: 18px;
-  margin-right: 12px;
-}
-.sidefoot .logo span:last-child {
-  margin-right: 0;
-}
-.sidefoot .logo span:before {
-  content: '';
-  width: 30px;
-  height: 20px;
-  margin-right: 7px;
-  display: inline-block;  
-  background: url(./assets/images/visual/logo_black.png) no-repeat;
-  background-size: cover;
-}
-.sidefoot .logo span:after {
-  content: '';
-  display: inline-block;
-  width: 1px;
-  height: 14px;
-  background: #fff;
-  margin-left: 15px;
-}
-.sidefoot .logo span:last-child:after {
-  display: none;
-}
-.sidefoot address {
-    font-style: normal;
-    font-size: 16px;
-    margin-bottom: 35px;
-}
-.sidefoot address span {margin-right: 33px;}
-.sidefoot address div {
-  margin: 3px 0;
-}
-.sidefoot .btn {}
-.sidefoot .btn a {
-  display: inline-block;
-  border: 1px solid #fff;
-  font-size: 18px;
-  color: #fff;
-  padding: 20px;
-  width: 250px;
-  position: relative;
-  border-radius: 5px;
-  margin-right: 20px;
-}
-.sidefoot .btn a::after {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url(./assets/images/visual/ico_download.png) no-repeat;
-  vertical-align: middle;
-  position: absolute;
-  right: 20px;
-  top: 23px;
-}
-.sidefoot .btn a:nth-child(2):after {
-  background: url(./assets/images/visual/ico_arrow_double.png) no-repeat;
-}
-.sidefoot .btn a:last-child {
-  margin-right: 0;
-}
-header nav > a {
-  position: relative;
-  margin-left: 20px;
-  font-size: 17px;
-  font-weight: 100;
-  transition: all 0.5s ease-in-out;
-}
 
-nav input[id=trigger] {
-  display: none;
-}
-nav label[for=trigger] {
-  width: 40px;
-  height: 30px;
-  display: block;
-  position: relative;
-  cursor: pointer;
-}
-
-nav label[for=trigger] span {
-  position: absolute;
-  height: 2px;
-  background-color: #fff;
-  width: 100%;
-  left: 0;
-  transition: 0.3s;
-}
-nav label[for=trigger] span:nth-child(1) {
-  top: 0;
-}
-nav label[for=trigger] span:nth-child(2) {
-  top: 50%;
-  width: 27px;
-}
-nav input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
-  top: 50%;
-  transform: rotate(45deg);
-}
-nav input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
-  top: 50%;
-  transform: rotate(-45deg);
-  width: 40px;
-}
-nav input[id=trigger]:checked ~ .sidebar {
-  top: 80px;
-}
 
 /*link_nav start*/
 .link_nav {
@@ -402,10 +196,14 @@ nav input[id=trigger]:checked ~ .sidebar {
   display: flex;
   flex-direction: column;
 }
+
 #About .panel:nth-child(1) p {
   color: #000;
   text-align: left;
   font-weight: 200;
+}
+#About .panel:nth-child(1) .sub_text p {
+  font-weight: 400;
 }
 #About .panel:nth-child(1)::after {
   position: absolute;
@@ -542,7 +340,7 @@ nav input[id=trigger]:checked ~ .sidebar {
   font-size: 16px;
   font-weight: 300;
 }
-#About .panel:nth-child(3) .all_wrap .year_wrap .text_box li::before {
+#About .panel:nth-child(3) .all_wrap .year_wrap .text_box li:not(.text_box_title)::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -817,7 +615,8 @@ nav input[id=trigger]:checked ~ .sidebar {
 }
 #Service .panel .text_box .text {
   font-size: 16px;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 400;
 }
 #Service .card_wrap {
   width: 90%;
@@ -851,7 +650,8 @@ nav input[id=trigger]:checked ~ .sidebar {
 }
 #Service .card .card_text {
   font-size: 16px;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 400;
 }
 #Service .panel:nth-child(5) img {
   position: absolute;
@@ -999,7 +799,8 @@ nav input[id=trigger]:checked ~ .sidebar {
   left: 270px;
   top: 376px;
   font-size: 22px;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 300;
 }
 #Solution .panel .title_text strong {
   font-weight: 5 00;
@@ -1044,7 +845,8 @@ nav input[id=trigger]:checked ~ .sidebar {
 }
 #Solution .text_box p {
   font-family: "SCoreDream", sans-serif;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 400;
 }
 #Solution .panel:nth-child(2) .solution_card:nth-child(2) .text_box {
   text-align: right;
@@ -1122,7 +924,8 @@ nav input[id=trigger]:checked ~ .sidebar {
 }
 #Solution .panel:nth-child(3) .content_text p:nth-child(2) {
   font-size: 24px;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 300;
 }
 #Solution .panel:nth-child(3) .content_item_wrap {
   position: absolute;
@@ -1155,7 +958,8 @@ nav input[id=trigger]:checked ~ .sidebar {
   display: table-cell;
   vertical-align: middle;
   font-size: 20px;
-  font-weight: 200;
+  /* font-weight: 200; */
+  font-weight: 300;
 }
 
 #Solution .panel:nth-child(4) .solution_card:nth-child(2) .text_box {
@@ -1251,8 +1055,9 @@ nav input[id=trigger]:checked ~ .sidebar {
   font-weight: 500;
 }
 #Solution .panel:nth-child(5) .content_item_wrap .item .content_text {
-  font-size: 20;
-  font-weight: 200;
+  font-size: 20px;
+  /* font-weight: 200; */
+  font-weight: 300;
 }
 #Solution .panel:nth-child(5) .replace_text_img {
   position: absolute;
@@ -1728,5 +1533,12 @@ footer {
   position: absolute;
   right: 0;
   top: -50px;
+  font-size: 20px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 /*07-18 modal 추가*/
+#canvas {
+  cursor: pointer;
+}
